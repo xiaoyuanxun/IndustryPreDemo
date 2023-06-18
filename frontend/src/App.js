@@ -1,25 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import ProductChainForm from './components/ProductChainForm';
+import ProductChainQuery from './components/ProductChainQuery'; // 替换为组件文件的路径
+import GetProductIndex from './components/GetProductIndex'; // 替换为组件文件的路径
+import AddProductLink from './components/AddProductLink'; // 替换为组件文件的路径
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       <ProductChainForm />
+      <ProductChainQuery />
+      <GetProductIndex />
+      <AddProductLink />
     </div>
   );
 }

@@ -39,7 +39,7 @@ contract ProductsChain {
         productIndex++;
     }   
 
-    // 查询产品链
+    // 增加某一链条信息
     function addProductLink(
         uint256 _productIndex,
         string memory _productName,
@@ -71,10 +71,29 @@ contract ProductsChain {
 
         ProductLink[] memory chain = new ProductLink[](linkCount);
 
-        for (uint256 i = 1; i <= linkCount; i++) {
-            chain[i - 1] = product.productLink[i];
+        for (uint256 i = 0; i < linkCount; i++) {
+            chain[i] = product.productLink[i];
         }
 
         return chain;
+    }
+
+    function getProductInfo(uint256 _productIndex) public view returns (
+        string memory, 
+        string memory, 
+        string memory, 
+        uint256, uint256
+    ) {
+        return (
+            products[_productIndex].productName,
+            products[_productIndex].productDescription,
+            products[_productIndex].productSerialNumber,
+            products[_productIndex].timestamp,
+            products[_productIndex].productLinkCount     
+        );
+    }
+
+    function getProductIndex() public view returns (uint256) {
+        return productIndex;
     }
 }

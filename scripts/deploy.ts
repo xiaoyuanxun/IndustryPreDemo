@@ -16,9 +16,17 @@ async function main() {
   );
 }
 
+async function deployProducts() {
+  const Products = await ethers.getContractFactory("ProductsChain");
+  const products = await Products.deploy();
+
+  await products.deployed();
+  console.log(`ProductsChain deployed to ${products.address}`);
+}
+
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
+deployProducts().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
