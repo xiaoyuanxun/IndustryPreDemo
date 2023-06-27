@@ -1,0 +1,10 @@
+.App {
+    height: 100%;
+    background: #050a31;
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    color: white;
+    overflow: auto;
+}

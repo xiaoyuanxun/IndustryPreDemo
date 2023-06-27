@@ -1,0 +1,46 @@
+.input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.input-wrap-title {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    color: white;
+}
+
+.input-wrap-input {
+    outline: none;
+    width: 352px;
+}
+
+.button-wrap {
+    background: #AAF5FF;
+    color: black;
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.whitespace {
+    display: flex;
+    background: white;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.whitespace-title {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    color: white;
+}

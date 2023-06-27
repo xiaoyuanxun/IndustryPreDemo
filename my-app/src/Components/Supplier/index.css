@@ -1,0 +1,37 @@
+.supplier-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 300px
+}
+
+.supplier-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+
+
+
+.supplier-submit-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    color: white;
+    padding: 0 100px;
+}
+
+.supplier-submit-wrap-title {
+    font-family: Inter;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 85px;
+}
+
+.supplier-submit-wrap-input {
+    outline: none;
+    flex: 1;
+    height: 30px;
+}
