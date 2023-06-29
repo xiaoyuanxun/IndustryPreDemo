@@ -24,9 +24,23 @@ async function deployProducts() {
   console.log(`ProductsChain deployed to ${products.address}`);
 }
 
+async function deployBloackIoTManager() {
+  const signers = await ethers.getSigners();
+  
+  const BloackIoTManager = await ethers.getContractFactory("BloackIoTManager", signers[0]);
+  const bloackIoTManager = await BloackIoTManager.deploy();
+
+  await bloackIoTManager.deployed();
+  console.log(`BloackIoTManager deployed to ${bloackIoTManager.address}`);
+}
+
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-deployProducts().catch((error) => {
+// deployProducts().catch((error) => {
+//   console.error(error);
+//   process.exitCode = 1;
+// });
+deployBloackIoTManager().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

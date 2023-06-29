@@ -57,7 +57,11 @@ pragma solidity ^0.8.13;
 }
 contract BloackIoTManager is BaseInfo {
     address owner;
-    
+
+    receive() external payable {}
+
+    // * fallback function
+    fallback() external payable {}    
     
      constructor() {
         owner = msg.sender;
@@ -70,7 +74,10 @@ contract BloackIoTManager is BaseInfo {
         require(whiteLists[msg.sender],"err,only whiteList!");
         _;
     }
-    //供应配件函数
+
+    event SupplyComponentEvent(bytes32 hashCode);
+
+    //供应配件函数a
     function supplyComponent(string memory _compName,bytes8 _modeNumber,uint256 _minSerialNumber,uint256 _maxSerialNumber,string memory _note) external onlyWiteList returns(bytes32 ){
         //生成一个配件信息结构体,可加逻辑：供应时自动根据配件信息是否已经存在来创建新产品信息（调用creatInfo）
         Component memory component=Component(_compName,_modeNumber,BASE+_maxSerialNumber,BASE+_minSerialNumber,supplyID,block.timestamp,0,0,0,0,batchID,State.Waiting,_note);
@@ -81,8 +88,10 @@ contract BloackIoTManager is BaseInfo {
         compsLen[batchID]++;
         supplyID=supplyID++;
         batchID=batchID++;
+        emit SupplyComponentEvent(_hashcode);
         return _hashcode;
     }
+
     //入库函数,设置入库ID和入库时间,由hash表获得批次ID，由于是该批次入库，所以所包含的compentons数量为1;
     //这里有一个要求，同一型号的配件，必须上一批次所有配件都出库后，才能继续入库,注意，这里的batchslen储存的是已经入库的配件批次数量
     //入库成功后batchs长度会增加
@@ -96,6 +105,7 @@ contract BloackIoTManager is BaseInfo {
         batchsLen[components[_batchID][rootCompIndex].modeNumber]++;
         enterID++;
     }
+
     //配件出库，选择一个该批次内还未出库的序列号范围内的序列号作为最大序列号，然后将该批次还未出库的序列号的最小序列号和这个最大序列号之间的配件全部出库，
     //再将新的根comp的未出库的最小序列号设置为这个序列号，从而达到可以记录分批出库的笑果
     //然后新建一个compenton，为这批出库的配件设置它的出库时间和出库ID，
@@ -123,6 +133,7 @@ contract BloackIoTManager is BaseInfo {
         //型号，批次ID，范围
         (minserialNumber,maxserialNumber)=generateSerialNumber();
     }
+
     //创建产品信息,如果不存在，则创建，如果存在，则更新
     function creatOrupdateInfo(string memory _productName,bytes8 _modeNumber,string memory note) public onlyWiteList returns (bool) {
         if(products[_modeNumber].modeNumber==0){
@@ -135,19 +146,23 @@ contract BloackIoTManager is BaseInfo {
         }
         return true;
     }
+
     //通过hash哈希获得入库状态
     function  getStateByHash(bytes32 _hashcode) external view returns (State state) {
         uint256 _batchID =hashTable[_hashcode];
         state=components[_batchID][0].state;
     }
+
     //通过modeNumber型号获得产品信息
     function getProductInfo(bytes8 _modeNumber) public view returns (Product memory) {
         return products[_modeNumber];
     }
+
     //获得所有配件型号列表
     function  getModeList() external view returns (bytes8[] memory) {
         return modeNumbers;
     }
+
     //通过序列号查询配件信息
     function getCompInfo(bytes24 _serialNumber) external view  returns (Component memory) {
         (,uint256 _batchID,uint256 _specialID)=parseSerialNumber(_serialNumber);
@@ -158,22 +173,26 @@ contract BloackIoTManager is BaseInfo {
         }
         revert("Invalid serial number!");
     }
+
     //解析序列号得到对应的modeNumber（型号）和 batchID,和标识码ID，从而获得相应的component记录
     function parseSerialNumber(bytes24 _serialNumber) internal pure returns (bytes8, uint64, uint64) {
-    bytes8 modelNumber = bytes8(_serialNumber);
-    uint64 batchID = uint64(uint192(_serialNumber) << 64);
-    uint64 componentID = uint64(uint192(_serialNumber) << 128);
-    
-    return (modelNumber, batchID, componentID);
+        bytes8 modelNumber = bytes8(_serialNumber);
+        uint64 batchID = uint64(uint192(_serialNumber) << 64);
+        uint64 componentID = uint64(uint192(_serialNumber) << 128);
+        
+        return (modelNumber, batchID, componentID);
     }
+
     //生成序列号
     function generateSerialNumber()  internal pure returns(bytes24,bytes24)  {
         
     }
+
     //添加白名单
     function setWhiteList(address user,bool status) external onlyOwner  {
         whiteLists[user]=status;
     }
+    
     //生成对应哈希
     function getHash(string memory _compName, bytes8 _modeNumber,uint256 _batchID) public pure returns (bytes32 _hashcode) {
         _hashcode=keccak256(abi.encodePacked(_compName,_modeNumber,_batchID));

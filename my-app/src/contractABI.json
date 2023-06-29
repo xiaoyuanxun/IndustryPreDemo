@@ -1,0 +1,340 @@
+[
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_hashcode",
+          "type": "bytes32"
+        }
+      ],
+      "name": "EnterStorge",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes8",
+          "name": "_modeNumber",
+          "type": "bytes8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxSerialNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "OutStroge",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "productName",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes8",
+              "name": "modeNumber",
+              "type": "bytes8"
+            },
+            {
+              "internalType": "string",
+              "name": "note",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct BaseInfo.Product",
+          "name": "product",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes24",
+          "name": "minserialNumber",
+          "type": "bytes24"
+        },
+        {
+          "internalType": "bytes24",
+          "name": "maxserialNumber",
+          "type": "bytes24"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_productName",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes8",
+          "name": "_modeNumber",
+          "type": "bytes8"
+        },
+        {
+          "internalType": "string",
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "creatOrupdateInfo",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes24",
+          "name": "_serialNumber",
+          "type": "bytes24"
+        }
+      ],
+      "name": "getCompInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "compName",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes8",
+              "name": "modeNumber",
+              "type": "bytes8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxSerialNumber",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "minSerialNumber",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "supplyTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "enterID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "enterTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "outTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "batchID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "enum BaseInfo.State",
+              "name": "state",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "note",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct BaseInfo.Component",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_compName",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes8",
+          "name": "_modeNumber",
+          "type": "bytes8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_batchID",
+          "type": "uint256"
+        }
+      ],
+      "name": "getHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_hashcode",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getModeList",
+      "outputs": [
+        {
+          "internalType": "bytes8[]",
+          "name": "",
+          "type": "bytes8[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes8",
+          "name": "_modeNumber",
+          "type": "bytes8"
+        }
+      ],
+      "name": "getProductInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "productName",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes8",
+              "name": "modeNumber",
+              "type": "bytes8"
+            },
+            {
+              "internalType": "string",
+              "name": "note",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct BaseInfo.Product",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_hashcode",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getStateByHash",
+      "outputs": [
+        {
+          "internalType": "enum BaseInfo.State",
+          "name": "state",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "status",
+          "type": "bool"
+        }
+      ],
+      "name": "setWhiteList",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_compName",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes8",
+          "name": "_modeNumber",
+          "type": "bytes8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minSerialNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxSerialNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_note",
+          "type": "string"
+        }
+      ],
+      "name": "supplyComponent",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
