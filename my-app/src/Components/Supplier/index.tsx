@@ -1,45 +1,61 @@
 import React, {useState} from 'react';
 import "./index.css"
-import {Button, InputComponent, WhiteSpace} from "../Basic";
+import {Button, InputComponent, SupplierWhiteSpace} from "../Basic";
 import contractAbi from '../../contractABI.json';
 import { ethers } from 'ethers';
+import { contractAddress } from '../../contractConfig';
 
-const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+interface Page0Props {
+  handleTransactionData: (data: string) => void;
+}
 
-export const Supplier = React.memo(() => {
-  const [page, setPage] = useState(0)
+interface Page1Props {
+  transactionData: string;
+}
 
+export const Supplier = React.memo((props: { page?: number }) => {
+  const [page, setPage] = useState(props.page || 0);
+  const [transactionData, setTransactionData] = useState('');
+
+  const handleTransactionData = (data: string) => {
+    setTransactionData(data);
+    setPage(1);
+  };
 
   if (page === 0) {
-    return <Page0/>
+    return <Page0 handleTransactionData={handleTransactionData} />;
   }
 
-  return <Page1/>
-})
+  return <Page1 transactionData={transactionData} />;
+});
 
-const Page1 = React.memo(() => {
-  return <div className={"supplier-main"}>
-    <div>
-      配件交付
-    </div>
-    <div className={"supplier-submit-wrap"}>
-      <div className={"supplier-submit-wrap-title"}>
-        提交成功
-      </div>
-      <div style={{width: "100%"}}>
-        <div>
-          入库哈希编码
-        </div>
-        <div style={{display: 'flex', alignItems: "center"}}>
-          <input className={"supplier-submit-wrap-input"} type="text"/>
-          <span style={{cursor: "pointer"}}>复制</span>
-        </div>
-      </div>
-    </div>
-  </div>
-})
+const Page1 = React.memo<Page1Props>(({ transactionData }) => {
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(transactionData);
+      alert('已复制到剪贴板');
+    } catch (error) {
+      console.error('复制失败:', error);
+    }
+  };
 
-const Page0 = React.memo(() => {
+  return (
+    <div className={"supplier-main"}>
+      <div>配件交付</div>
+      <div className={"supplier-submit-wrap"}>
+        <div className={"supplier-submit-wrap-title"}>提交成功</div>
+        <div style={{ width: "100%" }}>
+          <div>入库哈希编码</div>
+          <div style={{ display: 'flex', alignItems: "center" }}>
+            <input className={"supplier-submit-wrap-input"} type="text" value={transactionData} readOnly />
+            <span style={{ cursor: "pointer" }} onClick={handleCopy}>复制</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+});
+const Page0 = React.memo<Page0Props>(({ handleTransactionData }) => {
   const handleSubmit = async () => {
     try {
       const modelNumber = (document.getElementById('modelNumber') as HTMLInputElement).value;
@@ -83,6 +99,8 @@ const Page0 = React.memo(() => {
         const receipt = await tx.wait();
         console.log('TX : ', receipt);
         console.log('TX Return : ', receipt.logs[0].data);
+
+        handleTransactionData(receipt.logs[0].data); // Pass the data to handleTransactionData function
       }
     } catch(error) {
       console.error('Error:', error);
@@ -101,7 +119,7 @@ const Page0 = React.memo(() => {
         产品详细信息
       </div>
     </div>
-    <WhiteSpace/>
+    <SupplierWhiteSpace/>
     <div style={{display: "flex", justifyContent: "end"}}>
       <Button text={"确认提交"} onClick={handleSubmit} />
     </div>

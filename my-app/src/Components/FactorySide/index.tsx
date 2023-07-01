@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import "./index.css"
 import {Button, InputComponent, WhiteSpace} from "../Basic";
+import { contractAddress } from '../../contractConfig';
+import contractAbi from '../../contractABI.json';
+import { ethers } from 'ethers';
 
-export const FactorySide = React.memo(() => {
-  const [page, setPage] = useState(4)
+export const FactorySide = React.memo((props: { page?: number }) => {
+  const [page, setPage] = useState(props.page || 0)
 
   if (page === 0) {
     return <Page0/>
@@ -49,7 +52,7 @@ const Page3 = React.memo(() => {
         产品详细信息
       </div>
     </div>
-    <WhiteSpace/>
+    {/* <WhiteSpace/> */}
   </div>
 })
 
@@ -65,7 +68,7 @@ const Page2 = React.memo(() => {
         产品详细信息
       </div>
     </div>
-    <WhiteSpace/>
+    {/* <WhiteSpace/> */}
     <div style={{display: "flex", justifyContent: "end"}}>
       <Button text={"确认出库"}/>
     </div>
@@ -93,19 +96,64 @@ const Page1 = React.memo(() => {
 })
 
 const Page0 = React.memo(() => {
-  return <div className={"supplier-main"}>
-    <div className={"supplier-top"}>
-      <div className={"supplier-item-title"}>
-        创建配件信息库
+  const [productName, setProductName] = useState("");
+  const [productModeNumber, setProductModeNumber] = useState("");
+
+  const handleProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductName(event.target.value);
+    // console.log('配件名称改变 : ', productName);
+  };
+
+  const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductModeNumber(event.target.value);
+    // console.log('配件型号改变 : ', productModeNumber);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const note: String = '';
+      if(window.ethereum) {
+        await window.ethereum.enable();
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        console.log('用户地址：', await signer.getAddress());
+
+        const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+        const tx = await contract.creatOrupdateInfo(
+          productName, 
+          productModeNumber, 
+          note
+        );
+        const receipt = await tx.wait();
+        console.log('TX : ', receipt);
+        // console.log('TX Return : ', receipt.logs[0].data);
+
+      }
+    } catch(error) {
+      console.log('Error : ', error);
+    };
+  };
+
+  return (
+    <div className={"supplier-main"}>
+      <div className={"supplier-top"}>
+        <div className={"supplier-item-title"}>
+          创建配件信息库
+        </div>
+        <InputComponent title={"产品型号"} value={productModeNumber} onChange={handleProductModeNumberChange} />
+        <div className={"supplier-item-title"}>
+          产品详细信息
+        </div>
       </div>
-      <InputComponent title={"产品型号"}/>
-      <div className={"supplier-item-title"}>
-        产品详细信息
+      <WhiteSpace
+          productName={productName}
+          productModeNumber={productModeNumber}
+          onProductNameChange={handleProductNameChange}
+          onProductModeNumberChange={handleProductModeNumberChange}
+        />
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <Button text={"确认提交"} onClick={handleSubmit} />
       </div>
     </div>
-    <WhiteSpace/>
-    <div style={{display: "flex", justifyContent: "end"}}>
-      <Button text={"确认提交"}/>
-    </div>
-  </div>
+  );
 })

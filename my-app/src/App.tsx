@@ -28,10 +28,25 @@ function App() {
   return(
     <Router>
       <Routes>
+
         <Route path="/supplier" element = {
             <div className="App">
               <Header title={"供应商"} id={walletAddress}/>
               <Supplier/>
+            </div>
+          } />
+
+        <Route path="/supplier/0" element = {
+            <div className="App">
+              <Header title={"供应商"} id={walletAddress}/>
+              <Supplier page={0} />
+            </div>
+          } />
+          
+          <Route path="/supplier/1" element = {
+            <div className="App">
+              <Header title={"供应商"} id={walletAddress}/>
+              <Supplier page={1} />
             </div>
           } />
 
@@ -42,6 +57,40 @@ function App() {
           </div>
         } />
 
+        <Route path="/factory/0" element = {
+          <div className="App">
+            <Header title={"工厂端"} id={walletAddress}/>
+            <FactorySide page={0} />
+          </div>
+        } />
+
+        <Route path="/factory/1" element = {
+          <div className="App">
+            <Header title={"工厂端"} id={walletAddress}/>
+            <FactorySide page={1} />
+          </div>
+        } />
+
+        <Route path="/factory/2" element = {
+          <div className="App">
+            <Header title={"工厂端"} id={walletAddress}/>
+            <FactorySide page={2} />
+          </div>
+        } />        
+
+        <Route path="/factory/3" element = {
+          <div className="App">
+            <Header title={"工厂端"} id={walletAddress}/>
+            <FactorySide page={3} />
+          </div>
+        } />   
+        <Route path="/factory/4" element = {
+          <div className="App">
+            <Header title={"工厂端"} id={walletAddress}/>
+            <FactorySide page={4} />
+          </div>
+        } />                   
+        
         <Route path="/user" element = {
           <div className="App">
             <Header title={"用户端"} id={walletAddress}/>

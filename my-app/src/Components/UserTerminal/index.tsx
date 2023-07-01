@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, InputComponent, WhiteSpace} from "../Basic";
+import {Button, InputComponent, UserTerminalWhiteSpace} from "../Basic";
 
 export const UserTerminal = React.memo(() => {
   return <div className={"supplier-main"}>
@@ -15,7 +15,7 @@ export const UserTerminal = React.memo(() => {
         产品详细信息
       </div>
     </div>
-    <WhiteSpace/>
+    <UserTerminalWhiteSpace/>
     <div className={"supplier-item-title"}>
       产品轨迹
     </div>
