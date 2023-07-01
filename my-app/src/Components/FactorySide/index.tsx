@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import "./index.css"
 import {Button, InputComponent, WhiteSpace} from "../Basic";
 import { contractAddress } from '../../contractConfig';
@@ -75,21 +75,90 @@ const Page2 = React.memo(() => {
   </div>
 })
 
+function getStateString(state: number): string {
+  switch (state) {
+    case 0 :
+      return '待确认';
+    case 1 :
+      return '已确认';
+    case 2 : 
+      return '已出库';
+    case 3 :
+      return '已完成，代表该批次配件已全部出库';
+  }
+  return '待确认'
+}
 
 const Page1 = React.memo(() => {
+  const [productHashCode, setProductHashCode] = useState("");
+  const [currentState, setCurrentState] = useState('待确认');
+
+  let timer: NodeJS.Timeout;
+
+  const getStateByHash = async() => {
+    if(window.ethereum) {
+      await window.ethereum.enable();
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      console.log('用户地址：', await provider._getAddress);
+
+      const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+      const receipt = await contract.getStateByHash(productHashCode);
+
+      console.log('入库状态 : ', receipt);
+      // console.log(typeof receipt); // 打印值的类型
+      
+      setCurrentState(getStateString(receipt));
+    } else {
+      console.error("请安装MetaMask或其他以太坊钱包插件");
+    }
+  };
+
+  useEffect(() => {
+    // 在组件卸载时清除定时器
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  const handleProductHashCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductHashCode(event.target.value);
+    // console.log('配件名称改变 : ', productName);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      if(window.ethereum) {
+        await window.ethereum.enable();
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        console.log('用户地址：', await signer.getAddress());
+
+        const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+        const tx = await contract.EnterStorge(productHashCode);
+        const receipt = await tx.wait();
+        console.log('入库操作 : ', receipt);
+
+      // 开始轮询合约查询入库状态
+      timer = setInterval(getStateByHash, 5000); // 每隔5秒查询一次
+
+      }
+    } catch(error) {
+      console.log('Error : ', error);
+    };
+  };
+
   return <div className={"supplier-main"}>
     <div className={"supplier-top"}>
       <div className={"supplier-item-title"}>
         配件入库
       </div>
       <div style={{display: "flex", alignItems: "center"}}>
-        <InputComponent title={"入库哈希编码"}/>
+        <InputComponent title={"入库哈希编码"} value={productHashCode} onChange={handleProductHashCodeChange} />
         <div>查询</div>
       </div>
       <div style={{display: "flex", gap: "100px"}}>
-        当前状态
-        待确认
-        <Button text={"确认入库"}/>
+      <div>当前状态 : {currentState}</div>
+        <Button text={"确认入库"} onClick={handleSubmit} />
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./index.css"
-import {Button, InputComponent, SupplierWhiteSpace} from "../Basic";
+import {Button, SupplierInputComponent, SupplierWhiteSpace} from "../Basic";
 import contractAbi from '../../contractABI.json';
 import { ethers } from 'ethers';
 import { contractAddress } from '../../contractConfig';
@@ -55,6 +55,7 @@ const Page1 = React.memo<Page1Props>(({ transactionData }) => {
     </div>
   );
 });
+
 const Page0 = React.memo<Page0Props>(({ handleTransactionData }) => {
   const handleSubmit = async () => {
     try {
@@ -112,9 +113,9 @@ const Page0 = React.memo<Page0Props>(({ handleTransactionData }) => {
       <div className={"supplier-item-title"}>
         配件交付
       </div>
-      <InputComponent title={"产品型号"} id={'modelNumber'} />
-      <InputComponent title={"产品序列号范围"} id={'serialNumberRange_min'} />
-      <InputComponent title={""} id={'serialNumberRange_max'}/>
+      <SupplierInputComponent title={"产品型号"} id={'modelNumber'} />
+      <SupplierInputComponent title={"产品序列号范围"} id={'serialNumberRange_min'} />
+      <SupplierInputComponent title={""} id={'serialNumberRange_max'}/>
       <div className={"supplier-item-title"}>
         产品详细信息
       </div>

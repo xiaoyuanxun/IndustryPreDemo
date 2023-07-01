@@ -21,6 +21,16 @@ export const UserTerminalWhiteSpace = React.memo(() => {
   </div>
 })
 
+export const SupplierInputComponent = React.memo((props: { title: string, titleCss?: React.CSSProperties, id?: string }) => {
+  const { title, id } = props
+  return <div className={"input-wrap"}>
+    <div style={props.titleCss} className={"input-wrap-title"}>
+      {title}
+    </div>
+    <input className={'input-wrap-input'} type="text" id={id} />
+  </div>
+})
+
 export const InputComponent = React.memo((props: { 
   title: string, 
   titleCss?: React.CSSProperties, 

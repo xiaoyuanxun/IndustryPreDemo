@@ -13,7 +13,7 @@ pragma solidity ^0.8.13;
   
     //配件状态
     enum State { 
-        Waiting, //等待确认
+        Waiting, //待确认
         Ensured, //已确认
         Out,    //已出库
         Finish  //已完成，代表该批次配件已全部出库
