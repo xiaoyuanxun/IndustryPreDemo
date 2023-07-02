@@ -57,20 +57,64 @@ const Page3 = React.memo(() => {
 })
 
 const Page2 = React.memo(() => {
+  const [productName, setProductName] = useState("");
+  const [productModeNumber, setProductModeNumber] = useState("");
+  const [serialNumberRange_max, setSerialNumberRange_max] = useState("");
+
+  const handleProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductName(event.target.value);
+  };
+
+  const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductModeNumber(event.target.value);
+  };
+
+  const handleserialNumberRange_maxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSerialNumberRange_max(event.target.value);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      if(window.ethereum) {
+        await window.ethereum.enable();
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        console.log('用户地址：', await signer.getAddress());
+
+        const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+        const tx = await contract.OutStroge(
+          productModeNumber,
+          ethers.utils.parseUnits(serialNumberRange_max, 0),
+        );
+        const receipt = await tx.wait();
+        console.log('出库操作 : ', receipt);
+
+        console.log('出库TX Return : ', receipt.logs[0].data);
+      }
+    } catch(error) {
+      console.log('Error : ', error);
+    };
+  };
+
   return <div className={"supplier-main"}>
     <div className={"supplier-top"}>
       <div className={"supplier-item-title"}>
         配件出库
       </div>
-      <InputComponent title={"产品型号"}/>
-      <InputComponent title={"产品序列号范围"}/>
+      <InputComponent title={"产品型号"} value={productModeNumber} onChange={handleProductModeNumberChange} />
+      <InputComponent title={"产品序列号范围"} value={serialNumberRange_max} onChange={handleserialNumberRange_maxChange} />
       <div className={"supplier-item-title"}>
         产品详细信息
       </div>
     </div>
-    {/* <WhiteSpace/> */}
+    <WhiteSpace
+          productName={productName}
+          productModeNumber={productModeNumber}
+          onProductNameChange={handleProductNameChange}
+          onProductModeNumberChange={handleProductModeNumberChange}
+        />
     <div style={{display: "flex", justifyContent: "end"}}>
-      <Button text={"确认出库"}/>
+      <Button text={"确认出库"} onClick={handleSubmit} />
     </div>
   </div>
 })

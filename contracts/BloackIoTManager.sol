@@ -76,6 +76,7 @@ contract BloackIoTManager is BaseInfo {
     }
 
     event SupplyComponentEvent(bytes32 hashCode);
+    event OutStrogeEvent(Product product);
 
     //供应配件函数a
     function supplyComponent(string memory _compName,bytes8 _modeNumber,uint256 _minSerialNumber,uint256 _maxSerialNumber,string memory _note) external onlyWiteList returns(bytes32 ){
@@ -107,7 +108,7 @@ contract BloackIoTManager is BaseInfo {
     }
 
     //配件出库，选择一个该批次内还未出库的序列号范围内的序列号作为最大序列号，然后将该批次还未出库的序列号的最小序列号和这个最大序列号之间的配件全部出库，
-    //再将新的根comp的未出库的最小序列号设置为这个序列号，从而达到可以记录分批出库的笑果
+    //再将新的根comp的未出库的最小序列号设置为这个序列号，从而达到可以记录分批出库的效果
     //然后新建一个compenton，为这批出库的配件设置它的出库时间和出库ID，
     //如果这个批次的配件全部出库成功，状态设置为finish。
     function OutStroge(bytes8 _modeNumber,uint256 _maxSerialNumber) external onlyWiteList returns(Product memory product,bytes24 minserialNumber,bytes24 maxserialNumber) {
@@ -132,6 +133,7 @@ contract BloackIoTManager is BaseInfo {
         product=getProductInfo(_modeNumber);
         //型号，批次ID，范围
         (minserialNumber,maxserialNumber)=generateSerialNumber();
+        emit OutStrogeEvent(product);
     }
 
     //创建产品信息,如果不存在，则创建，如果存在，则更新
