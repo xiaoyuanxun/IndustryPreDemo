@@ -25,7 +25,26 @@ export const FactorySide = React.memo((props: { page?: number }) => {
 
 
 const Page4 = React.memo(() => {
-  const arr = new Array(10).fill("A2387B234")
+  const [arr, setArr] = useState([]);
+
+  useEffect(() => {
+    const getWalletAddress = async () => {
+      if (window.ethereum) {
+        await window.ethereum.enable(); // 授权访问用户钱包
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+        const receipt = await contract.getModeList();
+        console.log('查询配件信息 : ', receipt);
+
+        setArr(receipt);
+      } else {
+        console.error("请安装MetaMask或其他以太坊钱包插件");
+      }
+    };
+
+    getWalletAddress();
+  }, []);
+
   return <div className={"supplier-main"}>
     <div className={"supplier-item-title"}>
       配件列表
@@ -42,17 +61,53 @@ const Page4 = React.memo(() => {
 })
 
 const Page3 = React.memo(() => {
+  const [productModeNumber, setProductModeNumber] = useState("");
+  const [productName, setProductName] = useState("");
+
+  const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductModeNumber(event.target.value);
+  };
+
+  const handleProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductName(event.target.value);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      if(window.ethereum) {
+        await window.ethereum.enable();
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+        const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+        const receipt = await contract.getProductInfo(productModeNumber);
+        console.log('查询配件信息 : ', receipt);
+
+        setProductName(receipt.productName);
+      }
+    } catch(error) {
+      console.log('Error : ', error);
+    };
+  };
+
   return <div className={"supplier-main"}>
     <div className={"supplier-top"}>
       <div className={"supplier-item-title"}>
         查询配件信息
       </div>
-      <InputComponent title={"产品型号"}/>
+      <InputComponent title={"产品型号"} value={productModeNumber} onChange={handleProductModeNumberChange} />
       <div className={"supplier-item-title"}>
         产品详细信息
       </div>
     </div>
-    {/* <WhiteSpace/> */}
+    <WhiteSpace
+          productName={productName}
+          productModeNumber={productModeNumber}
+          onProductNameChange={handleProductNameChange}
+          onProductModeNumberChange={handleProductModeNumberChange}
+        />
+    <div style={{display: "flex", justifyContent: "end"}}>
+      <Button text={"查询"} onClick={handleSubmit} />
+    </div>
   </div>
 })
 
@@ -89,7 +144,7 @@ const Page2 = React.memo(() => {
         const receipt = await tx.wait();
         console.log('出库操作 : ', receipt);
 
-        console.log('出库TX Return : ', receipt.logs[0].data);
+        // console.log('出库TX Return : ', receipt.logs[0].data);
       }
     } catch(error) {
       console.log('Error : ', error);

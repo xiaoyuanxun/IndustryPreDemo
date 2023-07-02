@@ -11,16 +11,6 @@ export const SupplierWhiteSpace = React.memo(() => {
   </div>
 })
 
-export const UserTerminalWhiteSpace = React.memo(() => {
-  return <div className={"whitespace"}>
-    <InputComponent titleCss={{color: "black"}} title={"产品名称"}/>
-    <InputComponent titleCss={{color: "black"}} title={"产品型号"}/>
-    <div style={{color: "black"}} className={"whitespace-title"}>
-      产品备注
-    </div>
-  </div>
-})
-
 export const SupplierInputComponent = React.memo((props: { title: string, titleCss?: React.CSSProperties, id?: string }) => {
   const { title, id } = props
   return <div className={"input-wrap"}>

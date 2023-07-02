@@ -114,6 +114,7 @@ contract BloackIoTManager is BaseInfo {
     function OutStroge(bytes8 _modeNumber,uint256 _maxSerialNumber) external onlyWiteList returns(Product memory product,bytes24 minserialNumber,bytes24 maxserialNumber) {
         uint256 _lastbatch=batchs[_modeNumber][batchsLen[_modeNumber]-1];
         Component memory _newComp = components[_lastbatch][rootCompIndex];
+        _maxSerialNumber = _maxSerialNumber + BASE;
         require(_maxSerialNumber>_newComp.minSerialNumber,"can't out those products,these haved out!!");
         if(_maxSerialNumber<_newComp.maxSerialNumber){ //部分出库，即范围没有覆盖rootcomp的所有配件序列号范围
             components[_lastbatch][rootCompIndex].minSerialNumber=_maxSerialNumber;

@@ -29,6 +29,13 @@ function App() {
     <Router>
       <Routes>
 
+        <Route path="" element = {
+            <div className="App">
+              <Header title={"供应商"} id={walletAddress}/>
+              <Supplier/>
+            </div>
+          } />
+
         <Route path="/supplier" element = {
             <div className="App">
               <Header title={"供应商"} id={walletAddress}/>
