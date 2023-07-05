@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import {Button, InputComponent, WhiteSpace} from "../Basic";
+import { ethers } from 'ethers';
+import { contractAddress } from '../../contractConfig';
+import contractAbi from '../../contractABI.json';
 
 export const UserTerminal = React.memo(() => {
   const [productModeNumber, setProductModeNumber] = useState("");
@@ -18,6 +21,22 @@ export const UserTerminal = React.memo(() => {
     setSerialNumber(event.target.value);
   };
 
+  const handleSubmit = async () => {
+    try {
+      if(window.ethereum) {
+        await window.ethereum.enable();
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+        const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+        const receipt = await contract.getCompInfo(serialNumber);
+        console.log('产品详细信息 : ', receipt);
+
+      }
+    } catch(error) {
+      console.log('Error : ', error);
+    };
+  };
+
   return <div className={"supplier-main"}>
     <div className={"supplier-top"}>
       <div className={"supplier-item-title"}>
@@ -25,7 +44,7 @@ export const UserTerminal = React.memo(() => {
       </div>
       <div style={{display: "flex", gap: "20px"}}>
         <InputComponent title={"产品序列号"} value={serialNumber} onChange={handleSerialNumberChange} />
-        <Button text={"查询"}/>
+        <Button text={"查询"} onClick={handleSubmit} />
       </div>
       <div className={"supplier-item-title"}>
         产品详细信息

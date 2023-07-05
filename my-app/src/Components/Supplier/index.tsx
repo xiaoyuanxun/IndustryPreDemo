@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./index.css"
-import {Button, SupplierInputComponent, SupplierWhiteSpace} from "../Basic";
+import {Button, InputComponent, WhiteSpace} from "../Basic";
 import contractAbi from '../../contractABI.json';
 import { ethers } from 'ethers';
 import { contractAddress } from '../../contractConfig';
@@ -57,27 +57,32 @@ const Page1 = React.memo<Page1Props>(({ transactionData }) => {
 });
 
 const Page0 = React.memo<Page0Props>(({ handleTransactionData }) => {
+  const [productName, setProductName] = useState("");
+  const [productModeNumber, setProductModeNumber] = useState("");
+  const [serialNumberRange_min, setSerialNumberRange_min] = useState("");  
+  const [serialNumberRange_max, setSerialNumberRange_max] = useState("");
+
+  const handleProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductName(event.target.value);
+  };
+
+  const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductModeNumber(event.target.value);
+  };
+  const handleserialNumberRange_minChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSerialNumberRange_min(event.target.value);
+  };
+
+  const handleserialNumberRange_maxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSerialNumberRange_max(event.target.value);
+  };
+
   const handleSubmit = async () => {
     try {
-      const modelNumber = (document.getElementById('modelNumber') as HTMLInputElement).value;
-      const serialNumberRange_min = (document.getElementById('serialNumberRange_min') as HTMLInputElement).value;
-      const serialNumberRange_max = (document.getElementById('serialNumberRange_max') as HTMLInputElement).value;
-  
-      const productName = (document.getElementById('productName') as HTMLInputElement).value;
-      const productModeNumber = (document.getElementById('productModeNumber') as HTMLInputElement).value;
-
       const note: String = '';
 
-      if (productModeNumber != modelNumber) {
-        console.error('两次输入的产品型号不同');
-      }
-      // const bytes8Value: ethers.BytesLike = ethers.utils.f  (productModeNumber);
-
-      // // 使用 bytesToBytes8 函数进行转换
-      // const modeNumber: bytes8 = ethers.utils.hexlify(ethers.utils.hexZeroPad(bytes8Value, 8));
-
       console.log('产品名称 : ', productName);
-      console.log('Prodsuct Model:', modelNumber);
+      console.log('产品型号 : ', productModeNumber);
       console.log('Serial Number Range MIN : ', serialNumberRange_min);
       console.log('Serial Number Range MAX : ', serialNumberRange_max);
       console.log('产品备注 : ', note);
@@ -87,7 +92,6 @@ const Page0 = React.memo<Page0Props>(({ handleTransactionData }) => {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         console.log('用户地址：', await signer.getAddress());
-
 
         const contract = new ethers.Contract(contractAddress, contractAbi, signer);
         const tx = await contract.supplyComponent(
@@ -99,9 +103,9 @@ const Page0 = React.memo<Page0Props>(({ handleTransactionData }) => {
         );
         const receipt = await tx.wait();
         console.log('TX : ', receipt);
-        console.log('TX Return : ', receipt.logs[0].data);
+        console.log('TX Return : ', receipt.events[0].args.hashvalue);
 
-        handleTransactionData(receipt.logs[0].data); // Pass the data to handleTransactionData function
+        handleTransactionData(receipt.events[0].args.hashvalue); // Pass the data to handleTransactionData function
       }
     } catch(error) {
       console.error('Error:', error);
@@ -113,17 +117,21 @@ const Page0 = React.memo<Page0Props>(({ handleTransactionData }) => {
       <div className={"supplier-item-title"}>
         配件交付
       </div>
-      <SupplierInputComponent title={"产品型号"} id={'modelNumber'} />
-      <SupplierInputComponent title={"产品序列号范围"} id={'serialNumberRange_min'} />
-      <SupplierInputComponent title={""} id={'serialNumberRange_max'}/>
+      <InputComponent title={"产品型号"} value={productModeNumber} onChange={handleProductModeNumberChange}  />
+      <InputComponent title={"产品序列号范围"} value={serialNumberRange_min} onChange={handleserialNumberRange_minChange} />
+      <InputComponent title={""} value={serialNumberRange_max} onChange={handleserialNumberRange_maxChange} />
       <div className={"supplier-item-title"}>
         产品详细信息
       </div>
     </div>
-    <SupplierWhiteSpace/>
+    <WhiteSpace
+          productName={productName}
+          productModeNumber={productModeNumber}
+          onProductNameChange={handleProductNameChange}
+          onProductModeNumberChange={handleProductModeNumberChange}
+        />
     <div style={{display: "flex", justifyContent: "end"}}>
       <Button text={"确认提交"} onClick={handleSubmit} />
     </div>
   </div>
 })
-

@@ -1,0 +1,271 @@
+.system-screen {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .system-screen .overlap-wrapper {
+    background-color: #f9f9f9;
+    border: 1px none;
+    height: 1080px;
+    overflow: hidden;
+    width: 1920px;
+  }
+  
+  .system-screen .overlap {
+    height: 1080px;
+    position: relative;
+    width: 1926px;
+  }
+  
+  .system-screen .image {
+    height: 1010px;
+    left: 180px;
+    object-fit: cover;
+    position: absolute;
+    top: 70px;
+    width: 1740px;
+  }
+  
+  .system-screen .view {
+    background-color: #e8e8e8;
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 180px;
+  }
+  
+  .system-screen .overlap-group-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 70px;
+    width: 182px;
+  }
+  
+  .system-screen .overlap-group {
+    background-color: #2797ff;
+    box-shadow: 0px 0px 5px 3px #00000040;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .system-screen .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 128px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .system-screen .line {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 179px;
+    width: 180px;
+  }
+  
+  .system-screen .img {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 34px;
+    width: 70px;
+  }
+  
+  .system-screen .div {
+    height: 359px;
+    left: 0;
+    position: absolute;
+    top: 251px;
+    width: 182px;
+  }
+  
+  .system-screen .div-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 182px;
+  }
+  
+  .system-screen .overlap-2 {
+    background-color: #4e5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .system-screen .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 130px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .system-screen .line-2 {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 178px;
+    width: 180px;
+  }
+  
+  .system-screen .view-2 {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 179px;
+    width: 182px;
+  }
+  
+  .system-screen .overlap-3 {
+    background-color: #4f5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .system-screen .investment-portfolio {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 35px;
+    width: 70px;
+  }
+  
+  .system-screen .tittle {
+    height: 99px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1926px;
+  }
+  
+  .system-screen .overlap-4 {
+    height: 99px;
+    position: relative;
+    width: 1920px;
+  }
+  
+  .system-screen .rectangle {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 3px #00000040;
+    height: 70px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1920px;
+  }
+  
+  .system-screen .text-wrapper-3 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 91px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 21px;
+    width: 240px;
+  }
+  
+  .system-screen .image-2 {
+    height: 49px;
+    left: 29px;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+  }
+  
+  .system-screen .text-wrapper-4 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1800px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 23px;
+    white-space: nowrap;
+  }
+  
+  .system-screen .rectangle-2 {
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 40px;
+    left: 1748px;
+    position: absolute;
+    top: 59px;
+    width: 120px;
+  }
+  
+  .system-screen .text-wrapper-5 {
+    color: #807b7b;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 1772px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 68px;
+  }
+  
+  .system-screen .account {
+    height: 30px;
+    left: 1762px;
+    position: absolute;
+    top: 20px;
+    width: 30px;
+  }
+  
+  .system-screen .rectangle-3 {
+    background-color: #d9d9d9cc;
+    border-radius: 30px;
+    height: 600px;
+    left: 478px;
+    position: absolute;
+    top: 275px;
+    width: 1200px;
+  }
+  
+  .system-screen .h-1 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 534px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 328px;
+    width: 1088px;
+  }
+  

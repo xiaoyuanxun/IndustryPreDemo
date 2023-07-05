@@ -1,0 +1,18 @@
+.success-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .success-message {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .success-message p {
+    color: #32CD32;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  

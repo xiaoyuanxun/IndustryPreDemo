@@ -8,30 +8,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "components": [
-          {
-            "internalType": "string",
-            "name": "productName",
-            "type": "string"
-          },
-          {
-            "internalType": "bytes8",
-            "name": "modeNumber",
-            "type": "bytes8"
-          },
-          {
-            "internalType": "string",
-            "name": "note",
-            "type": "string"
-          }
-        ],
         "indexed": false,
-        "internalType": "struct BaseInfo.Product",
-        "name": "product",
-        "type": "tuple"
+        "internalType": "string",
+        "name": "out",
+        "type": "string"
       }
     ],
-    "name": "OutStrogeEvent",
+    "name": "EnterStorge",
     "type": "event"
   },
   {
@@ -39,12 +22,18 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "indexed": false,
         "internalType": "bytes32",
-        "name": "hashCode",
+        "name": "hashvalue",
         "type": "bytes32"
       }
     ],
-    "name": "SupplyComponentEvent",
+    "name": "SupplyComponent",
     "type": "event"
   },
   {
@@ -54,22 +43,9 @@
   {
     "inputs": [
       {
-        "internalType": "bytes32",
-        "name": "_hashcode",
-        "type": "bytes32"
-      }
-    ],
-    "name": "EnterStorge",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "_modeNumber",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "uint256",
@@ -87,9 +63,9 @@
             "type": "string"
           },
           {
-            "internalType": "bytes8",
+            "internalType": "string",
             "name": "modeNumber",
-            "type": "bytes8"
+            "type": "string"
           },
           {
             "internalType": "string",
@@ -102,14 +78,14 @@
         "type": "tuple"
       },
       {
-        "internalType": "bytes24",
-        "name": "minserialNumber",
-        "type": "bytes24"
+        "internalType": "uint256",
+        "name": "actualMinserialNumber",
+        "type": "uint256"
       },
       {
-        "internalType": "bytes24",
-        "name": "maxserialNumber",
-        "type": "bytes24"
+        "internalType": "uint256",
+        "name": "actualMaxserialNumber",
+        "type": "uint256"
       }
     ],
     "stateMutability": "nonpayable",
@@ -123,9 +99,9 @@
         "type": "string"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "_modeNumber",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "string",
@@ -147,9 +123,32 @@
   {
     "inputs": [
       {
-        "internalType": "bytes24",
-        "name": "_serialNumber",
-        "type": "bytes24"
+        "internalType": "bytes32",
+        "name": "_hashcode",
+        "type": "bytes32"
+      }
+    ],
+    "name": "enterStorge",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_modeNumber",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_batchID",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_specialID",
+        "type": "uint256"
       }
     ],
     "name": "getCompInfo",
@@ -162,9 +161,9 @@
             "type": "string"
           },
           {
-            "internalType": "bytes8",
+            "internalType": "string",
             "name": "modeNumber",
-            "type": "bytes8"
+            "type": "string"
           },
           {
             "internalType": "uint256",
@@ -238,9 +237,9 @@
         "type": "string"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "_modeNumber",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "uint256",
@@ -264,9 +263,9 @@
     "name": "getModeList",
     "outputs": [
       {
-        "internalType": "bytes8[]",
+        "internalType": "string[]",
         "name": "",
-        "type": "bytes8[]"
+        "type": "string[]"
       }
     ],
     "stateMutability": "view",
@@ -275,9 +274,9 @@
   {
     "inputs": [
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "_modeNumber",
-        "type": "bytes8"
+        "type": "string"
       }
     ],
     "name": "getProductInfo",
@@ -290,9 +289,9 @@
             "type": "string"
           },
           {
-            "internalType": "bytes8",
+            "internalType": "string",
             "name": "modeNumber",
-            "type": "bytes8"
+            "type": "string"
           },
           {
             "internalType": "string",
@@ -353,9 +352,9 @@
         "type": "string"
       },
       {
-        "internalType": "bytes8",
+        "internalType": "string",
         "name": "_modeNumber",
-        "type": "bytes8"
+        "type": "string"
       },
       {
         "internalType": "uint256",

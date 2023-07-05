@@ -4,6 +4,7 @@ import {Button, InputComponent, WhiteSpace} from "../Basic";
 import { contractAddress } from '../../contractConfig';
 import contractAbi from '../../contractABI.json';
 import { ethers } from 'ethers';
+import { RiCheckLine } from 'react-icons/ri';
 
 export const FactorySide = React.memo((props: { page?: number }) => {
   const [page, setPage] = useState(props.page || 0)
@@ -198,15 +199,15 @@ const Page1 = React.memo(() => {
     if(window.ethereum) {
       await window.ethereum.enable();
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      console.log('用户地址：', await provider._getAddress);
 
       const contract = new ethers.Contract(contractAddress, contractAbi, provider);
       const receipt = await contract.getStateByHash(productHashCode);
 
       console.log('入库状态 : ', receipt);
       // console.log(typeof receipt); // 打印值的类型
-      
-      setCurrentState(getStateString(receipt));
+      if(receipt == 1) {
+        setCurrentState(getStateString(receipt));
+      }
     } else {
       console.error("请安装MetaMask或其他以太坊钱包插件");
     }
@@ -233,10 +234,11 @@ const Page1 = React.memo(() => {
         console.log('用户地址：', await signer.getAddress());
 
         const contract = new ethers.Contract(contractAddress, contractAbi, signer);
-        const tx = await contract.EnterStorge(productHashCode);
+        const tx = await contract.enterStorge(productHashCode);
         const receipt = await tx.wait();
         console.log('入库操作 : ', receipt);
 
+        setCurrentState('正在确认')
       // 开始轮询合约查询入库状态
       timer = setInterval(getStateByHash, 5000); // 每隔5秒查询一次
 
@@ -266,6 +268,7 @@ const Page1 = React.memo(() => {
 const Page0 = React.memo(() => {
   const [productName, setProductName] = useState("");
   const [productModeNumber, setProductModeNumber] = useState("");
+  const [isCreationSuccess, setIsCreationSuccess] = useState(false);
 
   const handleProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setProductName(event.target.value);
@@ -296,6 +299,7 @@ const Page0 = React.memo(() => {
         console.log('TX : ', receipt);
         // console.log('TX Return : ', receipt.logs[0].data);
 
+        setIsCreationSuccess(true); // 设置为创建成功
       }
     } catch(error) {
       console.log('Error : ', error);
@@ -322,6 +326,16 @@ const Page0 = React.memo(() => {
       <div style={{ display: "flex", justifyContent: "end" }}>
         <Button text={"确认提交"} onClick={handleSubmit} />
       </div>
+      {isCreationSuccess ? (
+        <div>
+          <div className="success-icon">
+            <RiCheckLine size={24} color="#32CD32" />
+          </div>
+          <div className="success-message">
+            <p>创建成功！</p>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 })

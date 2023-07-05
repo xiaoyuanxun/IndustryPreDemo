@@ -1,0 +1,173 @@
+.login-screen {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-screen .overlap-wrapper {
+  background-color: #f9f9f9;
+  border: 1px none;
+  height: 1080px;
+  width: 1920px;
+}
+
+.login-screen .overlap {
+  background-image: url(../../../public/background_image_1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 1080px;
+  position: relative;
+}
+
+.login-screen .rectangle {
+  background-color: #d9d9d9cc;
+  border-radius: 30px;
+  height: 642px;
+  left: 285px;
+  position: absolute;
+  top: 180px;
+  width: 1393px;
+}
+
+.login-screen .tittle {
+  height: 102px;
+  left: 588px;
+  position: absolute;
+  top: 240px;
+  width: 792px;
+}
+
+.login-screen .text-wrapper {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 50px;
+  font-weight: 400;
+  left: 151px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 21px;
+}
+
+.login-screen .div {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  left: 698px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 46px;
+  white-space: nowrap;
+}
+
+.login-screen .image {
+  height: 102px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 104px;
+}
+
+.login-screen .view {
+  height: 80px;
+  left: 1086px;
+  position: absolute;
+  top: 682px;
+  width: 218px;
+}
+
+.login-screen .overlap-group {
+  background-color: #2797ff;
+  border-radius: 10px;
+  height: 80px;
+  position: relative;
+  width: 216px;
+}
+
+.login-screen .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 30px;
+  font-weight: 700;
+  left: 78px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 22px;
+  white-space: nowrap;
+}
+
+.login-screen .view-2 {
+  height: 80px;
+  left: 698px;
+  position: absolute;
+  top: 402px;
+  width: 608px;
+}
+
+.login-screen .div-wrapper {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 80px;
+  left: 204px;
+  position: absolute;
+  top: 0;
+  width: 400px;
+}
+
+.login-screen .text-wrapper-3 {
+  color: #999999;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  left: 21px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 22px;
+  white-space: nowrap;
+}
+
+.login-screen .text-wrapper-4 {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 22px;
+  white-space: nowrap;
+}
+
+.login-screen .view-3 {
+  height: 80px;
+  left: 698px;
+  position: absolute;
+  top: 542px;
+  width: 608px;
+}
+
+.login-screen .text-wrapper-5 {
+  color: #ff0000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 902px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 639px;
+  white-space: nowrap;
+}
