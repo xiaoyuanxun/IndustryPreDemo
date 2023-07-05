@@ -251,9 +251,12 @@
     border-radius: 30px;
     height: 600px;
     left: 478px;
+    right: 242px;
     position: absolute;
     top: 275px;
+    bottom: 205px;
     width: 1200px;
+    flex-shrink: 0;
   }
   
   .system-screen .h-1 {
@@ -262,10 +265,17 @@
     font-size: 24px;
     font-weight: 400;
     left: 534px;
+    right: 298px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 328px;
+    top: 280px;
+    bottom: 258px;
     width: 1088px;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
   }
+
   

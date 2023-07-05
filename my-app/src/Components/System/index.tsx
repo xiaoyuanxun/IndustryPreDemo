@@ -3,18 +3,22 @@ import "./index.css";
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
 import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
+import lineSvg from '../../images/line.svg';
+import AccountPng from '../../images/Account.png';
+import schooLogoPng from '../../images/school_logo.png'
+import background_image_Png from '../../images/background_image_1.png'
 
 export const System = React.memo(() => {
   return (
     <div className="system-screen">
       <div className="overlap-wrapper">
         <div className="overlap">
-          <img className="image" alt="Image" src="../../../public/background_image_1.png" />
+          <img className="image" alt="Image" src={background_image_Png} />
           <div className="view">
             <div className="overlap-group-wrapper">
               <div className="overlap-group">
                 <div className="text-wrapper">系统首页</div>
-                <img className="line" alt="Line" src="line-1.svg" />
+                <img className="line" alt="Line" src={lineSvg} />
                 <img className="img" alt="Booking" src={BookingPng} />
               </div>
             </div>
@@ -22,14 +26,14 @@ export const System = React.memo(() => {
               <div className="div-wrapper">
                 <div className="overlap-2">
                   <div className="text-wrapper-2">参与实验</div>
-                  <img className="line-2" alt="Line" src="image.svg" />
+                  <img className="line-2" alt="Line" src={lineSvg} />
                   <img className="img" alt="Computer support" src={ComputerSupportPng} />
                 </div>
               </div>
               <div className="view-2">
                 <div className="overlap-3">
                   <div className="text-wrapper">实验数据</div>
-                  <img className="line" alt="Line" src="line-1-2.svg" />
+                  <img className="line" alt="Line" src={lineSvg} />
                   <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
                 </div>
               </div>
@@ -39,11 +43,11 @@ export const System = React.memo(() => {
             <div className="overlap-4">
               <div className="rectangle" />
               <div className="text-wrapper-3">区块链物联网实训系统</div>
-              <img className="image-2" alt="Image" src="image-3.png" />
+              <img className="image-2" alt="Image" src={schooLogoPng} />
               <div className="text-wrapper-4">张三</div>
               <div className="rectangle-2" />
               <div className="text-wrapper-5">退出登录</div>
-              <img className="account" alt="Account" src="account.png" />
+              <img className="account" alt="Account" src={AccountPng} />
             </div>
           </div>
           <div className="rectangle-3" />

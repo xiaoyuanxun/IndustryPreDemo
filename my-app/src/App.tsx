@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import {FactorySide, Header, Supplier, UserTerminal, Login, System } from "./Components";
+import {
+  FactorySide, 
+  Header, 
+  Supplier, 
+  UserTerminal, 
+  Login, 
+  System,
+  Experiment_1,
+  Experiment_2,
+  Data,
+  SystemHeader
+} from "./Components";
 import { ethers } from 'ethers'
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
 
@@ -106,15 +117,29 @@ function App() {
         } />
 
         <Route path="/login" element = {
-          <div className="App">
-            <Login/>
-          </div>
+          <Login/>
         } />
 
         <Route path="/system" element = {
           <div className="App">
             <System/>
           </div>
+        } />
+
+        <Route path="/experiment" element = {
+          <Experiment_1/>
+        } />
+
+        <Route path="/experiment/1" element = {
+          <Experiment_1/>
+        } />
+        
+        <Route path="/experiment/2" element = {
+          <Experiment_2/>
+        } />
+
+        <Route path="/data" element = {
+          <Data/>
         } />
     </Routes>
   </Router>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import schooLogoPng from '../../images/school_logo.png'
 
 export const Login = React.memo(() => {
   return (
@@ -10,7 +11,7 @@ export const Login = React.memo(() => {
           <div className="tittle">
             <h1 className="text-wrapper">区块链物联网实训系统</h1>
             <div className="div">学生端</div>
-            <img className="image" alt="Image" src='https://generation-sessions.s3.amazonaws.com/249bc909d5ee70d993ef5e9c3c0cc970/img/image-3@2x.png' />
+            <img className="image" alt="Image" src={schooLogoPng} />
           </div>
           <div className="view">
             <div className="overlap-group">
