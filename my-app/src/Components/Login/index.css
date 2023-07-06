@@ -102,6 +102,7 @@
   text-align: center;
   top: 22px;
   white-space: nowrap;
+  background-color: transparent; /* 添加透明背景 */
 }
 
 .login-screen .view-2 {

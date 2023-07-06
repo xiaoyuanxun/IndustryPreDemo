@@ -186,7 +186,7 @@ function App() {
           </div>
         } />
 
-        <Route path="/login" element = {
+        <Route path="/loginPage" element = {
           <Login/>
         } />
 
@@ -211,7 +211,7 @@ function App() {
         <Route path="/data" element = {
           <Data/>
         } />
-
+{/* <Redirect to="/" /> 默认跳转到根路径 */}
       <Route path="/testHeader" element = {
           <SystemHeader/>
         } />

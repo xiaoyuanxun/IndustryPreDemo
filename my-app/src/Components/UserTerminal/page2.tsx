@@ -20,8 +20,23 @@ import MoreThanPng from '../../images/More Than.png'
 import Arrow2Svg from '../../images/Arrow 2.svg'
 import CancelPng from '../../images/Cancel.png'
 import ErrorPng from '../../images/Error.png'
+import { useNavigate } from 'react-router-dom';
 
 export const UserTerminalPage2 = React.memo(() => {
+  const navigate = useNavigate();
+
+  const handleGoToHomePage = () => {
+    navigate('/system');
+  };
+  
+  const handleGoToExperimenPage = () => {
+    navigate('/experiment/2');
+  };
+
+  const handleGoToDataPage = () => {
+    navigate('/data');
+  };
+
   return (
     <div className="UserTerminalPage2">
       <div className="overlap-wrapper">
@@ -30,7 +45,9 @@ export const UserTerminalPage2 = React.memo(() => {
             <div className="view">
               <div className="overlap-group-wrapper">
                 <div className="div">
-                  <div className="text-wrapper">系统首页</div>
+                  <div className="text-wrapper" onClick={handleGoToHomePage}>
+                    系统首页
+                  </div>
                   <img className="line" alt="Line" src={lineSvg} />
                   <img className="img" alt="Booking" src={BookingPng} />
                 </div>
@@ -38,14 +55,18 @@ export const UserTerminalPage2 = React.memo(() => {
               <div className="overlap-2">
                 <div className="div-wrapper">
                   <div className="overlap-3">
-                    <div className="text-wrapper-2">参与实验</div>
+                    <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
+                      参与实验
+                    </div>
                     <img className="line-2" alt="Line" src={lineSvg} />
                     <img className="img" alt="Computer support" src={ComputerSupportPng} />
                   </div>
                 </div>
                 <div className="view-2">
                   <div className="overlap-4">
-                    <div className="text-wrapper">实验数据</div>
+                    <div className="text-wrapper" onClick={handleGoToDataPage}>
+                      实验数据
+                    </div>
                     <img className="line" alt="Line" src={lineSvg} />
                     <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
                   </div>

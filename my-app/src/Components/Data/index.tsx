@@ -17,8 +17,23 @@ import GroupPng from '../../images/Group.png'
 import ComputersConnectingPng from '../../images/Computers Connecting.png'
 import SystemReportPng from '../../images/System Report.png'
 import ArrowSvg from '../../images/Arrow.svg'
+import { useNavigate } from 'react-router-dom';
 
 export const Data =  React.memo(() => {
+  const navigate = useNavigate();
+
+  const handleGoToHomePage = () => {
+    navigate('/system');
+  };
+  
+  const handleGoToExperimenPage = () => {
+    navigate('/experiment/2');
+  };
+
+  const handleGoToDataPage = () => {
+    navigate('/data');
+  };
+
   return (
     <div className="data-screen">
       <div className="div">
@@ -189,7 +204,9 @@ export const Data =  React.memo(() => {
             <div className="view-8">
               <div className="view-9">
                 <div className="overlap-group-2">
-                  <div className="text-wrapper-35">系统首页</div>
+                  <div className="text-wrapper-35" onClick={handleGoToHomePage}>
+                    系统首页
+                  </div>
                   <img className="line-4" alt="Line" src={lineSvg}/>
                   <img className="img-2" alt="Booking" src={BookingPng} />
                 </div>
@@ -197,14 +214,18 @@ export const Data =  React.memo(() => {
               <div className="overlap-7">
                 <div className="view-10">
                   <div className="overlap-group-2">
-                    <div className="text-wrapper-36">参与实验</div>
+                    <div className="text-wrapper-36" onClick={handleGoToExperimenPage}>
+                      参与实验
+                    </div>
                     <img className="line-5" alt="Line" src={lineSvg}/>
                     <img className="img-2" alt="Computer support" src={ComputerSupportPng} />
                   </div>
                 </div>
                 <div className="view-11">
                   <div className="overlap-8">
-                    <div className="text-wrapper-35">实验数据</div>
+                    <div className="text-wrapper-35"onClick={handleGoToDataPage}>
+                      实验数据
+                    </div>
                     <img className="line-4" alt="Line" src={lineSvg} />
                     <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
                   </div>
