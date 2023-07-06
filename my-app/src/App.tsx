@@ -25,7 +25,10 @@ import {
   FactorySidePage6,
   FactorySidePage7,
   FactorySidePage8,
-  FactorySidePage9
+  FactorySidePage9,
+  UserTerminalPage0,
+  UserTerminalPage1,
+  UserTerminalPage2
 } from "./Components";
 import { ethers } from 'ethers'
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
@@ -160,9 +163,26 @@ function App() {
         } />   
 
         <Route path="/user" element = {
-          <div className="App">
-            <Header title={"用户端"} id={walletAddress}/>
+          <div>
             <UserTerminal/>
+          </div>
+        } />
+
+        <Route path="/user/0" element = {
+          <div>
+            <UserTerminalPage0/>
+          </div>
+        } />
+
+        <Route path="/user/1" element = {
+          <div>
+            <UserTerminalPage1/>
+          </div>
+        } />
+
+        <Route path="/user/2" element = {
+          <div>
+            <UserTerminalPage2/>
           </div>
         } />
 

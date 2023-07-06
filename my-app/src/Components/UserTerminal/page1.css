@@ -1,0 +1,335 @@
+.UserTerminalPage1 {
+    background-color: #0f0b37;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .UserTerminalPage1 .overlap-wrapper {
+    background-color: #0f0b37;
+    border: 1px none;
+    height: 1080px;
+    overflow: hidden;
+    width: 1920px;
+  }
+  
+  .UserTerminalPage1 .overlap {
+    height: 1080px;
+    position: relative;
+    width: 1924px;
+  }
+  
+  .UserTerminalPage1 .overlap-group {
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1924px;
+  }
+  
+  .UserTerminalPage1 .view {
+    background-color: #e8e8e8;
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 180px;
+  }
+  
+  .UserTerminalPage1 .overlap-group-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 70px;
+    width: 182px;
+  }
+  
+  .UserTerminalPage1 .div {
+    background-color: #4e5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .UserTerminalPage1 .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 128px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .UserTerminalPage1 .line {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 179px;
+    width: 180px;
+  }
+  
+  .UserTerminalPage1 .img {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 34px;
+    width: 70px;
+  }
+  
+  .UserTerminalPage1 .overlap-2 {
+    height: 359px;
+    left: 0;
+    position: absolute;
+    top: 251px;
+    width: 182px;
+  }
+  
+  .UserTerminalPage1 .div-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 182px;
+  }
+  
+  .UserTerminalPage1 .overlap-3 {
+    background-color: #2797ff;
+    box-shadow: 0px 0px 5px 3px #00000040;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .UserTerminalPage1 .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 130px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .UserTerminalPage1 .line-2 {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 178px;
+    width: 180px;
+  }
+  
+  .UserTerminalPage1 .view-2 {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 179px;
+    width: 182px;
+  }
+  
+  .UserTerminalPage1 .overlap-4 {
+    background-color: #4f5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .UserTerminalPage1 .investment-portfolio {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 35px;
+    width: 70px;
+  }
+  
+  .UserTerminalPage1 .tittle {
+    height: 70px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1924px;
+  }
+  
+  .UserTerminalPage1 .overlap-5 {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 3px #00000040;
+    height: 70px;
+    position: relative;
+    width: 1920px;
+  }
+  
+  .UserTerminalPage1 .text-wrapper-3 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 91px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 21px;
+    width: 240px;
+  }
+  
+  .UserTerminalPage1 .image {
+    height: 49px;
+    left: 29px;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+  }
+  
+  .UserTerminalPage1 .text-wrapper-4 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1800px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 23px;
+    white-space: nowrap;
+  }
+  
+  .UserTerminalPage1 .account {
+    height: 30px;
+    left: 1762px;
+    position: absolute;
+    top: 20px;
+    width: 30px;
+  }
+  
+  .UserTerminalPage1 .h-1 {
+    color: #ffffff;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    left: 641px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 125px;
+    white-space: nowrap;
+  }
+  
+  .UserTerminalPage1 .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 960px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 239px;
+    white-space: nowrap;
+  }
+  
+  .UserTerminalPage1 .back {
+    height: 30px;
+    left: 600px;
+    position: absolute;
+    top: 154px;
+    width: 30px;
+  }
+  
+  .UserTerminalPage1 .line-3 {
+    height: 1px;
+    left: 180px;
+    object-fit: cover;
+    position: absolute;
+    top: 190px;
+    width: 1740px;
+  }
+  
+  .UserTerminalPage1 .div-2 {
+    height: 71px;
+    left: 600px;
+    position: absolute;
+    top: 394px;
+    width: 906px;
+  }
+  
+  .UserTerminalPage1 .line-4 {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 70px;
+    width: 900px;
+  }
+  
+  .UserTerminalPage1 .text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 134px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+  }
+  
+  .UserTerminalPage1 .text-wrapper-7 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 134px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 33px;
+  }
+  
+  .UserTerminalPage1 .text-wrapper-8 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 356px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 33px;
+  }
+  
+  .UserTerminalPage1 .arrow {
+    height: 42px;
+    left: 50px;
+    position: absolute;
+    top: 9px;
+    width: 37px;
+  }
+  
+  .UserTerminalPage1 .div-3 {
+    height: 71px;
+    left: 600px;
+    position: absolute;
+    top: 505px;
+    width: 906px;
+  }
+  
+  .UserTerminalPage1 .div-4 {
+    height: 71px;
+    left: 600px;
+    position: absolute;
+    top: 616px;
+    width: 906px;
+  }
+  
