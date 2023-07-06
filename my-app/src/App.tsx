@@ -10,10 +10,26 @@ import {
   Experiment_1,
   Experiment_2,
   Data,
-  SystemHeader
+  SystemHeader,
+  Sidebar,
+  SupplierPage0,
+  SupplierPage1,
+  SupplierPage2,
+  SupplierPage3,
+  FactorySidePage0,
+  FactorySidePage1,
+  FactorySidePage2,
+  FactorySidePage3,
+  FactorySidePage4,
+  FactorySidePage5,
+  FactorySidePage6,
+  FactorySidePage7,
+  FactorySidePage8,
+  FactorySidePage9
 } from "./Components";
 import { ethers } from 'ethers'
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
+import { BookButton } from './Components/Basic';
 
 function App() {
 
@@ -48,67 +64,101 @@ function App() {
           } />
 
         <Route path="/supplier" element = {
-            <div className="App">
-              <Header title={"供应商"} id={walletAddress}/>
-              <Supplier/>
-            </div>
+          <div >
+            <Supplier/>            
+          </div>
           } />
 
         <Route path="/supplier/0" element = {
-            <div className="App">
-              <Header title={"供应商"} id={walletAddress}/>
-              <Supplier page={0} />
+            <div >
+              <SupplierPage0/>
             </div>
           } />
           
-          <Route path="/supplier/1" element = {
-            <div className="App">
-              <Header title={"供应商"} id={walletAddress}/>
-              <Supplier page={1} />
-            </div>
-          } />
+        <Route path="/supplier/1" element = {
+            <div >
+            <SupplierPage1/>
+          </div>
+        } />
+
+        <Route path="/supplier/2" element = {
+            <div >
+            <SupplierPage2/>
+          </div>
+        } />
+
+        <Route path="/supplier/3" element = {
+            <div >
+            <SupplierPage3/>
+          </div>
+        } />
 
         <Route path="/factory" element = {
-          <div className="App">
-            <Header title={"工厂端"} id={walletAddress}/>
+          <div >
             <FactorySide/>
           </div>
         } />
 
         <Route path="/factory/0" element = {
-          <div className="App">
-            <Header title={"工厂端"} id={walletAddress}/>
-            <FactorySide page={0} />
+          <div>
+            <FactorySidePage0 />
           </div>
         } />
 
         <Route path="/factory/1" element = {
-          <div className="App">
-            <Header title={"工厂端"} id={walletAddress}/>
-            <FactorySide page={1} />
+          <div >
+            <FactorySidePage1 />
           </div>
         } />
 
         <Route path="/factory/2" element = {
-          <div className="App">
-            <Header title={"工厂端"} id={walletAddress}/>
-            <FactorySide page={2} />
+          <div >
+            <FactorySidePage2 />
           </div>
         } />        
 
         <Route path="/factory/3" element = {
-          <div className="App">
-            <Header title={"工厂端"} id={walletAddress}/>
-            <FactorySide page={3} />
+          <div>
+            <FactorySidePage3 />
           </div>
         } />   
+        
         <Route path="/factory/4" element = {
-          <div className="App">
-            <Header title={"工厂端"} id={walletAddress}/>
-            <FactorySide page={4} />
+          <div >
+            <FactorySidePage4  />
           </div>
         } />                   
-        
+                
+        <Route path="/factory/5" element = {
+          <div >
+            <FactorySidePage5  />
+          </div>
+        } />     
+
+        <Route path="/factory/6" element = {
+          <div >
+            <FactorySidePage6  />
+          </div>
+        } />        
+
+        <Route path="/factory/7" element = {
+          <div >
+            <FactorySidePage7  />
+          </div>
+        } />   
+
+        <Route path="/factory/8" element = {
+          <div >
+            <FactorySidePage8  />
+          </div>
+        } />   
+
+        <Route path="/factory/9" element = {
+          <div >
+            <FactorySidePage9  />
+          </div>
+        } />   
+
         <Route path="/user" element = {
           <div className="App">
             <Header title={"用户端"} id={walletAddress}/>
@@ -141,7 +191,19 @@ function App() {
         <Route path="/data" element = {
           <Data/>
         } />
+
+      <Route path="/testHeader" element = {
+          <SystemHeader/>
+        } />
+
+
+      <Route path="/side" element = {
+          <Sidebar/>
+          
+        } />
+        
     </Routes>
+
   </Router>
   )
 

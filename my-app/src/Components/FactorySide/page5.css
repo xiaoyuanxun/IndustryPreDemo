@@ -1,0 +1,472 @@
+.FactorySidePage5 {
+    background-color: #0f0b37;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .FactorySidePage5 .overlap-wrapper {
+    background-color: #0f0b37;
+    border: 1px none;
+    height: 1080px;
+    overflow: hidden;
+    width: 1920px;
+  }
+  
+  .FactorySidePage5 .overlap {
+    height: 1080px;
+    position: relative;
+    width: 1924px;
+  }
+  
+  .FactorySidePage5 .overlap-group {
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1924px;
+  }
+  
+  .FactorySidePage5 .view {
+    background-color: #e8e8e8;
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 180px;
+  }
+  
+  .FactorySidePage5 .overlap-group-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 70px;
+    width: 182px;
+  }
+  
+  .FactorySidePage5 .div {
+    background-color: #4e5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .FactorySidePage5 .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 128px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .FactorySidePage5 .line {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 179px;
+    width: 180px;
+  }
+  
+  .FactorySidePage5 .img {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 34px;
+    width: 70px;
+  }
+  
+  .FactorySidePage5 .overlap-2 {
+    height: 359px;
+    left: 0;
+    position: absolute;
+    top: 251px;
+    width: 182px;
+  }
+  
+  .FactorySidePage5 .div-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 182px;
+  }
+  
+  .FactorySidePage5 .overlap-3 {
+    background-color: #2797ff;
+    box-shadow: 0px 0px 5px 3px #00000040;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 130px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .FactorySidePage5 .line-2 {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 178px;
+    width: 180px;
+  }
+  
+  .FactorySidePage5 .view-2 {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 179px;
+    width: 182px;
+  }
+  
+  .FactorySidePage5 .overlap-4 {
+    background-color: #4f5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .FactorySidePage5 .investment-portfolio {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 35px;
+    width: 70px;
+  }
+  
+  .FactorySidePage5 .tittle {
+    height: 70px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1924px;
+  }
+  
+  .FactorySidePage5 .overlap-5 {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 3px #00000040;
+    height: 70px;
+    position: relative;
+    width: 1920px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-3 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 91px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 21px;
+    width: 240px;
+  }
+  
+  .FactorySidePage5 .image {
+    height: 49px;
+    left: 29px;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-4 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1800px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 23px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage5 .account {
+    height: 30px;
+    left: 1762px;
+    position: absolute;
+    top: 20px;
+    width: 30px;
+  }
+  
+  .FactorySidePage5 .h-1 {
+    color: #ffffff;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    left: 641px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 125px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage5 .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 960px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 239px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage5 .view-3 {
+    height: 30px;
+    left: 1640px;
+    position: absolute;
+    top: 96px;
+    width: 204px;
+  }
+  
+  .FactorySidePage5 .overlap-6 {
+    background-color: #e8e8e8;
+    border-radius: 35px;
+    height: 30px;
+    position: relative;
+    width: 200px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-6 {
+    color: #484848;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 11px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 65px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-7 {
+    color: #484848;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 76px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 124px;
+  }
+  
+  .FactorySidePage5 .back {
+    height: 30px;
+    left: 600px;
+    position: absolute;
+    top: 154px;
+    width: 30px;
+  }
+  
+  .FactorySidePage5 .line-3 {
+    height: 1px;
+    left: 180px;
+    object-fit: cover;
+    position: absolute;
+    top: 190px;
+    width: 1740px;
+  }
+  
+  .FactorySidePage5 .view-4 {
+    height: 528px;
+    left: 600px;
+    position: absolute;
+    top: 357px;
+    width: 918px;
+  }
+  
+  .FactorySidePage5 .overlap-7 {
+    border: 1px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 3px #72727233;
+    height: 528px;
+    position: relative;
+    width: 900px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-8 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 449px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 75px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage5 .ok {
+    height: 90px;
+    left: 329px;
+    position: absolute;
+    top: 48px;
+    width: 90px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-9 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 429px;
+  }
+  
+  .FactorySidePage5 .line-4 {
+    height: 1px;
+    left: -1px;
+    object-fit: cover;
+    position: absolute;
+    top: 256px;
+    width: 900px;
+  }
+  
+  .FactorySidePage5 .line-5 {
+    height: 1px;
+    left: -1px;
+    object-fit: cover;
+    position: absolute;
+    top: 176px;
+    width: 900px;
+  }
+  
+  .FactorySidePage5 .line-6 {
+    height: 1px;
+    left: -1px;
+    object-fit: cover;
+    position: absolute;
+    top: 336px;
+    width: 900px;
+  }
+  
+  .FactorySidePage5 .line-7 {
+    height: 1px;
+    left: -1px;
+    object-fit: cover;
+    position: absolute;
+    top: 416px;
+    width: 900px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-10 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 189px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-11 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 224px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-12 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 269px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-13 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 304px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-14 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 348px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-15 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 383px;
+  }
+  
+  .FactorySidePage5 .text-wrapper-16 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 149px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 464px;
+    width: 600px;
+  }
+  

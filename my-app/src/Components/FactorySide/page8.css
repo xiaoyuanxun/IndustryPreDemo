@@ -1,0 +1,452 @@
+.FactorySidePage8 {
+    background-color: #0f0b37;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .FactorySidePage8 .overlap-wrapper {
+    background-color: #0f0b37;
+    border: 1px none;
+    height: 1080px;
+    overflow: hidden;
+    width: 1920px;
+  }
+  
+  .FactorySidePage8 .overlap {
+    height: 1080px;
+    position: relative;
+    width: 1924px;
+  }
+  
+  .FactorySidePage8 .overlap-group {
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1924px;
+  }
+  
+  .FactorySidePage8 .view {
+    background-color: #e8e8e8;
+    height: 1080px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 180px;
+  }
+  
+  .FactorySidePage8 .overlap-group-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 70px;
+    width: 182px;
+  }
+  
+  .FactorySidePage8 .div {
+    background-color: #4e5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .FactorySidePage8 .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 128px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .FactorySidePage8 .line {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 179px;
+    width: 180px;
+  }
+  
+  .FactorySidePage8 .img {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 34px;
+    width: 70px;
+  }
+  
+  .FactorySidePage8 .overlap-2 {
+    height: 359px;
+    left: 0;
+    position: absolute;
+    top: 251px;
+    width: 182px;
+  }
+  
+  .FactorySidePage8 .div-wrapper {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 182px;
+  }
+  
+  .FactorySidePage8 .overlap-3 {
+    background-color: #2797ff;
+    box-shadow: 0px 0px 5px 3px #00000040;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 130px;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .FactorySidePage8 .line-2 {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 178px;
+    width: 180px;
+  }
+  
+  .FactorySidePage8 .view-2 {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: 179px;
+    width: 182px;
+  }
+  
+  .FactorySidePage8 .overlap-4 {
+    background-color: #4f5590;
+    height: 180px;
+    position: relative;
+    width: 180px;
+  }
+  
+  .FactorySidePage8 .investment-portfolio {
+    height: 70px;
+    left: 55px;
+    position: absolute;
+    top: 35px;
+    width: 70px;
+  }
+  
+  .FactorySidePage8 .tittle {
+    height: 70px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1924px;
+  }
+  
+  .FactorySidePage8 .overlap-5 {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 3px #00000040;
+    height: 70px;
+    position: relative;
+    width: 1920px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-3 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 91px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 21px;
+    width: 240px;
+  }
+  
+  .FactorySidePage8 .image {
+    height: 49px;
+    left: 29px;
+    position: absolute;
+    top: 10px;
+    width: 50px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-4 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 1800px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 23px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage8 .account {
+    height: 30px;
+    left: 1762px;
+    position: absolute;
+    top: 20px;
+    width: 30px;
+  }
+  
+  .FactorySidePage8 .h-1 {
+    color: #ffffff;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    left: 641px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 125px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage8 .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 960px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 239px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage8 .view-3 {
+    height: 30px;
+    left: 1640px;
+    position: absolute;
+    top: 96px;
+    width: 204px;
+  }
+  
+  .FactorySidePage8 .overlap-6 {
+    background-color: #e8e8e8;
+    border-radius: 35px;
+    height: 30px;
+    position: relative;
+    width: 200px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-6 {
+    color: #484848;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 11px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 65px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-7 {
+    color: #484848;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 76px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    width: 124px;
+  }
+  
+  .FactorySidePage8 .back {
+    height: 30px;
+    left: 600px;
+    position: absolute;
+    top: 154px;
+    width: 30px;
+  }
+  
+  .FactorySidePage8 .line-3 {
+    height: 1px;
+    left: 180px;
+    object-fit: cover;
+    position: absolute;
+    top: 190px;
+    width: 1740px;
+  }
+  
+  .FactorySidePage8 .view-4 {
+    height: 22px;
+    left: 826px;
+    position: absolute;
+    top: 850px;
+    width: 450px;
+  }
+  
+  .FactorySidePage8 .rectangle-wrapper {
+    background-color: #c7daff;
+    height: 5px;
+    left: 48px;
+    position: absolute;
+    top: 9px;
+    width: 400px;
+  }
+  
+  .FactorySidePage8 .rectangle {
+    background-color: #2797ff;
+    height: 5px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-8 {
+    color: #2797ff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+  }
+  
+  .FactorySidePage8 .view-5 {
+    height: 240px;
+    left: 600px;
+    position: absolute;
+    top: 442px;
+    width: 904px;
+  }
+  
+  .FactorySidePage8 .overlap-7 {
+    border: 1px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 3px #72727233;
+    height: 240px;
+    position: relative;
+    width: 900px;
+  }
+  
+  .FactorySidePage8 .line-4 {
+    height: 1px;
+    left: -1px;
+    object-fit: cover;
+    position: absolute;
+    top: 238px;
+    width: 900px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-9 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 449px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 75px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage8 .ok {
+    height: 90px;
+    left: 329px;
+    position: absolute;
+    top: 48px;
+    width: 90px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-10 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 102px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 168px;
+  }
+  
+  .FactorySidePage8 .view-6 {
+    height: 20px;
+    left: 226px;
+    position: absolute;
+    top: 169px;
+    width: 496px;
+  }
+  
+  .FactorySidePage8 .overlap-group-2 {
+    background-color: #d9d9d933;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    width: 494px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-11 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 9px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 1px;
+    white-space: nowrap;
+  }
+  
+  .FactorySidePage8 .view-7 {
+    height: 20px;
+    left: 736px;
+    position: absolute;
+    top: 169px;
+    width: 62px;
+  }
+  
+  .FactorySidePage8 .overlap-8 {
+    background-color: #13d4ff;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .FactorySidePage8 .text-wrapper-12 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 1px;
+    white-space: nowrap;
+  }
+  

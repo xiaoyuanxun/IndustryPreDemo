@@ -29,6 +29,7 @@
     color: #AAF5FF;
 
 } */
+
 .header-type-id {
     max-width: 200px; /* 调整宽度大小，根据您的需求进行调整 */
     overflow: hidden;
@@ -36,176 +37,115 @@
     white-space: nowrap;
   }
   
-
-.system-screen {
-    background-color: #f9f9f9;
+  .image {
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
   }
 
-  .system-screen .tittle {
-    height: 99px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1926px;
+  .image .image-wrapper {
+    border: 0px none;
+    height: 49.3px;
+    width: 50px;
   }
-
-  .system-screen .overlap-9 {
-    height: 99px;
-    position: relative;
-    width: 1920px;
-  }
-
-  .system-screen .text-wrapper-37 {
-    color: #000000;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 24px;
-    font-weight: 400;
-    left: 91px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 21px;
-    width: 240px;
-  }
-
-  .system-screen .image-2 {
-    height: 49px;
+  
+  .image .img {
+    height: 49.3px;
     left: 29px;
-    position: absolute;
+    position: fixed;
     top: 10px;
     width: 50px;
   }
 
-  .system-screen .text-wrapper-38 {
-    color: #000000;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 20px;
-    font-weight: 400;
-    left: 1800px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 23px;
-    white-space: nowrap;
+  .image .account-wrapper {
+    border: 0px none;
+    height: 30px;
+    width: 30px;
   }
   
-  .system-screen .rectangle-3 {
-    background-color: #e8e8e8;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px #00000040;
-    height: 40px;
-    left: 1748px;
-    position: absolute;
-    top: 59px;
-    width: 120px;
-  }
-  
-  .system-screen .text-wrapper-39 {
-    color: #807b7b;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 18px;
-    font-weight: 400;
-    left: 1772px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 68px;
-  }
-  
-  .system-screen .account {
+  .image .account {
     height: 30px;
     left: 1762px;
-    position: absolute;
+    position: fixed;
     top: 20px;
     width: 30px;
   }
-
-/* 
-.tittle {
-    height: 99px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1926px;
+  
+  .label {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
 
-  .system-screen .overlap-9 {
-    height: 99px;
-    position: relative;
-    width: 1920px;
+  .label .h-1-wrapper {
+    border: 0px none;
+    height: 29px;
+    width: 240px;
   }
-
-.text-wrapper-37 {
+  
+  .label .text-wrapper-desc {
     color: #000000;
     font-family: "Inter-Regular", Helvetica;
     font-size: 24px;
     font-weight: 400;
-    left: 91px;
+    left: 0;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
+    position: fixed;
     text-align: center;
-    top: 21px;
+    top: 0;
     width: 240px;
+    margin-top: 21px;
+    margin-left: 91px;
   }
-
- .image-2 {
-    height: 49px;
-    left: 29px;
-    position: absolute;
-    top: 10px;
-    width: 50px;
+  
+  .label .div-wrapper {
+    border: 0px none;
+    height: 24px;
+    width: 40px;
   }
-
- .text-wrapper-38 {
+  
+  .label .text-wrapper-name {
     color: #000000;
     font-family: "Inter-Regular", Helvetica;
     font-size: 20px;
     font-weight: 400;
-    left: 1800px;
+    left: 0;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
+    position: fixed;
     text-align: center;
-    top: 23px;
+    top: 0;
     white-space: nowrap;
+    margin-top: 23px;
+    margin-left: 1800px;
   }
   
- .rectangle-3 {
-    background-color: #e8e8e8;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px #00000040;
-    height: 40px;
-    left: 1748px;
-    position: absolute;
-    top: 59px;
-    width: 120px;
+  .box {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
   
-.text-wrapper-39 {
-    color: #807b7b;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 18px;
-    font-weight: 400;
-    left: 1772px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 68px;
+  .box .rectangle-wrapper {
+    border: 0px none;
+    height: 70px;
+    width: 1920px;
   }
   
- .account {
-    height: 30px;
-    left: 1762px;
-    position: absolute;
-    top: 20px;
-    width: 30px;
-  } */
+  .box .rectangle {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 3px #00000040;
+    height: 70px;
+    left: 0;
+    /* position: fixed; */
+    top: 0;
+    width: 1920px;
+  }
+  

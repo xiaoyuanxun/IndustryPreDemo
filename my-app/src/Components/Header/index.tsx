@@ -18,15 +18,31 @@ export const Header = React.memo((props: { title: string, id: string }) => {
 })
 
 export const SystemHeader = React.memo(() => {
-  return <div className="tittle">
-    <div className="overlap-9">
-      <div className="rectangle-2" />
-      <div className="text-wrapper-37">区块链物联网实训系统</div>
-      <img className="image-2" alt="Image" src={schooLogoPng} />
-      <div className="text-wrapper-38">张三</div>
-      <div className="rectangle-3" />
-      <div className="text-wrapper-39">退出登录</div>
-      <img className="account" alt="Account" src={AccountPng} />
-    </div>
-  </div>
+  return (
+      <div className="box">
+        <div className="rectangle-wrapper">
+          <div className="rectangle" />
+          <div className="image">
+        <div className="image-wrapper">
+          <img className="img" alt="Image" src={schooLogoPng}/>
+        </div>
+      </div>
+      <div className="label">
+        <div className="h-1-wrapper">
+          <h1 className="text-wrapper-desc">区块链物联网实训系统</h1>
+        </div>
+      </div>
+      <div className="image">
+        <div className="account-wrapper">
+          <img className="account" alt="Account" src={AccountPng} />
+        </div>
+      </div>
+      <div className="label">
+          <div className="div-wrapper">
+            <div className="text-wrapper-name ">张三</div>
+          </div>
+      </div>
+        </div>
+      </div>
+  );
 })
