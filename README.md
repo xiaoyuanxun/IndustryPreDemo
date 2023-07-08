@@ -74,3 +74,12 @@
 这是个电池，通过工厂端配件库信息对应进行上传，并且上传后通过工厂端进行确认入库信息后完成入库
 
 0x9e692d4b4da0959684bf5c5d3638cfef3512d51af4ce23e5bdaff8e851877133
+
+## 合约修改意见
+
+1. [getCanEnterStorge判断有bug会算数下溢](https://github.com/xiaoyuanxun/IndustryPreDemo/blob/7872ee5a580eeefb8004a14c9af721a71f14d5df/contracts/BloackIoTManager.sol#L135)
+
+2. 唯一序列号相关 : 唯一序列号的存储， 唯一序列号的上传函数， 唯一序列号相关查询 => 配件流动路径
+
+3. 存储入库Hash值 : 产品信息与入库Hash值的映射，因为供应商的交付列表需要展示交付Hash值
+
