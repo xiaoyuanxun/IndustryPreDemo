@@ -30,8 +30,8 @@ export const System = React.memo(() => {
         <div className="overlap">
           <img className="image" alt="Image" src={background_image_Png} />
           <div className="view">
-            <div className="overlap-group-wrapper">
-              <div className="overlap-group">
+            <div className="overlap-group-wrapper" onClick={handleGoToHomePage}>
+              <div className="overlap-group" onClick={handleGoToHomePage}>
                 <div className="text-wrapper" onClick={handleGoToHomePage}>
                   系统首页
                 </div>
@@ -40,7 +40,7 @@ export const System = React.memo(() => {
               </div>
             </div>
             <div className="div">
-              <div className="div-wrapper">
+              <div className="div-wrapper" onClick={handleGoToExperimenPage}>
                 <div className="overlap-2">
                   <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                     参与实验
@@ -49,7 +49,7 @@ export const System = React.memo(() => {
                   <img className="img" alt="Computer support" src={ComputerSupportPng} />
                 </div>
               </div>
-              <div className="view-2">
+              <div className="view-2" onClick={handleGoToDataPage}>
                 <div className="overlap-3">
                   <div className="text-wrapper" onClick={handleGoToDataPage}>
                     实验数据
@@ -66,8 +66,8 @@ export const System = React.memo(() => {
               <div className="text-wrapper-3">区块链物联网实训系统</div>
               <img className="image-2" alt="Image" src={schooLogoPng} />
               <div className="text-wrapper-4">张三</div>
-              <div className="rectangle-2" />
-              <div className="text-wrapper-5">退出登录</div>
+              {/* <div className="rectangle-2" /> */}
+              {/* <div className="text-wrapper-5">退出登录</div> */}
               <img className="account" alt="Account" src={AccountPng} />
             </div>
           </div>

@@ -1,17 +1,11 @@
 import React, {useState} from 'react';
 import "./index.css"
-import {Button, InputComponent, WhiteSpace} from "../Basic";
-import contractAbi from '../../contractABI.json';
-import { ethers } from 'ethers';
-import { contractAddress } from '../../contractConfig';
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
 import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
-import CarRepairSvg from '../../images/Car repair.svg'
 import Vector2Svg from '../../images/vector-2.svg'
 import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
@@ -40,6 +34,26 @@ export const Supplier = React.memo(() => {
     navigate('/data');
   };
 
+  const handleGoToSupplierPage = () => {
+    navigate('/supplier');
+  };
+
+  const handleGoToFactoryPage = () => {
+    navigate('/factory');
+  };
+
+  const handleGoToUserPage = () => {
+    navigate('/user');
+  };
+
+  const handleGoToSupplierPage0 = () => {
+    navigate('/supplier/0');
+  };
+
+  const handleGoToSupplierPage3 = () => {
+    navigate('/supplier/3');
+  };
+  
   return (
     <div className="Supplier">
       <div className="overlap-wrapper">
@@ -47,7 +61,7 @@ export const Supplier = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <div className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
@@ -57,7 +71,7 @@ export const Supplier = React.memo(() => {
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
@@ -66,7 +80,7 @@ export const Supplier = React.memo(() => {
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>
@@ -87,15 +101,21 @@ export const Supplier = React.memo(() => {
           </div>
           <div className="view-3">
             <div className="overlap-6">
-              <h1 className="h-1">配件供应商</h1>
-              <div className="text-wrapper-5">配件交付</div>
-              <div className="text-wrapper-6">交付列表</div>
+              <h1 className="h-1" onClick={handleGoToSupplierPage}>
+                配件供应商
+              </h1>
+              <div className="text-wrapper-5" onClick={handleGoToSupplierPage0}>
+                配件交付
+              </div>
+              <div className="text-wrapper-6" onClick={handleGoToSupplierPage3}>
+                交付列表
+              </div>
               <img className="vector" alt="Vector" src={Vector} />
             </div>
           </div>
           <div className="view-4">
-            <div className="overlap-7">
-              <div className="text-wrapper-7">
+            <div className="overlap-7" onClick={handleGoToFactoryPage}>
+              <div className="text-wrapper-7" onClick={handleGoToFactoryPage}>
                 新能源汽车
                 <br />
                 加工厂
@@ -109,8 +129,10 @@ export const Supplier = React.memo(() => {
             </div>
           </div>
           <div className="view-5">
-            <div className="overlap-8">
-              <div className="text-wrapper-8">新能源车主</div>
+            <div className="overlap-8" onClick={handleGoToUserPage}>
+              <div className="text-wrapper-8" onClick={handleGoToUserPage}>
+                新能源车主
+              </div>
               <img className="vector-3" alt="Vector" src={Vector3Svg} />
             </div>
           </div>

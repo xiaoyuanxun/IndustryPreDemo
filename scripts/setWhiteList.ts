@@ -12,10 +12,17 @@ async function setWhiteList() {
     //     whiteLists[user]=status;
     // }
 
-    const tx = await contract.setWhiteList(
-        ethers.utils.getAddress('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'),
+    const tx_1 = await contract.setWhiteList(
+        ethers.utils.getAddress('0x70997970C51812dc3A010C7d01b50e0d17dc79C8'),
         true
     );
+    await tx_1.wait()
+
+    const tx_2 = await contract.setWhiteList(
+      ethers.utils.getAddress('0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC'),
+      true
+  );
+    await tx_2.wait()
     // const tx = await contract.supplyComponent(
     //   '产品1',
     //   '0x1234567890abcdef',
@@ -24,7 +31,7 @@ async function setWhiteList() {
     //   ''
     // );
 
-    await tx.wait()
+
 }
 
 setWhiteList().catch((error) => {

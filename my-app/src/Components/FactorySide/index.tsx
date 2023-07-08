@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "./index.css"
-import {Button, InputComponent, WhiteSpace} from "../Basic";
-import { contractAddress } from '../../contractConfig';
-import contractAbi from '../../contractABI.json';
-import { ethers } from 'ethers';
-import { RiCheckLine } from 'react-icons/ri';
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
 import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
-import CarRepairSvg from '../../images/Car repair.svg'
 import Vector2Svg from '../../images/vector-2.svg'
 import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
@@ -33,6 +26,34 @@ export const FactorySide = React.memo(() => {
     navigate('/data');
   };
 
+  const handleGoToFactory0Page = () => {
+    navigate('/factory/0');
+  };
+
+  const handleGoToFactory6Page = () => {
+    navigate('/factory/6');
+  };
+
+  const handleGoToFactory2Page = () => {
+    navigate('/factory/2');
+  };
+  
+  const handleGoToFactory9Page = () => {
+    navigate('/factory/9');
+  };
+  
+  const handleGoToSupplierPage = () => {
+    navigate('/supplier');
+  };
+
+  const handleGoToFactoryPage = () => {
+    navigate('/factory');
+  };
+
+  const handleGoToUserPage = () => {
+    navigate('/user');
+  };
+
   return (
     <div className="FactorySide">
       <div className="overlap-wrapper">
@@ -40,7 +61,7 @@ export const FactorySide = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <div className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
@@ -50,7 +71,7 @@ export const FactorySide = React.memo(() => {
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
@@ -59,7 +80,7 @@ export const FactorySide = React.memo(() => {
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>
@@ -79,15 +100,15 @@ export const FactorySide = React.memo(() => {
             </div>
           </div>
           <div className="view-3">
-            <div className="overlap-6">
+            <div className="overlap-6" onClick={handleGoToSupplierPage}>
               <h1 className="text-wrapper-5">配件供应商</h1>
               <img className="vector" alt="Vector" src={Vector} />
             </div>
           </div>
           <div className="overlap-7">
             <div className="view-4">
-              <div className="overlap-8">
-                <div className="text-wrapper-6">新能源汽车加工厂</div>
+              <div className="overlap-8" onClick={handleGoToFactoryPage}>
+                <div className="text-wrapper-5">新能源汽车加工厂</div>
                 <div className="group">
                   <div className="overlap-group-2">
                     <div className="rectangle" />
@@ -96,14 +117,14 @@ export const FactorySide = React.memo(() => {
                 </div>
               </div>
             </div>
-            <div className="text-wrapper-7">新增配件</div>
-            <div className="text-wrapper-8">配件列表</div>
-            <div className="text-wrapper-9">配件入库</div>
-            <div className="text-wrapper-10">配件出库</div>
+            <div className="text-wrapper-7" onClick={handleGoToFactory0Page}>新增配件</div>
+            <div className="text-wrapper-8" onClick={handleGoToFactory9Page}>配件列表</div>
+            <div className="text-wrapper-9" onClick={handleGoToFactory2Page}>配件入库</div>
+            <div className="text-wrapper-10" onClick={handleGoToFactory6Page}>配件出库</div>
           </div>
           <div className="view-5">
-            <div className="overlap-6">
-              <div className="text-wrapper-5">新能源车主</div>
+            <div className="overlap-6" onClick={handleGoToUserPage}>
+              <div className="text-wrapper-11">新能源车主</div>
               <img className="vector-3" alt="Vector" src={Vector3Svg}/>
             </div>
           </div>

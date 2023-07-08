@@ -6,10 +6,6 @@ import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import CarRepairSvg from '../../images/Car repair.svg'
-import Vector2Svg from '../../images/vector-2.svg'
-import Vector3Svg from '../../images/vector-3.svg'
-import Vector from '../../images/Vector.svg'
 import lineStack1Png from '../../images/line-stack 1.png'
 import PieChartSvg from '../../images/Pie Chart.svg'
 import Line3Svg from '../../images/Line 3.svg'
@@ -185,12 +181,9 @@ export const Data =  React.memo(() => {
               <div className="view-6">
                 <div className="text-wrapper-30">参与实验时长</div>
                 <p className="element">
-                  <span className="text-wrapper-31">100 </span>
-                  <span className="text-wrapper-32">小时</span>
-                  <span className="text-wrapper-31"> 00 </span>
-                  <span className="text-wrapper-32">分钟</span>
-                  <span className="text-wrapper-31"> 00 </span>
-                  <span className="text-wrapper-32">秒</span>
+                  <span className="text-wrapper-31">
+                    100 小时 00 分钟 00 秒
+                   </span>
                 </p>
               </div>
               <div className="view-7">
@@ -203,22 +196,22 @@ export const Data =  React.memo(() => {
             </div>
             <div className="view-8">
               <div className="view-9">
-                <div className="overlap-group-2">
+                <div className="overlap-group-2" onClick={handleGoToHomePage}>
                   <div className="text-wrapper-35" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
                   <img className="line-4" alt="Line" src={lineSvg}/>
-                  <img className="img-2" alt="Booking" src={BookingPng} />
+                  <img className="img-2" alt="Booking" src={BookingPng} onClick={handleGoToHomePage} />
                 </div>
               </div>
               <div className="overlap-7">
                 <div className="view-10">
-                  <div className="overlap-group-2">
+                  <div className="overlap-group-2" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-36" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
                     <img className="line-5" alt="Line" src={lineSvg}/>
-                    <img className="img-2" alt="Computer support" src={ComputerSupportPng} />
+                    <img className="img-2" alt="Computer support" src={ComputerSupportPng} onClick={handleGoToExperimenPage} />
                   </div>
                 </div>
                 <div className="view-11">
@@ -239,8 +232,8 @@ export const Data =  React.memo(() => {
                 <div className="text-wrapper-37">区块链物联网实训系统</div>
                 <img className="image-2" alt="Image" src={schooLogoPng} />
                 <div className="text-wrapper-38">张三</div>
-                <div className="rectangle-3" />
-                <div className="text-wrapper-39">退出登录</div>
+                {/* <div className="rectangle-3" />
+                <div className="text-wrapper-39">退出登录</div> */}
                 <img className="account" alt="Account" src={AccountPng} />
               </div>
             </div>

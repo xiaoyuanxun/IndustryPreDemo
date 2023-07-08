@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./page6.css";
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
@@ -6,19 +6,25 @@ import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
-import CarRepairSvg from '../../images/Car repair.svg'
-import Vector2Svg from '../../images/vector-2.svg'
-import Vector3Svg from '../../images/vector-3.svg'
-import Vector from '../../images/Vector.svg'
 import Line6Svg from '../../images/Line 6.svg'
-import Line7Svg from '../../images/Line 7.svg'
 import BackPng from '../../images/Back.png'
-import OkPng from '../../images/Ok.png'
 import { useNavigate } from 'react-router-dom';
+import { ethers } from "ethers";
+import { contractAddress, rpcProviderUrl, factoryPrivateKey, BASE } from "../../contractConfig";
+import contractAbi from '../../contractABI.json';
 
 export const FactorySidePage6 = React.memo(() => {
+  const [productModeNumber, setProductModeNumber] = useState('');
+  const [serialNumberRange, setSerialNumberRange] = useState('');
   const navigate = useNavigate();
+
+  const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductModeNumber(event.target.value);
+  };
+
+  const handleserialNumberRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSerialNumberRange(event.target.value);
+  };
 
   const handleGoToHomePage = () => {
     navigate('/system');
@@ -31,6 +37,53 @@ export const FactorySidePage6 = React.memo(() => {
   const handleGoToDataPage = () => {
     navigate('/data');
   };
+  
+  const handleSubmit = async () => {
+    try {
+      const provider = new ethers.providers.JsonRpcProvider(rpcProviderUrl);
+      const wallet = new ethers.Wallet(factoryPrivateKey, provider);
+      const signer = wallet.connect(provider);
+      console.log('工厂操作员地址：', await signer.getAddress());
+
+      const contract_read = new ethers.Contract(contractAddress, contractAbi, provider);
+
+      const productInfo = await contract_read.getProductInfo(productModeNumber);
+      console.log('productInfo', productInfo);
+
+      if(productInfo.productName == '') {
+        alert('输入产品型号错误 !');
+        return;
+      };
+
+      const getCompInfoRangeNumberByModelNumberResult = await contract_read.getCompInfoRangeNumberByModelNumber(productModeNumber);
+      console.log('getCompInfoRangeNumberByModelNumberResult : ', getCompInfoRangeNumberByModelNumberResult);
+      
+      const serialNumberRange_min =
+        ethers.BigNumber.from(getCompInfoRangeNumberByModelNumberResult[0])
+          .sub(BASE).toString();
+      const serialNumberRange_max = 
+        ethers.BigNumber.from(getCompInfoRangeNumberByModelNumberResult[1])
+          .sub(BASE).toString();
+      
+      if(isAMoreThanB(serialNumberRange, serialNumberRange_max)) {
+        alert('序列号超过范围 !');
+        return;
+      }
+      
+      const transfer_productInfo = {
+        productName: productInfo.productName, 
+        productModeNumber: productModeNumber, 
+        productDescription: productInfo.note,
+        serialNumberRange_min: serialNumberRange_min,
+        serialNumberRange_max: serialNumberRange
+      };
+
+      console.log('传递信息 : ', transfer_productInfo);
+      navigate('/factory/7', { state: transfer_productInfo });
+    } catch(error) {
+      console.error('Error : ', error);
+    };
+  };
 
   return (
     <div className="FactorySidePage6">
@@ -39,7 +92,7 @@ export const FactorySidePage6 = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <div className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
@@ -49,7 +102,7 @@ export const FactorySidePage6 = React.memo(() => {
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
@@ -58,7 +111,7 @@ export const FactorySidePage6 = React.memo(() => {
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>
@@ -81,12 +134,22 @@ export const FactorySidePage6 = React.memo(() => {
           <div className="view-3">
             <div className="overlap-6">
               <div className="text-wrapper-5">产品型号</div>
-              <div className="rectangle" />
-              <div className="rectangle-2" />
+              <input
+                  className="rectangle"
+                  type="text"
+                  value={productModeNumber}
+                  onChange={handleProductModeNumberChange}
+              />
+              <input
+                  className="rectangle-2"
+                  type="text"
+                  value={serialNumberRange}
+                  onChange={handleserialNumberRangeChange}
+              />
               <div className="text-wrapper-6">产品序列号范围</div>
               <div className="rectangle-3" />
               <div className="view-4">
-                <div className="overlap-group-2">
+                <div className="overlap-group-2" onClick={handleSubmit}>
                   <div className="text-wrapper-7">提交</div>
                 </div>
               </div>
@@ -112,3 +175,10 @@ export const FactorySidePage6 = React.memo(() => {
     </div>
   );
 });
+
+function isAMoreThanB(A: string, B: string): boolean {
+  const numberA = parseInt(A, 10);
+  const numberB = parseInt(B, 10);
+
+  return ( A > B );
+}

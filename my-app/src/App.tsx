@@ -10,7 +10,6 @@ import {
   Experiment_1,
   Experiment_2,
   Data,
-  SystemHeader,
   Sidebar,
   SupplierPage0,
   SupplierPage1,
@@ -28,11 +27,11 @@ import {
   FactorySidePage9,
   UserTerminalPage0,
   UserTerminalPage1,
-  UserTerminalPage2
+  UserTerminalPage2,
+  InnerHeader
 } from "./Components";
 import { ethers } from 'ethers'
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
-import { BookButton } from './Components/Basic';
 
 function App() {
 
@@ -60,9 +59,8 @@ function App() {
       <Routes>
 
         <Route path="" element = {
-            <div className="App">
-              <Header title={"供应商"} id={walletAddress}/>
-              <Supplier/>
+            <div>
+              <Login/>
             </div>
           } />
 
@@ -211,17 +209,21 @@ function App() {
         <Route path="/data" element = {
           <Data/>
         } />
-{/* <Redirect to="/" /> 默认跳转到根路径 */}
-      <Route path="/testHeader" element = {
-          <SystemHeader/>
-        } />
 
+        {/* <Redirect to="/" /> 默认跳转到根路径 */}
 
       <Route path="/side" element = {
           <Sidebar/>
           
         } />
         
+        <Route path="/test" element = {
+          <div className='App'>
+            <Header/>
+            <Sidebar/>
+          </div>
+        } />
+
     </Routes>
 
   </Router>

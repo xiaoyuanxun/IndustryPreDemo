@@ -79,11 +79,11 @@
     font-family: "Inter-Regular", Helvetica;
     font-size: 30px;
     font-weight: 400;
-    left: 125px;
+    left: 129px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 320px;
+    top: 302px;
     white-space: nowrap;
   }
   
@@ -770,11 +770,23 @@
   }
   
   .data-screen .text-wrapper-31 {
-    color: #000000;
+    /* color: #000000;
     font-family: "Inter-Regular", Helvetica;
     font-size: 30px;
     font-weight: 400;
     letter-spacing: 0;
+    bottom: 10px; */
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+    width: 259px;
+    position: absolute; /* 使用绝对定位 */
+    top: 50%; /* 将元素的顶部位置设置为父容器的中间位置 */
+    transform: translateY(-50%); /* 使用负的50%的垂直位移将元素向上移动自身高度的一半 */
   }
   
   .data-screen .text-wrapper-32 {

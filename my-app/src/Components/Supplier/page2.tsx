@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./page2.css";
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
@@ -6,20 +6,36 @@ import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
-import CarRepairSvg from '../../images/Car repair.svg'
-import Vector2Svg from '../../images/vector-2.svg'
-import Vector3Svg from '../../images/vector-3.svg'
-import Vector from '../../images/Vector.svg'
 import Line6Svg from '../../images/Line 6.svg'
-import Line7Svg from '../../images/Line 7.svg'
 import BackPng from '../../images/Back.png'
 import OkPng from '../../images/Ok.png'
 import BulletListPng from '../../images/Bullet List.png'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+interface ProductInfo {
+  productHashCode?: string;
+}
 
 export const SupplierPage2 = React.memo(() => {
+  const location = useLocation();
+  const messages = location.state as ProductInfo;
+  console.log('传递过来的消息 : ', messages);
+
+  const [productHashCode, setProductHashCode] = useState(messages?.productHashCode || '');
   const navigate = useNavigate();
+
+  const handleProductHashCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductHashCode(event.target.value);
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(productHashCode);
+      alert('已复制到剪贴板');
+    } catch (error) {
+      console.error('复制失败:', error);
+    }
+  }
 
   const handleGoToHomePage = () => {
     navigate('/system');
@@ -40,7 +56,7 @@ export const SupplierPage2 = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <div className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
@@ -50,7 +66,7 @@ export const SupplierPage2 = React.memo(() => {
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
@@ -59,7 +75,7 @@ export const SupplierPage2 = React.memo(() => {
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>
@@ -108,11 +124,11 @@ export const SupplierPage2 = React.memo(() => {
               <div className="text-wrapper-11">入库哈希编码</div>
               <div className="view-7">
                 <div className="overlap-8">
-                  <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a6458bac63ecfc8d3947ae176</div>
+                  <div className="text-wrapper-12">{productHashCode}</div>
                 </div>
               </div>
               <div className="view-8">
-                <div className="overlap-9">
+                <div className="overlap-9" onClick={handleCopy}>
                   <div className="text-wrapper-13">复制</div>
                 </div>
               </div>

@@ -441,7 +441,7 @@
     border-radius: 5px;
     height: 20px;
     position: relative;
-    width: 494px;
+    width: 575px;
   }
   
   .SupplierPage2 .text-wrapper-12 {
@@ -471,6 +471,7 @@
     height: 20px;
     position: relative;
     width: 60px;
+    left: 80px;
   }
   
   .SupplierPage2 .text-wrapper-13 {

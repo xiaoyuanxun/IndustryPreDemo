@@ -7,6 +7,53 @@ import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
 import background_image_Png from '../../images/background_image_1.png'
+import { useNavigate } from 'react-router-dom';
+
+export const Sidebar = React.memo(() => {
+  const navigate = useNavigate();
+
+  const handleGoToHomePage = () => {
+    navigate('/system');
+  };
+  
+  const handleGoToExperimenPage = () => {
+    navigate('/experiment/2');
+  };
+
+  const handleGoToDataPage = () => {
+    navigate('/data');
+  };
+
+  return (
+    <div className="sidebar">
+
+      <div className="sidebar-box">
+        <img className='sidebar-box-logo' alt="sidebar-box-logo" src={BookingPng} onClick={handleGoToHomePage} />
+        <div className='sidebar-box-title' onClick={handleGoToHomePage} >
+          系统首页
+        </div>
+      </div>
+
+      <img className='sidebar-line' alt="sidebar-line" src={lineSvg} />
+      
+      <div className="sidebar-box">
+        <img className='sidebar-box-logo' alt="sidebar-box-logo" src={ComputerSupportPng} onClick={handleGoToExperimenPage} />
+        <div className='sidebar-box-title' onClick={handleGoToExperimenPage} >
+          参与实验
+        </div>
+      </div>
+      
+      <img className='sidebar-line' alt="sidebar-line" src={lineSvg} />
+
+      <div className="sidebar-box">
+        <img className='sidebar-box-logo' alt="sidebar-box-logo" src={InvestmentPortfolioPng} onClick={handleGoToDataPage} />
+        <div className='sidebar-box-title' onClick={handleGoToDataPage}>
+          实验数据
+        </div>
+      </div>
+    </div>
+  );
+});
 
 export const InputComponent = React.memo((props: { 
   title: string, 
@@ -73,48 +120,3 @@ export const WhiteSpace = React.memo((props: WhiteSpaceProps) => {
   );
 })
 
-export const Sidebar = React.memo(() => {
-  return (
-    <div className="Sidebar">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="overlap-group">
-            <div className="view">
-              <div className="overlap-group-wrapper">
-                <div className="div">
-                  <div className="text-wrapper">系统首页</div>
-                  <img className="line" alt="Line" src={lineSvg} />
-                  <img className="img" alt="Booking" src={BookingPng} />
-                </div>
-              </div>
-              <div className="overlap-2">
-                <div className="div-wrapper">
-                  <div className="overlap-3">
-                    <div className="text-wrapper-2">参与实验</div>
-                    <img className="line-2" alt="Line" src={lineSvg} />
-                    <img className="img" alt="Computer support" src={ComputerSupportPng} />
-                  </div>
-                </div>
-                <div className="view-2">
-                  <div className="overlap-4">
-                    <div className="text-wrapper">实验数据</div>
-                    <img className="line" alt="Line" src={lineSvg}/>
-                    <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-});
-
-export const BookButton = React.memo(() => {
-  return (
-    <div className='book'>
-      <div className='image'> </div>
-    </div>
-  );
-});

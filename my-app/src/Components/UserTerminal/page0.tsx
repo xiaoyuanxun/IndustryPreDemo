@@ -6,17 +6,8 @@ import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
-import CarRepairSvg from '../../images/Car repair.svg'
-import Vector2Svg from '../../images/vector-2.svg'
-import Vector3Svg from '../../images/vector-3.svg'
-import Vector from '../../images/Vector.svg'
 import Line6Svg from '../../images/Line 6.svg'
-import Line7Svg from '../../images/Line 7.svg'
 import BackPng from '../../images/Back.png'
-import OkPng from '../../images/Ok.png'
-import LessThanPng from '../../images/Less Than.png'
-import MoreThanPng from '../../images/More Than.png'
 import { useNavigate } from 'react-router-dom';
 
 export const UserTerminalPage0 = React.memo(() => {
@@ -41,7 +32,7 @@ export const UserTerminalPage0 = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <div className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
@@ -51,7 +42,7 @@ export const UserTerminalPage0 = React.memo(() => {
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
@@ -60,7 +51,7 @@ export const UserTerminalPage0 = React.memo(() => {
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>

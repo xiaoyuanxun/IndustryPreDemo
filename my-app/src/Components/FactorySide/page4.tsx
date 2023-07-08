@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./page4.css";
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
@@ -6,19 +6,26 @@ import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
-import CarRepairSvg from '../../images/Car repair.svg'
-import Vector2Svg from '../../images/vector-2.svg'
-import Vector3Svg from '../../images/vector-3.svg'
-import Vector from '../../images/Vector.svg'
 import Line6Svg from '../../images/Line 6.svg'
 import Line7Svg from '../../images/Line 7.svg'
 import BackPng from '../../images/Back.png'
-import OkPng from '../../images/Ok.png'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+interface ProductInfo {
+  productHashCode?: string
+}
 
 export const FactorySidePage4 = React.memo(() => {
+  const location = useLocation();
+  const messages = location.state as ProductInfo;
+  console.log('传递来消息 : ', messages);
+
+  const [productHashCode, setProductHashCode] = useState(messages?.productHashCode || '');
   const navigate = useNavigate();
+
+  const handleProductHashCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductHashCode(event.target.value);
+  };
 
   const handleGoToHomePage = () => {
     navigate('/system');
@@ -39,7 +46,7 @@ export const FactorySidePage4 = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <div className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
@@ -49,7 +56,7 @@ export const FactorySidePage4 = React.memo(() => {
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
@@ -58,7 +65,7 @@ export const FactorySidePage4 = React.memo(() => {
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>
@@ -86,7 +93,7 @@ export const FactorySidePage4 = React.memo(() => {
               <img className="line-3" alt="Line" src={Line7Svg} />
               <img className="line-4" alt="Line" src={Line7Svg} />
               <div className="text-wrapper-6">入库哈希编码</div>
-              <div className="text-wrapper-7">0x70df8fa2db2e53c25de9f962a6458bac63ecfc8d3947ae176ba42590962f8275</div>
+              <div className="text-wrapper-7">{productHashCode}</div>
               <div className="text-wrapper-8">当前入库状态</div>
               <div className="text-wrapper-9">已入库</div>
             </div>

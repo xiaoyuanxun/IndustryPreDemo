@@ -405,7 +405,7 @@
     border-radius: 5px;
     height: 20px;
     position: relative;
-    width: 494px;
+    width: 590px;
   }
   
   .FactorySidePage8 .text-wrapper-11 {
@@ -435,6 +435,7 @@
     height: 20px;
     position: relative;
     width: 60px;
+    left: 90px;
   }
   
   .FactorySidePage8 .text-wrapper-12 {
@@ -442,11 +443,11 @@
     font-family: "Inter-Regular", Helvetica;
     font-size: 16px;
     font-weight: 400;
-    left: 14px;
+    left: 15px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 1px;
+    top: 0px;
     white-space: nowrap;
   }
   

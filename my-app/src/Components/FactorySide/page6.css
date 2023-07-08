@@ -303,6 +303,7 @@
     position: absolute;
     top: 0;
     width: 900px;
+    pointer-events: none; /* 禁用元素的鼠标事件，使其不会阻止输入框的点击 */
   }
   
   .FactorySidePage6 .view-4 {

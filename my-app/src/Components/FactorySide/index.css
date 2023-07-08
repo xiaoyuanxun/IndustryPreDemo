@@ -256,9 +256,21 @@
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 60px;
+    top: 25px;
   }
   
+  .FactorySide .text-wrapper-11 {
+    color: #ffffff;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 50px;
+    font-weight: 700;
+    left: 287px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 55px;
+  }
+
   .FactorySide .vector {
     height: 121px;
     left: 80px;

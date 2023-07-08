@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 import "./page1.css";
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
@@ -6,17 +6,52 @@ import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
 import AccountPng from '../../images/Account.png';
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
-import CarRepairSvg from '../../images/Car repair.svg'
-import Vector2Svg from '../../images/vector-2.svg'
-import Vector3Svg from '../../images/vector-3.svg'
-import Vector from '../../images/Vector.svg'
 import Line6Svg from '../../images/Line 6.svg'
-import Line7Svg from '../../images/Line 7.svg'
 import BackPng from '../../images/Back.png'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { ethers } from "ethers";
+import { contractAddress, rpcProviderUrl, supplierPrivateKey } from "../../contractConfig";
+import contractAbi from '../../contractABI.json';
+
+interface ProductInfo {
+  productName?: string;
+  productModeNumber?: string;
+  productDescription?: string;
+  serialNumberRange_min?: string;
+  serialNumberRange_max?: string;
+}
 
 export const SupplierPage1 = React.memo(() => {
+  const location = useLocation();
+  const messages = location.state as ProductInfo;
+  console.log('传递过来的消息 : ', messages);
+
+  const [productName, setProductName] = useState(messages?.productName || '');
+  const [productModeNumber, setProductModeNumber] = useState(messages?.productModeNumber || '');
+  const [productDescription, setProductDescription] = useState(messages?.productDescription|| '');
+  const [serialNumberRange_min, setSerialNumberRange_min] = useState(messages?.serialNumberRange_min || '');  
+  const [serialNumberRange_max, setSerialNumberRange_max] = useState(messages?.serialNumberRange_max || '');
+
+  const handleProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductName(event.target.value);
+  };
+
+  const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductModeNumber(event.target.value);
+  };
+
+  const handleProductDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProductDescription(event.target.value);
+  };
+
+  const handleserialNumberRange_minChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSerialNumberRange_min(event.target.value);
+  };
+
+  const handleserialNumberRange_maxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSerialNumberRange_max(event.target.value);
+  };
+   
   const navigate = useNavigate();
 
   const handleGoToHomePage = () => {
@@ -31,6 +66,39 @@ export const SupplierPage1 = React.memo(() => {
     navigate('/data');
   };
 
+  const handleSubmit = async () => {
+    try {
+      const provider = new ethers.providers.JsonRpcProvider(rpcProviderUrl);
+      const wallet = new ethers.Wallet(supplierPrivateKey, provider);
+      const signer = wallet.connect(provider);
+      console.log('供应商操作员地址：', await signer.getAddress());
+
+      const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+
+      const tx = await contract.supplyComponent(
+        productName,
+        productModeNumber,
+        serialNumberRange_min,
+        serialNumberRange_max,
+        productDescription
+      );
+      const receipt = await tx.wait();
+      console.log('配件交付函数 : ', receipt);
+
+      const hashcode = receipt.events[0].args.hashvalue;
+      console.log('入库hash编码 : ', hashcode);
+
+      const transfer_productInfo = {
+        productHashCode: hashcode,
+      };
+
+      console.log('传递信息 : ', transfer_productInfo);
+      navigate('/supplier/2', { state: transfer_productInfo });
+    } catch(error) {
+      console.error('Error : ', error);
+    };
+  };
+
   return (
     <div className="SupplierPage1">
       <div className="overlap-wrapper">
@@ -38,7 +106,7 @@ export const SupplierPage1 = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <div className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </div>
@@ -48,7 +116,7 @@ export const SupplierPage1 = React.memo(() => {
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
@@ -57,7 +125,7 @@ export const SupplierPage1 = React.memo(() => {
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>
@@ -81,21 +149,22 @@ export const SupplierPage1 = React.memo(() => {
             <div className="overlap-6">
               <div className="text-wrapper-5">备注</div>
               <div className="rectangle" />
-              <div className="rectangle-2" />
+              <div className="rectangle-2" onClick={handleSubmit}/>
+              <div className="text-wrapper-13" onClick={handleSubmit}>提交</div>
               <img className="line-3" alt="Line" src={Line6Svg} />
               <img className="line-4" alt="Line" src={Line6Svg} />
               <img className="line-5" alt="Line" src={Line6Svg} />
               <img className="line-6" alt="Line" src={Line6Svg} />
               <div className="text-wrapper-6">产品名称</div>
-              <div className="text-wrapper-7">1型电池</div>
+              <div className="text-wrapper-7">{productName}</div>
               <div className="text-wrapper-8">产品型号</div>
-              <div className="text-wrapper-9">TEST-123</div>
+              <div className="text-wrapper-9">{productModeNumber}</div>
               <div className="text-wrapper-10">产品序列号范围</div>
-              <div className="text-wrapper-11">100-200</div>
+              <div className="text-wrapper-11">{serialNumberRange_min}-{serialNumberRange_max}</div>
               <div className="text-wrapper-12">
-                这是个电池，通过工厂端配件库信息对应进行上传，并且上传后通过工厂端进行确认入库信息后完成入库
+                {productDescription}
               </div>
-              <div className="text-wrapper-13">提交</div>
+              
             </div>
           </div>
           <div className="text-wrapper-14">确认详细信息</div>
