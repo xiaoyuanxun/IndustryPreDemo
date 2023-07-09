@@ -111,7 +111,7 @@ export const UserTerminal = React.memo(() => {
             </div>
           </div>
           <div className="view-5">
-            <div className="overlap-8" onClick={handleGoToUserPage}>
+            <div className="overlap-8" >
               <div className="text-wrapper-6" onClick={handleGoToUserPage}>
                 新能源车主
               </div>

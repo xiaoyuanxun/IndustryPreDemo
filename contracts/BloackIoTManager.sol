@@ -198,8 +198,8 @@ contract BloackIoTManager is BaseInfo {
         return _modeNumber;
     }
     //获得某种产品型号下历史交付hash值
-    function getHistoryHashsByModelNumber(string calldata _modelNumber) public view returns (bytes32[]){
-        return supplyHashs(_modelNumber);
+    function getHistoryHashsByModelNumber(string calldata _modelNumber) public view returns (bytes32[] memory){
+        return supplyHashs[_modelNumber];
     }
 
     //通过hash哈希获得配件的序列号范围
@@ -231,6 +231,18 @@ contract BloackIoTManager is BaseInfo {
     //获得所有配件型号列表
     function  getModeList() external view returns (string[] memory) {
         return modeNumbers;
+    }
+    
+    //获得所有产品列表
+    function  getProductList() external view returns (Product[] memory) {
+        uint256 length = modeNumbers.length;
+        Product[] memory allValues = new Product[](length);
+
+        for (uint256 i = 0; i < length; i++) {
+            allValues[i] = products[modeNumbers[i]];
+        }
+
+        return allValues;
     }
     
     //通过型号，批次ID，随机值查询配件信息

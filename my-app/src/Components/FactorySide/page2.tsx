@@ -149,8 +149,8 @@ export const FactorySidePage2 = React.memo(() => {
           <div className="text-wrapper-7">提交入库信息</div>
           <div className="view-5">
             <div className="overlap-7">
-              <div className="text-wrapper-8">供应商</div>
-              <div className="text-wrapper-9">0x123···323</div>
+              <div className="text-wrapper-8">工厂端</div>
+              <div className="text-wrapper-9">0xf39...266</div>
             </div>
           </div>
           <img className="back" alt="Back" src={BackPng} />

@@ -99,7 +99,7 @@ export const SupplierPage2 = React.memo(() => {
           <div className="view-3">
             <div className="overlap-6">
               <div className="text-wrapper-6">供应商</div>
-              <div className="text-wrapper-7">0x123···323</div>
+              <div className="text-wrapper-7">0x709...9C8</div>
             </div>
           </div>
           <img className="back" alt="Back" src={BackPng} />

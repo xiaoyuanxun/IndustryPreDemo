@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./page9.css";
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
@@ -12,8 +12,12 @@ import BackPng from '../../images/Back.png'
 import LessThanPng from '../../images/Less Than.png'
 import MoreThanPng from '../../images/More Than.png'
 import { useNavigate } from 'react-router-dom';
+import { ethers } from "ethers";
+import contractAbi from '../../contractABI.json';
+import { contractAddress, rpcProviderUrl, factoryPrivateKey } from "../../contractConfig";
 
 export const FactorySidePage9 = React.memo(() => {
+  const [productArray, setProductArray] = useState([]);
   const navigate = useNavigate();
 
   const handleGoToHomePage = () => {
@@ -27,6 +31,29 @@ export const FactorySidePage9 = React.memo(() => {
   const handleGoToDataPage = () => {
     navigate('/data');
   };
+
+    useEffect(() => {
+
+    const getAllProductInfo = async () => {
+      try {
+        const provider = new ethers.providers.JsonRpcProvider(rpcProviderUrl);
+        const wallet = new ethers.Wallet(factoryPrivateKey, provider);
+        const signer = wallet.connect(provider);
+        console.log('工厂操作员地址：', await signer.getAddress());
+
+        const contract_read = new ethers.Contract(contractAddress, contractAbi, provider);
+        const productList = await contract_read.getProductList();
+        console.log('查询产品列表 : ', productList);
+
+        setProductArray(productList);
+      } catch(error) {
+        console.error("Error : ", error);
+      }
+    };
+
+    getAllProductInfo();
+  }, []);
+
 
   return (
     <div className="FactorySidePage9">
@@ -76,8 +103,8 @@ export const FactorySidePage9 = React.memo(() => {
           <h1 className="h-1">配件列表</h1>
           <div className="view-3">
             <div className="overlap-6">
-              <div className="text-wrapper-5">供应商</div>
-              <div className="text-wrapper-6">0x123···323</div>
+              <div className="text-wrapper-5">工厂端</div>
+              <div className="text-wrapper-6">0xf39...266</div>
             </div>
           </div>
           <img className="back" alt="Back" src={BackPng} />
@@ -88,6 +115,19 @@ export const FactorySidePage9 = React.memo(() => {
               <div className="text-wrapper-7">产品名称</div>
               <div className="text-wrapper-8">产品型号</div>
             </div>
+            <div className={'factory-product-box'}> 
+              {/* {productArray.map((item, index) => {
+                return (
+                  <div className="div-2">
+                    <img className="line-5" alt="Line" src={Line7Svg}/>
+                    <div className="text-wrapper-9">{item[0]}</div>
+                    <div className="text-wrapper-10">{item[1]}</div>
+                  </div>
+                );
+              })} */}
+            </div>
+
+
             <div className="div-2">
               <img className="line-5" alt="Line" src={Line7Svg}/>
               <div className="text-wrapper-9">1型电池</div>

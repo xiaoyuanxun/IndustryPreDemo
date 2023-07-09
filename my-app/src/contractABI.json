@@ -307,6 +307,25 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_modelNumber",
+        "type": "string"
+      }
+    ],
+    "name": "getHistoryHashsByModelNumber",
+    "outputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "getModeList",
     "outputs": [
@@ -369,6 +388,36 @@
         "internalType": "struct BaseInfo.Product",
         "name": "",
         "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getProductList",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "productName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "modeNumber",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "note",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct BaseInfo.Product[]",
+        "name": "",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",

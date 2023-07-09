@@ -233,7 +233,7 @@ export const FactorySidePage0 = React.memo(() => {
           <div className="view-5">
             <div className="overlap-7">
               <div className="text-wrapper-10">工厂端</div>
-              <div className="text-wrapper-11">{shortWalletAddress}</div>
+              <div className="text-wrapper-11">0xf39...266</div>
             </div>
           </div>
           <img className="back" alt="Back" src={BackPng} />

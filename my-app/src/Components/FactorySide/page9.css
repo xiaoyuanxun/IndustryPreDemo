@@ -322,6 +322,15 @@
     top: 0;
   }
   
+  .FactorySidePage9 .factory-product-box {
+    display: flex;
+  }
+
+  .FactorySidePage9 .factory-product-box-product {
+    display: flex;
+  }
+
+
   .FactorySidePage9 .text-wrapper-8 {
     color: #ffffff;
     font-family: "Inter-Regular", Helvetica;
@@ -340,6 +349,8 @@
     position: absolute;
     top: 70px;
     width: 904px;
+    /* display: flex;
+    align-items: center; */
   }
   
   .FactorySidePage9 .line-5 {
@@ -361,6 +372,18 @@
     line-height: normal;
     position: absolute;
     top: 0;
+
+    /* margin-left: 10px; /* 根据您的需求设置适当的间距 */
+    /* color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    left: 25px;
+    letter-spacing: 0;
+    position: absolute;
+    top: 0;  */
   }
   
   .FactorySidePage9 .text-wrapper-10 {
@@ -373,6 +396,13 @@
     line-height: normal;
     position: absolute;
     top: 0;
+    /* margin-left: 10px; /* 根据您的需求设置适当的间距 */
+    /* color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  */
   }
   
   .FactorySidePage9 .div-3 {
