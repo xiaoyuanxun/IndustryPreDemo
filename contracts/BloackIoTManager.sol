@@ -51,16 +51,13 @@ import "hardhat/console.sol";
     mapping(uint256 => Component[]) components;  //通过批次id得到对应产品，如果这批产品是分批出库，则这个此次又可以对应多个components,第一个component用于保存未完全出库的配件
     mapping(uint256 =>uint256 ) compsLen;  //批次对应的配件信息的数量
     mapping(string => Product) products;    //通过产品型号得到对应产品信息
+    mapping(string => bytes32[]) supplyHashs;  //某个产品型号的历史提交hash
     string[] modeNumbers;//所有的配件型号
     
     event EnterStorge(string  out);
     event SupplyComponent(string,bytes32 hashvalue);
 
-   /* constructor(uint256 _supplyID,uint256 _partInID,uint256 _partOutID){
-        supplyID=_supplyID;
-        partInID=_partInID;
-        partOutID=_partOutID;
-    }*/
+   
 }
 
 contract BloackIoTManager is BaseInfo {
@@ -93,7 +90,8 @@ contract BloackIoTManager is BaseInfo {
         Component memory component=Component(_compName, _modeNumber,BASE+_maxSerialNumber,BASE+_minSerialNumber,supplyID,block.timestamp,0,0,0,0,batchID,State.Waiting,_note);
         bytes32 _hashcode=getHash(_compName,_modeNumber,batchID); //生成hash
         hashTable[_hashcode]=batchID;
-        batchs[_modeNumber].push(batchID);
+        supplyHashs[_modeNumber].push(_hashcode);
+        batchs[_modeNumber].push(batchID);    
         components[batchID].push(component);
         compsLen[batchID]++; 
         supplyID += 1;
@@ -134,7 +132,8 @@ contract BloackIoTManager is BaseInfo {
         // bug 更改
         // 第一个配件进来时 batchsLen[_modeNumber] = 0, -1 会溢出
         // uint256 lastBatch = batchs[_modeNumber][batchsLen[_modeNumber]-1];
-        uint256 lastBatch = batchs[_modeNumber][batchsLen[_modeNumber]];
+        if(batchsLen[_modeNumber]==0) return true;
+        uint256 lastBatch = batchs[_modeNumber][batchsLen[_modeNumber]-1];
         console.log('lastBatch = ', lastBatch);
         console.log('the result = ', components[lastBatch][rootCompIndex].state==State.Finish);
         return(components[lastBatch][rootCompIndex].state==State.Finish);
@@ -198,6 +197,10 @@ contract BloackIoTManager is BaseInfo {
         string memory _modeNumber=components[_batchID][rootCompIndex].modeNumber;
         return _modeNumber;
     }
+    //获得某种产品型号下历史交付hash值
+    function getHistoryHashsByModelNumber(string calldata _modelNumber) public view returns (bytes32[]){
+        return supplyHashs(_modelNumber);
+    }
 
     //通过hash哈希获得配件的序列号范围
     function  getCompInfoRangeNumberByHash(bytes32 _hashcode) external view returns (uint256, uint256) {
@@ -244,21 +247,7 @@ contract BloackIoTManager is BaseInfo {
         revert("Invalid serial number!");
     }
 
-    /*
-    //解析序列号得到对应的modeNumber（型号）和 batchID,和标识码ID，从而获得相应的component记录
-    function parseSerialNumber(bytes calldata serialNumber) public pure returns (bytes8, uint64, uint64) {
-    bytes12 _serialNumber=bytes12(serialNumber);
-    bytes4 modelNumber = bytes4(_serialNumber);
-    uint64 batchID = uint64(uint96(_serialNumber) << 32);
-    uint64 componentID = uint64(uint96(_serialNumber) << 64);
-    
-    return (modelNumber, batchID, componentID);
-    }*/
-    //生成本次出库的最大和最小的实际序列号
-    /*
-    function generateActualSerialNumber(bytes8 _modeNumber,uint256 _batchID,uint256 _serialNumberValue)  internal pure returns(bytes24)  {
-        
-    }*/
+
     //添加,删除白名单权限
     function setWhiteList(address user,bool status) external onlyOwner  {
         whiteLists[user]=status;
