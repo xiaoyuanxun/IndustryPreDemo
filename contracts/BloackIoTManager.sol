@@ -5,7 +5,7 @@ import "hardhat/console.sol";
 
 //我们定义，序列号生成算法为产品型号(8位bytes)-供应时间-批次Id(bytes8)-标识ID，互相拼接得到。
 //如一个配件产品型号为HDAE4578,批次id为1004593,标识ID为10009999（在给定范围（10000001-10010000）选出,这个范围由供应商输入的数字再加上10000000得到），则
-//该配件序列号为HDAE4578100459310009999
+//该配件序列号为HDAE4578_1004593_10009999
  contract BaseInfo{
     uint256 constant BASE=10000000;
     uint256 supplyID=BASE;//供应ID
@@ -55,8 +55,14 @@ import "hardhat/console.sol";
     string[] modeNumbers;//所有的配件型号
     
     event EnterStorge(string  out);
+    event OutStorge(
+        string modeNumber,
+        uint256 time, 
+        uint256 batchId,
+        uint256 minserialNumber,
+        uint256 maxserialNumber
+    );
     event SupplyComponent(string,bytes32 hashvalue);
-
    
 }
 
@@ -167,7 +173,14 @@ contract BloackIoTManager is BaseInfo {
         //型号，批次ID，范围
         actualMinserialNumber=_newComp.minSerialNumber;
         actualMaxserialNumber=_newComp.maxSerialNumber;
-       
+       //我们定义，序列号生成算法为产品型号(8位bytes)-供应时间-批次Id(bytes8)-标识ID，互相拼接得到。
+       emit OutStorge(
+            _modeNumber,
+            components[_lastbatch][rootCompIndex].supplyTime, 
+            _lastbatch,
+            actualMinserialNumber,
+            actualMaxserialNumber
+       );
     }
     
     //通过型号创建产品信息,如果不存在，则创建，如果存在，则更新

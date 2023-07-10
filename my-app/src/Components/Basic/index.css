@@ -101,7 +101,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   top: 240px;
 }
 

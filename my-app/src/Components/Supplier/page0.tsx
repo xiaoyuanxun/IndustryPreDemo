@@ -59,41 +59,40 @@ export const SupplierPage0 = React.memo(() => {
       }
       console.log("First Number:", firstNumber);
       console.log("Second Number:", secondNumber);
-      setSerialNumberRange_min(firstNumber.toString());
-      setSerialNumberRange_max(secondNumber.toString());
+      try {
+        const provider = new ethers.providers.JsonRpcProvider(rpcProviderUrl);
+        const wallet = new ethers.Wallet(supplierPrivateKey, provider);
+        const signer = wallet.connect(provider);
+        console.log('供应商操作员地址：', await signer.getAddress());
+  
+        const contract_read = new ethers.Contract(contractAddress, contractAbi, provider);
+        const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+  
+        const productInfo = await contract.getProductInfo(productModeNumber);
+        console.log('由型号获得产品信息 : ', productInfo);
+        if(productInfo.productName == '') {
+          alert('输入的产品型号有误 !');
+          throw new Error('输入的产品型号有误 !');
+        }
+        const productName = productInfo.productName;
+        const productDescription = productInfo.note;
+        const transfer_productInfo = {
+          productName: productName,
+          productModeNumber: productModeNumber,
+          productDescription: productDescription,
+          serialNumberRange_min: firstNumber,
+          serialNumberRange_max: secondNumber
+        };
+  
+        console.log('传递信息 : ', transfer_productInfo);
+        navigate('/supplier/1', { state: transfer_productInfo });
+      } catch(error) {
+        console.error('Error : ', error);
+      };
     } else {
       alert('序列号范围输入格式有误!');
     }
-    try {
-      const provider = new ethers.providers.JsonRpcProvider(rpcProviderUrl);
-      const wallet = new ethers.Wallet(supplierPrivateKey, provider);
-      const signer = wallet.connect(provider);
-      console.log('供应商操作员地址：', await signer.getAddress());
 
-      const contract_read = new ethers.Contract(contractAddress, contractAbi, provider);
-      const contract = new ethers.Contract(contractAddress, contractAbi, signer);
-
-      const productInfo = await contract.getProductInfo(productModeNumber);
-      console.log('由型号获得产品信息 : ', productInfo);
-      if(productInfo.productName == '') {
-        alert('输入的产品型号有误 !');
-        throw new Error('输入的产品型号有误 !');
-      }
-      const productName = productInfo.productName;
-      const productDescription = productInfo.note;
-      const transfer_productInfo = {
-        productName: productName,
-        productModeNumber: productModeNumber,
-        productDescription: productDescription,
-        serialNumberRange_min: serialNumberRange_min,
-        serialNumberRange_max: serialNumberRange_max
-      };
-
-      console.log('传递信息 : ', transfer_productInfo);
-      navigate('/supplier/1', { state: transfer_productInfo });
-    } catch(error) {
-      console.error('Error : ', error);
-    };
   };
 
     return (

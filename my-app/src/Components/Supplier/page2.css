@@ -49,7 +49,7 @@
   flex-direction: row;
   align-items: center;
 
-  margin-left: 103px;
+  margin-left: 50px;
   margin-top: 30px;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .SupplierPage2-box-2-box {
-  width: 494px;
+  width: 600px;
   height: 20px;
   flex-shrink: 0;
   border-radius: 5px;

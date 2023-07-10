@@ -83,7 +83,19 @@ export const FactorySidePage7 = React.memo(() => {
       const receipt = await tx.wait();
       console.log('出库 : ', receipt);
 
-      const outStorageCode = receipt.transactionHash;
+      const event_modeNumber = receipt.events[0].args.modeNumber;
+      const event_time = receipt.events[0].args.time.toString();
+      const event_batchId = receipt.events[0].args.batchId.toString();
+      const event_minserialNumber = receipt.events[0].args.minserialNumber.toString();
+      const event_maxserialNumber = receipt.events[0].args.maxserialNumber.toString();
+
+      console.log('event_modeNumber : ', event_modeNumber);
+      console.log('event_time : ', event_time);
+      console.log('event_batchId : ', event_batchId);
+      console.log('event_minserialNumber : ', event_minserialNumber);
+      console.log('event_maxserialNumber : ', event_maxserialNumber);
+
+      const outStorageCode = `${event_modeNumber}-${event_time}-${event_batchId}-${event_minserialNumber}`;
       console.log('出库编码 : ', outStorageCode);
 
       const transfer_productInfo = {
@@ -101,48 +113,6 @@ export const FactorySidePage7 = React.memo(() => {
     <div className="FactorySidePage7">
       <div className="overlap-wrapper">
         <div className="overlap">
-          <div className="overlap-group">
-            <div className="view">
-              <div className="overlap-group-wrapper">
-                <div className="div" onClick={handleGoToHomePage}>
-                  <div className="text-wrapper" onClick={handleGoToHomePage}>
-                    系统首页
-                  </div>
-                  <img className="line" alt="Line" src={lineSvg} />
-                  <img className="img" alt="Booking" src={BookingPng} />
-                </div>
-              </div>
-              <div className="overlap-2">
-                <div className="div-wrapper">
-                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
-                    <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
-                      参与实验
-                    </div>
-                    <img className="line-2" alt="Line" src={lineSvg}  />
-                    <img className="img" alt="Computer support" src={ComputerSupportPng} />
-                  </div>
-                </div>
-                <div className="view-2">
-                  <div className="overlap-4" onClick={handleGoToDataPage}>
-                    <div className="text-wrapper" onClick={handleGoToDataPage}>
-                      实验数据
-                    </div>
-                    <img className="line" alt="Line" src={lineSvg}  />
-                    <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="tittle">
-              <div className="overlap-5">
-                <div className="text-wrapper-3">区块链物联网实训系统</div>
-                <img className="image" alt="Image" src={schooLogoPng}/>
-                <div className="text-wrapper-4">张三</div>
-                <img className="account" alt="Account" src={AccountPng} />
-              </div>
-            </div>
-          </div>
-          <h1 className="h-1">产品出库</h1>
           <div className="view-3">
             <div className="overlap-6">
               <div className="text-wrapper-5">备注</div>
@@ -165,14 +135,6 @@ export const FactorySidePage7 = React.memo(() => {
             </div>
           </div>
           <div className="text-wrapper-14">提交出库信息</div>
-          <div className="view-4">
-            <div className="overlap-7">
-              <div className="text-wrapper-15">工厂端</div>
-              <div className="text-wrapper-16">0xf39...266</div>
-            </div>
-          </div>
-          <img className="back" alt="Back" src={BackPng} />
-          <img className="line-7" alt="Line" src={Line6Svg} />
           <div className="view-5">
             <div className="rectangle-wrapper">
               <div className="rectangle-3" />

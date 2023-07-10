@@ -32,28 +32,27 @@ import {
 } from "./Components";
 import { ethers } from 'ethers'
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
+import { useNavigate, RouteProps } from 'react-router-dom';
 
 function App() {
+  // const [walletAddress, setWalletAddress] = useState(""); // 用于保存钱包地址的状态
+  // useEffect(() => {
+  //   // 使用Web3或以太坊的API获取钱包地址，并更新状态
+  //   const getWalletAddress = async () => {
+  //     if (window.ethereum) {
+  //       await window.ethereum.enable(); // 授权访问用户钱包
+  //       const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //       const signer = provider.getSigner();
+  //       const address = await signer.getAddress();
+  //       setWalletAddress(address);
+  //     } else {
+  //       console.error("请安装MetaMask或其他以太坊钱包插件");
+  //     }
+  //   };
 
-  const [walletAddress, setWalletAddress] = useState(""); // 用于保存钱包地址的状态
-
-  useEffect(() => {
-    // 使用Web3或以太坊的API获取钱包地址，并更新状态
-    const getWalletAddress = async () => {
-      if (window.ethereum) {
-        await window.ethereum.enable(); // 授权访问用户钱包
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const address = await signer.getAddress();
-        setWalletAddress(address);
-      } else {
-        console.error("请安装MetaMask或其他以太坊钱包插件");
-      }
-    };
-
-    getWalletAddress();
-  }, []);
-
+  //   getWalletAddress();
+  // }, []);
+  
   return(
     <Router>
       <Routes>
@@ -125,93 +124,188 @@ function App() {
         } />
 
         <Route path="/factory" element = {
-          <div >
+            <>
+            <Header/>
+            <Sidebar activeNumber={1}/>
             <FactorySide/>
-          </div>
+            </>
         } />
 
         <Route path="/factory/0" element = {
-          <div>
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '新增配件'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage0 />
-          </div>
+            </>
         } />
 
         <Route path="/factory/1" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '新增配件'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage1 />
-          </div>
+            </>
         } />
 
         <Route path="/factory/2" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件入库'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage2 />
-          </div>
+            </>
         } />        
 
         <Route path="/factory/3" element = {
-          <div>
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件入库'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage3 />
-          </div>
+            </>
         } />   
         
         <Route path="/factory/4" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件入库'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage4  />
-          </div>
+            </>
         } />                   
                 
         <Route path="/factory/5" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件入库'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage5  />
-          </div>
+            </>
         } />     
 
         <Route path="/factory/6" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '产品出库'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage6  />
-          </div>
+            </>
         } />        
 
         <Route path="/factory/7" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '产品出库'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage7  />
-          </div>
+            </>
         } />   
 
         <Route path="/factory/8" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '产品出库'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage8  />
-          </div>
+            </>
         } />   
 
         <Route path="/factory/9" element = {
-          <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件列表'
+              sideName = '工厂端'
+              address = '0xf39...266'
+            />
+            <Sidebar activeNumber={1}/>
             <FactorySidePage9  />
-          </div>
+            </>
         } />   
 
         <Route path="/user" element = {
-          <div>
+            <>
+            <Header/>
+            <Sidebar activeNumber={1}/>
             <UserTerminal/>
-          </div>
+            </>
         } />
 
         <Route path="/user/0" element = {
-          <div>
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '新能源车主'
+              sideName = '用户端'
+              address = '0x3C4...3BC'
+            />
+            <Sidebar activeNumber={1}/>
             <UserTerminalPage0/>
-          </div>
+            </>
         } />
 
         <Route path="/user/1" element = {
-          <div>
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '新能源车主'
+              sideName = '用户端'
+              address = '0x3C4...3BC'
+            />
+            <Sidebar activeNumber={1}/>
             <UserTerminalPage1/>
-          </div>
+            </>
         } />
 
         <Route path="/user/2" element = {
-          <div>
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '新能源车主'
+              sideName = '用户端'
+              address = '0x3C4...3BC'
+            />
+            <Sidebar activeNumber={1}/>
             <UserTerminalPage2/>
-          </div>
+            </>
         } />
 
         <Route path="/loginPage" element = {
@@ -233,18 +327,24 @@ function App() {
         } />
 
         <Route path="/experiment/1" element = {
-          <Experiment_1/>
+            <>
+            <Header/>
+            <Sidebar activeNumber={1}/>
+            <Experiment_1/>
+            </>
         } />
         
         <Route path="/experiment/2" element = {
-          <Experiment_2/>
+            <>
+            <Header/>
+            <Sidebar activeNumber={1}/>
+            <Experiment_2/>
+            </>
         } />
 
         <Route path="/data" element = {
           <Data/>
         } />
-
-        {/* <Redirect to="/" /> 默认跳转到根路径 */}
         
         <Route path="/test" element = {
           <div style={{ background: '#0F0C37', height: '100%'}}>

@@ -46,47 +46,6 @@ export const UserTerminal = React.memo(() => {
     <div className="UserTerminal">
       <div className="overlap-wrapper">
         <div className="overlap">
-          <div className="overlap-group">
-            <div className="view">
-              <div className="overlap-group-wrapper">
-                <div className="div" onClick={handleGoToHomePage}>
-                  <div className="text-wrapper" onClick={handleGoToHomePage}>
-                    系统首页
-                  </div>
-                  <img className="line" alt="Line" src={lineSvg} />
-                  <img className="img" alt="Booking" src={BookingPng} />
-                </div>
-              </div>
-              <div className="overlap-2">
-                <div className="div-wrapper">
-                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
-                    <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
-                      参与实验
-                    </div>
-                    <img className="line-2" alt="Line" src={lineSvg} />
-                    <img className="img" alt="Computer support" src={ComputerSupportPng} />
-                  </div>
-                </div>
-                <div className="view-2">
-                  <div className="overlap-4" onClick={handleGoToDataPage}>
-                    <div className="text-wrapper" onClick={handleGoToDataPage}>
-                      实验数据
-                    </div>
-                    <img className="line" alt="Line" src={lineSvg} />
-                    <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="tittle">
-              <div className="overlap-5">
-                <div className="text-wrapper-3">区块链物联网实训系统</div>
-                <img className="image" alt="Image" src={schooLogoPng} />
-                <div className="text-wrapper-4">张三</div>
-                <img className="account" alt="Account" src={AccountPng} />
-              </div>
-            </div>
-          </div>
           <div className="view-3">
             <div className="overlap-6" onClick={handleGoToSupplierPage}>
               <h1 className="h-1" onClick={handleGoToSupplierPage}>

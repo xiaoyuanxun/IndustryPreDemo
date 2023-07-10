@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    height: 100%;
   }
   
   .page1-element .overlap-wrapper {
@@ -294,6 +295,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    height: 100%;
   }
   
   .page2-element .overlap-wrapper {
