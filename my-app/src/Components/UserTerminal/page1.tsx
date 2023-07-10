@@ -1,17 +1,8 @@
 import React from "react";
 import "./page1.css";
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
-import Line6Svg from '../../images/Line 6.svg'
 import Line7Svg from '../../images/Line 7.svg'
-import BackPng from '../../images/Back.png'
-import OkPng from '../../images/Ok.png'
 import Arrow2Svg from '../../images/Arrow 2.svg'
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 interface ProductInfo {
   supplyId?: string,
@@ -33,20 +24,6 @@ export const UserTerminalPage1 = React.memo(() => {
   const enterTime = messages?.enterTime || '';
   const outId = messages?.outId || '';
   const outTime = messages?.outTime || '';
-
-  const navigate = useNavigate();
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
 
   return (
     <div className="UserTerminalPage1">

@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import "./page1.css";
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png';
-import Line6Svg from '../../images/Line 6.svg';
 import Line7Svg from '../../images/Line 7.svg';
-import BackPng from '../../images/Back.png';
 import OkPng from '../../images/Ok.png';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 interface ProductInfo {
   productName?: string;
@@ -24,23 +16,9 @@ interface ProductInfo {
   const messages = location.state as ProductInfo;
   console.log(messages?.productName);
 
-  const [productName, setProductName] = useState(messages?.productName || '');
-  const [productModeNumber, setProductModeNumber] = useState(messages?.productModeNumber || '');
-  const [productDescription, setProductDescription] = useState(messages?.productDescription|| '');
-
-  const navigate = useNavigate();
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
+  const [ productName ] = useState(messages?.productName || '');
+  const [ productModeNumber ] = useState(messages?.productModeNumber || '');
+  const [ productDescription ] = useState(messages?.productDescription|| '');
 
   return (
     <div className="FactorySidePage1">

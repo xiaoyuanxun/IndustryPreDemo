@@ -1,118 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./page3.css";
-import Line6Svg from '../../images/Line 6.svg'
-import LessThanPng from '../../images/Less Than.png'
-import MoreThanPng from '../../images/More Than.png'
-import { useNavigate } from 'react-router-dom';
+import LinePng from '../../images/FactoryPage9Line.png'
+import { ethers } from "ethers";
+import contractAbi from '../../contractABI.json';
+import { contractAddress, rpcProviderUrl, supplierPrivateKey } from "../../contractConfig";
 
 export const SupplierPage3 = React.memo(() => {
-  const navigate = useNavigate();
+  const [productArray, setProductArray] = useState<{ name: string; model: string; hashCode: string }[]>([]);
 
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
+  useEffect(() => {
+
+  const getAllProductInfo = async () => {
+    try {
+      const provider = new ethers.providers.JsonRpcProvider(rpcProviderUrl);
+      const wallet = new ethers.Wallet(supplierPrivateKey, provider);
+      const signer = wallet.connect(provider);
+      console.log('供应商操作员地址：', await signer.getAddress());
+
+      const contract_read = new ethers.Contract(contractAddress, contractAbi, provider);
+      const productList = await contract_read.getProductList();
+      console.log('查询产品列表 : ', productList);
+      
+      const _productArray = [];
+      for (let i = 0; i < productList.length; i++) {
+        const product = productList[i];
+        const name = product[0];
+        const model = product[1];
+        const hashArray = await contract_read.getHistoryHashsByModelNumber(model);
+        for (let j = 0; j < hashArray.length; j++) {
+          const hashCode = hashArray[j];
+          _productArray.push({ name, model, hashCode });
+        }
+      }
+      setProductArray(_productArray);
+      console.log('_productArray : ', _productArray);
+    } catch(error) {
+      console.error("Error : ", error);
+    }
   };
 
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
+  getAllProductInfo();
+}, []);
 
   return (
     <div className="SupplierPage3">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="view-4">
-            <div className="view-5">
-              <img className="line-4" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-7">产品名称</div>
-              <div className="text-wrapper-8">产品型号</div>
-              <div className="text-wrapper-9">交付哈希值</div>
-            </div>
-            <div className="div-2">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-3">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-4">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-5">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-6">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-7">
-              <img className="line-5" alt="Line" src={Line6Svg}/>
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-8">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-9">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-10">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
-            <div className="div-11">
-              <img className="line-5" alt="Line" src={Line6Svg} />
-              <div className="text-wrapper-10">1型电池</div>
-              <div className="text-wrapper-11">TEST-123</div>
-              <div className="text-wrapper-12">0x70df8fa2db2e53c25de9f962a64532b8bac63e...</div>
-            </div>
+      <div className="SupplierPage3-box">
+        <div className="SupplierPage3-box-title">
+          <div className="SupplierPage3-box-title-1">
+            产品名称
           </div>
-          <div className="view-6">
-            <div className="overlap-group-wrapper-2">
-              <div className="overlap-group-2">
-                <div className="text-wrapper-13">1</div>
-              </div>
-            </div>
-            <div className="overlap-wrapper-2">
-              <div className="overlap-7">
-                <div className="text-wrapper-13">2</div>
-              </div>
-            </div>
-            <div className="overlap-wrapper-3">
-              <div className="overlap-7">
-                <div className="text-wrapper-13">3</div>
-              </div>
-            </div>
-            <img className="less-than" alt="Less than" src={LessThanPng} />
-            <img className="less-than-2" alt="Less than" src={MoreThanPng} />
+          <div className="SupplierPage3-box-title-2">
+            产品型号
+          </div>
+          <div className="SupplierPage3-box-title-3">
+            交付哈希值
           </div>
         </div>
+        <img className="SupplierPage3-line" alt="Line" src={LinePng} />
       </div>
+      {productArray.map((item, index) => (
+        <div key={index} className="SupplierPage3-product">
+          <div className="SupplierPage3-product-box"> 
+            <div className="SupplierPage3-product-name">{item.name}</div>
+            <div className="SupplierPage3-product-model">{item.model}</div>
+            <div className="SupplierPage3-product-hash">{truncateHash(item.hashCode)}</div>
+          </div>
+          <img className="SupplierPage3-line" alt="Line" src={LinePng} />
+        </div>
+
+      ))}
     </div>
   );
 });
+
+function truncateHash(hash: string) {
+  const containerWidth = 500; // CSS 中的宽度
+  const fontSize = 18; // CSS 中的字体大小
+  const charWidth = fontSize * 0.6; // 字符宽度的估计值
+
+  const maxChars = Math.floor(containerWidth / charWidth);
+  if (hash.length <= maxChars) {
+    return hash;
+  }
+  return hash.substring(0, maxChars) + "...";
+}

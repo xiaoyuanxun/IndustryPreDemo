@@ -6,6 +6,8 @@ import { ethers } from "ethers";
 import { contractAddress, rpcProviderUrl, supplierPrivateKey } from "../../contractConfig";
 import contractAbi from '../../contractABI.json';
 import { PageFunctionTitle } from '../Basic';
+import ProgressLine from '../../images/SupplierPage0Progress.png'
+import FactProgressLine from '../../images/SupplierPage1FactProgress.png'
 
 interface ProductInfo {
   productName?: string;
@@ -20,45 +22,13 @@ export const SupplierPage1 = React.memo(() => {
   const messages = location.state as ProductInfo;
   console.log('传递过来的消息 : ', messages);
 
-  const [productName, setProductName] = useState(messages?.productName || '');
-  const [productModeNumber, setProductModeNumber] = useState(messages?.productModeNumber || '');
-  const [productDescription, setProductDescription] = useState(messages?.productDescription|| '');
-  const [serialNumberRange_min, setSerialNumberRange_min] = useState(messages?.serialNumberRange_min || '');  
-  const [serialNumberRange_max, setSerialNumberRange_max] = useState(messages?.serialNumberRange_max || '');
-
-  const handleProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setProductName(event.target.value);
-  };
-
-  const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setProductModeNumber(event.target.value);
-  };
-
-  const handleProductDescriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setProductDescription(event.target.value);
-  };
-
-  const handleserialNumberRange_minChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSerialNumberRange_min(event.target.value);
-  };
-
-  const handleserialNumberRange_maxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSerialNumberRange_max(event.target.value);
-  };
+  const [ productName ] = useState(messages?.productName || '');
+  const [ productModeNumber ] = useState(messages?.productModeNumber || '');
+  const [ productDescription ] = useState(messages?.productDescription|| '');
+  const [ serialNumberRange_min ] = useState(messages?.serialNumberRange_min || '');  
+  const [ serialNumberRange_max ] = useState(messages?.serialNumberRange_max || '');
    
   const navigate = useNavigate();
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
 
   const handleSubmit = async () => {
     try {
@@ -132,6 +102,15 @@ export const SupplierPage1 = React.memo(() => {
           <div className="SupplierPage1-box-button-title">
             提交
           </div>
+        </div>
+      </div>
+      <div className='SupplierPage1-progress'>
+        <div className='SupplierPage1-progress-name'>
+          2/3
+        </div>
+        <div className='SupplierPage1-progress-line'>
+          <img className='SupplierPage1-progress-line-1' alt='factProgress' src={FactProgressLine}/>
+          <img className='SupplierPage1-progress-line-2' alt='allProgerss' src={ProgressLine}/>
         </div>
       </div>
     </div>

@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./index.css"
 import BookingPng from '../../images/Booking.png';
 import ComputerSupportPng from '../../images/Computer Support.png';
 import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
 import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
 import { useNavigate } from 'react-router-dom';
 
 export const Sidebar = React.memo((props: { activeNumber: number }) => {

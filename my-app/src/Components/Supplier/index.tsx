@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./index.css"
 import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
@@ -15,18 +15,6 @@ import { useNavigate } from 'react-router-dom';
 
 export const Supplier = React.memo(() => {
   const navigate = useNavigate();
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
 
   const handleGoToSupplierPage = () => {
     navigate('/supplier');

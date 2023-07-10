@@ -1,11 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./index.css";
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
 import Vector2Svg from '../../images/vector-2.svg'
 import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
@@ -13,18 +7,6 @@ import { useNavigate } from 'react-router-dom';
 
 export const UserTerminal = React.memo(() => {
   const navigate = useNavigate();
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
 
   const handleGoToSupplierPage = () => {
     navigate('/supplier');

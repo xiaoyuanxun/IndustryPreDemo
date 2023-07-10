@@ -18,18 +18,6 @@ export const UserTerminalPage0 = React.memo(() => {
     setProductHashCode(event.target.value);
   };
 
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
-
   const formatDate = (timestamp: number) => {
     console.log('timestamp : ', timestamp);
     const date = new Date(timestamp * 1000);
@@ -57,7 +45,7 @@ export const UserTerminalPage0 = React.memo(() => {
       const event_batchId = elements[2];
       const event_specialId = elements[3];
 
-      if(event_modeNumber != productModeNumber) {
+      if(event_modeNumber !== productModeNumber) {
         navigate('/user/2');
         return;
       }

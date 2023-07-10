@@ -1,13 +1,5 @@
 import React, { useState } from "react";
 import "./page2.css";
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
-import Line6Svg from '../../images/Line 6.svg'
-import BackPng from '../../images/Back.png'
 import { useNavigate } from 'react-router-dom';
 import { contractAddress, rpcProviderUrl, factoryPrivateKey } from "../../contractConfig";
 import contractAbi from '../../contractABI.json';
@@ -20,18 +12,6 @@ export const FactorySidePage2 = React.memo(() => {
 
   const handleProductHashCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setProductHashCode(event.target.value);
-  };
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
   };
 
   const getStateString = (stateNumber: number) => {

@@ -20,6 +20,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  margin-top: 81px;
 }
 
 .SupplierPage1-box-1-title {
@@ -75,4 +77,40 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.SupplierPage1-progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 83px;
+}
+
+.SupplierPage1-progress-name {
+  color: #2797FF;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 19px;
+}
+
+.SupplierPage1-progress-line {
+  display: flex;
+  flex-direction: row;
+}
+
+.SupplierPage1-progress-line-1 {
+  width: 266.667px;
+  height: 5px;
+  flex-shrink: 0;
+  background: #2797FF;
+}
+
+.SupplierPage1-progress-line-2 {
+  width: 400px;
+  height: 5px;
+  flex-shrink: 0;
+  background: #C8DAFF;
 }

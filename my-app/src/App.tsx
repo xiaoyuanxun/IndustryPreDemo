@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import {
   FactorySide, 
@@ -30,9 +30,7 @@ import {
   UserTerminalPage2,
   InnerHeader
 } from "./Components";
-import { ethers } from 'ethers'
-import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
-import { useNavigate, RouteProps } from 'react-router-dom';
+import { BrowserRouter as Router , Routes, Route } from 'react-router-dom'
 
 function App() {
   // const [walletAddress, setWalletAddress] = useState(""); // 用于保存钱包地址的状态
@@ -58,9 +56,9 @@ function App() {
       <Routes>
 
         <Route path="" element = {
-            <div>
-              <Login/>
-            </div>
+            <>
+            <Login/>
+            </>
           } />
 
         <Route path="/supplier" element = {
@@ -125,14 +123,15 @@ function App() {
 
         <Route path="/factory" element = {
             <>
+            <FactorySide/>
             <Header/>
             <Sidebar activeNumber={1}/>
-            <FactorySide/>
             </>
         } />
 
         <Route path="/factory/0" element = {
             <>
+            <FactorySidePage0 />
             <Header/>
             <InnerHeader 
               pageTitle = '新增配件'
@@ -140,12 +139,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage0 />
             </>
         } />
 
         <Route path="/factory/1" element = {
             <>
+            <FactorySidePage1 />
             <Header/>
             <InnerHeader 
               pageTitle = '新增配件'
@@ -153,12 +152,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage1 />
             </>
         } />
 
         <Route path="/factory/2" element = {
             <>
+            <FactorySidePage2 />
             <Header/>
             <InnerHeader 
               pageTitle = '配件入库'
@@ -166,12 +165,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage2 />
             </>
         } />        
 
         <Route path="/factory/3" element = {
             <>
+            <FactorySidePage3 />
             <Header/>
             <InnerHeader 
               pageTitle = '配件入库'
@@ -179,12 +178,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage3 />
             </>
         } />   
         
         <Route path="/factory/4" element = {
             <>
+            <FactorySidePage4  />
             <Header/>
             <InnerHeader 
               pageTitle = '配件入库'
@@ -192,12 +191,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage4  />
             </>
         } />                   
                 
         <Route path="/factory/5" element = {
             <>
+            <FactorySidePage5  />
             <Header/>
             <InnerHeader 
               pageTitle = '配件入库'
@@ -205,12 +204,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage5  />
             </>
         } />     
 
         <Route path="/factory/6" element = {
             <>
+            <FactorySidePage6  />
             <Header/>
             <InnerHeader 
               pageTitle = '产品出库'
@@ -218,12 +217,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage6  />
             </>
         } />        
 
         <Route path="/factory/7" element = {
             <>
+            <FactorySidePage7  />
             <Header/>
             <InnerHeader 
               pageTitle = '产品出库'
@@ -231,12 +230,12 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage7  />
             </>
         } />   
 
         <Route path="/factory/8" element = {
             <>
+            <FactorySidePage8  />            
             <Header/>
             <InnerHeader 
               pageTitle = '产品出库'
@@ -244,7 +243,6 @@ function App() {
               address = '0xf39...266'
             />
             <Sidebar activeNumber={1}/>
-            <FactorySidePage8  />
             </>
         } />   
 
@@ -263,14 +261,15 @@ function App() {
 
         <Route path="/user" element = {
             <>
+            <UserTerminal/>
             <Header/>
             <Sidebar activeNumber={1}/>
-            <UserTerminal/>
             </>
         } />
 
         <Route path="/user/0" element = {
             <>
+            <UserTerminalPage0/>
             <Header/>
             <InnerHeader 
               pageTitle = '新能源车主'
@@ -278,12 +277,12 @@ function App() {
               address = '0x3C4...3BC'
             />
             <Sidebar activeNumber={1}/>
-            <UserTerminalPage0/>
             </>
         } />
 
         <Route path="/user/1" element = {
             <>
+            <UserTerminalPage1/>
             <Header/>
             <InnerHeader 
               pageTitle = '新能源车主'
@@ -291,12 +290,12 @@ function App() {
               address = '0x3C4...3BC'
             />
             <Sidebar activeNumber={1}/>
-            <UserTerminalPage1/>
             </>
         } />
 
         <Route path="/user/2" element = {
             <>
+            <UserTerminalPage2/>
             <Header/>
             <InnerHeader 
               pageTitle = '新能源车主'
@@ -304,7 +303,6 @@ function App() {
               address = '0x3C4...3BC'
             />
             <Sidebar activeNumber={1}/>
-            <UserTerminalPage2/>
             </>
         } />
 
@@ -323,7 +321,10 @@ function App() {
         } />
 
         <Route path="/experiment" element = {
+          <>
           <Experiment_1/>
+          </>
+
         } />
 
         <Route path="/experiment/1" element = {
@@ -336,9 +337,9 @@ function App() {
         
         <Route path="/experiment/2" element = {
             <>
+            <Experiment_2/>
             <Header/>
             <Sidebar activeNumber={1}/>
-            <Experiment_2/>
             </>
         } />
 

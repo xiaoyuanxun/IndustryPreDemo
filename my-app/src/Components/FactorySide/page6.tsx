@@ -1,13 +1,5 @@
 import React, { useState } from "react";
 import "./page6.css";
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
-import Line6Svg from '../../images/Line 6.svg'
-import BackPng from '../../images/Back.png'
 import { useNavigate } from 'react-router-dom';
 import { ethers } from "ethers";
 import { contractAddress, rpcProviderUrl, factoryPrivateKey, BASE } from "../../contractConfig";
@@ -24,18 +16,6 @@ export const FactorySidePage6 = React.memo(() => {
 
   const handleserialNumberRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSerialNumberRange(event.target.value);
-  };
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
   };
   
   const handleSubmit = async () => {

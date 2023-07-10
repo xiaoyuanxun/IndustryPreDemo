@@ -1,11 +1,5 @@
 import React from "react";
 import "./index.css";
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
 import CarRepairSvg from '../../images/Car repair.svg'
 import Vector2Svg from '../../images/vector-2.svg'
 import Vector3Svg from '../../images/vector-3.svg'
@@ -13,19 +7,6 @@ import Vector from '../../images/Vector.svg'
 import { useNavigate } from 'react-router-dom';
 
 export const Experiment_1 = React.memo(() => {
-  const navigate = useNavigate();
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
 
   return (
     <div className="page1-element">
@@ -38,7 +19,7 @@ export const Experiment_1 = React.memo(() => {
             </div>
           </div>
           <div className="selected">
-            <div className="overlap-7">
+            <div className="overlap-7">1
               <div className="text-wrapper-6">汽车组装工厂</div>
               <img className="car-repair-2" alt="Car repair" src={CarRepairSvg} />
             </div>
@@ -52,20 +33,8 @@ export const Experiment_1 = React.memo(() => {
 export const Experiment_2 = React.memo(() => {
   const navigate = useNavigate();
 
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
   const handleGoToExperimen1Page = () => {
     navigate('/experiment/1');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
   };
 
   const handleGoToSupplierPage = () => {

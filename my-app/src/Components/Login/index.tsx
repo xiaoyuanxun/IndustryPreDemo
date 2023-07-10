@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./index.css";
 import schooLogoPng from '../../images/school_logo.png'
-import background_image_Png from '../../images/background_image_1.png'
 import { useNavigate } from 'react-router-dom';
 
-interface UserData {
-  username: string;
-  password: string;
-}
+// interface UserData {
+//   username: string;
+//   password: string;
+// }
 
 export const Login = React.memo(() => {
   const [userId, setUserId] = useState("");

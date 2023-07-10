@@ -11,17 +11,7 @@ import FactProgressLine from '../../images/SupplierPage0Progress1.png'
 
 export const SupplierPage0 = React.memo(() => {
   const [productModeNumber, setProductModeNumber] = useState("");
-  const [serialNumberRange_min, setSerialNumberRange_min] = useState("");  
-  const [serialNumberRange_max, setSerialNumberRange_max] = useState("");
   const [serialNumberRange, setSerialNumberRange] = useState("");
-
-  const handleserialNumberRange_minChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSerialNumberRange_min(event.target.value);
-  };
-
-  const handleserialNumberRange_maxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSerialNumberRange_max(event.target.value);
-  };
 
   const handleserialNumberRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSerialNumberRange(event.target.value);
@@ -33,18 +23,6 @@ export const SupplierPage0 = React.memo(() => {
   };
 
   const navigate = useNavigate();
-
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
-  };
 
   const handleSubmit = async () => {
     const regex: RegExp = /(\d+)-(\d+)/;
@@ -65,7 +43,6 @@ export const SupplierPage0 = React.memo(() => {
         const signer = wallet.connect(provider);
         console.log('供应商操作员地址：', await signer.getAddress());
   
-        const contract_read = new ethers.Contract(contractAddress, contractAbi, provider);
         const contract = new ethers.Contract(contractAddress, contractAbi, signer);
   
         const productInfo = await contract.getProductInfo(productModeNumber);
@@ -128,8 +105,8 @@ export const SupplierPage0 = React.memo(() => {
             1/3
           </div>
           <div className='SupplierPage0-progress-line'>
-            <img className='SupplierPage0-progress-line-2' src={FactProgressLine}/>
-            <img className='SupplierPage0-progress-line-1' src={ProgressLine}/>
+            <img className='SupplierPage0-progress-line-2' alt='factProgres' src={FactProgressLine}/>
+            <img className='SupplierPage0-progress-line-1' alt='allProgress' src={ProgressLine}/>
           </div>
         </div>
       </div>

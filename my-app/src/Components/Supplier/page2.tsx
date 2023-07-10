@@ -16,12 +16,8 @@ export const SupplierPage2 = React.memo(() => {
   const messages = location.state as ProductInfo;
   console.log('传递过来的消息 : ', messages);
 
-  const [productHashCode, setProductHashCode] = useState(messages?.productHashCode || '');
+  const [productHashCode ] = useState(messages?.productHashCode || '');
   const navigate = useNavigate();
-
-  const handleProductHashCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setProductHashCode(event.target.value);
-  };
 
   const handleCopy = async () => {
     try {
@@ -32,16 +28,8 @@ export const SupplierPage2 = React.memo(() => {
     }
   }
 
-  const handleGoToHomePage = () => {
-    navigate('/system');
-  };
-  
-  const handleGoToExperimenPage = () => {
-    navigate('/experiment/2');
-  };
-
-  const handleGoToDataPage = () => {
-    navigate('/data');
+  const handleGoToSupplier3Page = () => {
+    navigate('/supplier/3');
   };
 
   return (
@@ -71,9 +59,9 @@ export const SupplierPage2 = React.memo(() => {
           </div>
         </div>
         <img className="SupplierPage2-box-line" alt="Line" src={LongLine} />
-        <div className="SupplierPage2-box-3">
-          <img className="SupplierPage2-box-3-button" alt="button" src={BulletListPng} />
-          <div className="SupplierPage2-box-3-title">
+        <div className="SupplierPage2-box-3" onClick={handleGoToSupplier3Page}>
+          <img className="SupplierPage2-box-3-button" alt="button" src={BulletListPng} onClick={handleGoToSupplier3Page}/>
+          <div className="SupplierPage2-box-3-title" onClick={handleGoToSupplier3Page}>
             查看交付列表
           </div>
         </div>
