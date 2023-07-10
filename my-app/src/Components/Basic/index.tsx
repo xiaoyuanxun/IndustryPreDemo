@@ -9,7 +9,8 @@ import schooLogoPng from '../../images/school_logo.png'
 import background_image_Png from '../../images/background_image_1.png'
 import { useNavigate } from 'react-router-dom';
 
-export const Sidebar = React.memo(() => {
+export const Sidebar = React.memo((props: { activeNumber: number }) => {
+  const { activeNumber } = props;
   const navigate = useNavigate();
 
   const handleGoToHomePage = () => {
@@ -27,7 +28,9 @@ export const Sidebar = React.memo(() => {
   return (
     <div className="sidebar">
 
-      <div className="sidebar-box">
+      <div 
+        className={`sidebar-box ${activeNumber === 0 ? 'active' : ''}`}
+        onClick={handleGoToHomePage}>
         <img className='sidebar-box-logo' alt="sidebar-box-logo" src={BookingPng} onClick={handleGoToHomePage} />
         <div className='sidebar-box-title' onClick={handleGoToHomePage} >
           系统首页
@@ -36,7 +39,9 @@ export const Sidebar = React.memo(() => {
 
       <img className='sidebar-line' alt="sidebar-line" src={lineSvg} />
       
-      <div className="sidebar-box">
+      <div 
+        className={`sidebar-box ${activeNumber === 1 ? 'active' : ''}`}
+        onClick={handleGoToExperimenPage}>
         <img className='sidebar-box-logo' alt="sidebar-box-logo" src={ComputerSupportPng} onClick={handleGoToExperimenPage} />
         <div className='sidebar-box-title' onClick={handleGoToExperimenPage} >
           参与实验
@@ -45,7 +50,9 @@ export const Sidebar = React.memo(() => {
       
       <img className='sidebar-line' alt="sidebar-line" src={lineSvg} />
 
-      <div className="sidebar-box">
+      <div 
+        className={`sidebar-box ${activeNumber === 2 ? 'active' : ''}`}
+        onClick={handleGoToDataPage}>
         <img className='sidebar-box-logo' alt="sidebar-box-logo" src={InvestmentPortfolioPng} onClick={handleGoToDataPage} />
         <div className='sidebar-box-title' onClick={handleGoToDataPage}>
           实验数据
@@ -53,6 +60,29 @@ export const Sidebar = React.memo(() => {
       </div>
     </div>
   );
+});
+
+export const PageFunctionTitle = React.memo((props: { titleName: string }) => {
+  const titleName = props.titleName;
+  return (
+    <div className="pageFunctionTitle">
+      {titleName}
+    </div>
+  );
+});
+
+export const FunctionPageInPut = React.memo((props: { 
+  value?: string, // 添加 value 属性的类型声明
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void, // 添加 onChange 属性的类型声明
+}) => {
+  const { value, onChange } = props
+  return (
+    <input className={'FunctionPageInPut'} 
+      type="text" 
+      value={value} 
+      onChange={onChange} 
+    />
+  )
 });
 
 export const InputComponent = React.memo((props: { 

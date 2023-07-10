@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
 import "./index.css"
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
-import Vector2Svg from '../../images/vector-2.svg'
 import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
+import Group8Png from '../../images/Group 8.svg'
 import { useNavigate } from 'react-router-dom';
 
 // interface Page0Props {
@@ -55,90 +49,38 @@ export const Supplier = React.memo(() => {
   };
   
   return (
-    <div className="Supplier">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="overlap-group">
-            <div className="view">
-              <div className="overlap-group-wrapper">
-                <div className="div" onClick={handleGoToHomePage}>
-                  <div className="text-wrapper" onClick={handleGoToHomePage}>
-                    系统首页
-                  </div>
-                  <img className="line" alt="Line" src={lineSvg} />
-                  <img className="img" alt="Booking" src={BookingPng}/>
-                </div>
-              </div>
-              <div className="overlap-2">
-                <div className="div-wrapper">
-                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
-                    <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
-                      参与实验
-                    </div>
-                    <img className="line-2" alt="Line" src={lineSvg} />
-                    <img className="img" alt="Computer support" src={ComputerSupportPng} />
-                  </div>
-                </div>
-                <div className="view-2">
-                  <div className="overlap-4" onClick={handleGoToDataPage}>
-                    <div className="text-wrapper" onClick={handleGoToDataPage}>
-                      实验数据
-                    </div>
-                    <img className="line" alt="Line" src={lineSvg} />
-                    <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
-                  </div>
-                </div>
-              </div>
+      <div className="Supplier">
+        <div className='Supplier-1'>
+          <img className="Supplier-1-image" alt="Vector" src={Vector} />
+          <div className='Supplier-1-info'>
+            <div className="Supplier-1-title" onClick={handleGoToSupplierPage}>
+              配件供应商
             </div>
-            <div className="tittle">
-              <div className="overlap-5">
-                <div className="text-wrapper-3">区块链物联网实训系统</div>
-                <img className="image" alt="Image" src={schooLogoPng} />
-                <div className="text-wrapper-4">张三</div>
-                <img className="account" alt="Account" src={AccountPng} />
-              </div>
-            </div>
-          </div>
-          <div className="view-3">
-            <div className="overlap-6">
-              <h1 className="h-1" onClick={handleGoToSupplierPage}>
-                配件供应商
-              </h1>
-              <div className="text-wrapper-5" onClick={handleGoToSupplierPage0}>
+            <div className='Supplier-1-url'>
+              <div className='Supplier-1-url-1' onClick={handleGoToSupplierPage0}>
                 配件交付
               </div>
-              <div className="text-wrapper-6" onClick={handleGoToSupplierPage3}>
+              <div className='Supplier-1-url-2' onClick={handleGoToSupplierPage3}>
                 交付列表
               </div>
-              <img className="vector" alt="Vector" src={Vector} />
-            </div>
-          </div>
-          <div className="view-4">
-            <div className="overlap-7" onClick={handleGoToFactoryPage}>
-              <div className="text-wrapper-7" onClick={handleGoToFactoryPage}>
-                新能源汽车
-                <br />
-                加工厂
-              </div>
-              <div className="group">
-                <div className="overlap-group-2">
-                  <div className="rectangle" />
-                  <img className="vector-2" alt="Vector" src={Vector2Svg} />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="view-5">
-            <div className="overlap-8" onClick={handleGoToUserPage}>
-              <div className="text-wrapper-8" onClick={handleGoToUserPage}>
-                新能源车主
-              </div>
-              <img className="vector-3" alt="Vector" src={Vector3Svg} />
             </div>
           </div>
         </div>
+        <div className='Supplier-2' onClick={handleGoToFactoryPage}>
+          <img className="Supplier-2-image" alt="Vector" src={Group8Png} />
+          <div className='Supplier-2-title'>
+            新能源汽车
+            <br />
+            加工厂
+          </div>
+        </div>
+        <div className='Supplier-3' onClick={handleGoToUserPage}>
+          <img className="Supplier-3-image" alt="Vector" src={Vector3Svg} />
+          <div className='Supplier-3-title'>
+            新能源车主
+          </div>
+        </div>
       </div>
-    </div>
   );
 })
 

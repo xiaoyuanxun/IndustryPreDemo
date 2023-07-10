@@ -65,33 +65,63 @@ function App() {
           } />
 
         <Route path="/supplier" element = {
-          <div >
+          <>
+            <Header/>
+            <Sidebar activeNumber={1}/>
             <Supplier/>            
-          </div>
+          </>
           } />
 
         <Route path="/supplier/0" element = {
-            <div >
-              <SupplierPage0/>
-            </div>
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件交付'
+              sideName = '供应商'
+              address = '0x709...9C8'
+            />
+            <Sidebar activeNumber={1}/>
+            <SupplierPage0/>
+            </>
           } />
           
         <Route path="/supplier/1" element = {
-            <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件交付'
+              sideName = '供应商'
+              address = '0x709...9C8'
+            />
+            <Sidebar activeNumber={1}/>
             <SupplierPage1/>
-          </div>
+            </>
         } />
 
         <Route path="/supplier/2" element = {
-            <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '配件交付'
+              sideName = '供应商'
+              address = '0x709...9C8'
+            />
+            <Sidebar activeNumber={1}/>
             <SupplierPage2/>
-          </div>
+            </>
         } />
 
         <Route path="/supplier/3" element = {
-            <div >
+            <>
+            <Header/>
+            <InnerHeader 
+              pageTitle = '交付列表'
+              sideName = '供应商'
+              address = '0x709...9C8'
+            />
+            <Sidebar activeNumber={1}/>
             <SupplierPage3/>
-          </div>
+            </>
         } />
 
         <Route path="/factory" element = {
@@ -185,13 +215,17 @@ function App() {
         } />
 
         <Route path="/loginPage" element = {
+          <>
           <Login/>
+          </>
         } />
 
         <Route path="/system" element = {
-          <div className="App">
+          <>
+            <Header/>
+            <Sidebar activeNumber={0}/>
             <System/>
-          </div>
+          </>
         } />
 
         <Route path="/experiment" element = {
@@ -211,16 +245,16 @@ function App() {
         } />
 
         {/* <Redirect to="/" /> 默认跳转到根路径 */}
-
-      <Route path="/side" element = {
-          <Sidebar/>
-          
-        } />
         
         <Route path="/test" element = {
-          <div className='App'>
+          <div style={{ background: '#0F0C37', height: '100%'}}>
             <Header/>
-            <Sidebar/>
+            <InnerHeader 
+              pageTitle = '配件交付'
+              sideName = '供应商'
+              address = '0x123...123'
+            />
+            <Sidebar activeNumber={1}/> 
           </div>
         } />
 

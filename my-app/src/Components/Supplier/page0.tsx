@@ -4,20 +4,16 @@ import "./page0.css"
 import contractAbi from '../../contractABI.json';
 import { ethers } from 'ethers';
 import { contractAddress, rpcProviderUrl, supplierPrivateKey } from '../../contractConfig';
-import BookingPng from '../../images/Booking.png';
-import ComputerSupportPng from '../../images/Computer Support.png';
-import InvestmentPortfolioPng from '../../images/Investment Portfolio.png';
-import lineSvg from '../../images/line.svg';
-import AccountPng from '../../images/Account.png';
-import schooLogoPng from '../../images/school_logo.png'
-import Line6Svg from '../../images/Line 6.svg'
-import BackPng from '../../images/Back.png'
 import { useNavigate } from 'react-router-dom';
+import { PageFunctionTitle, FunctionPageInPut } from '../Basic';
+import ProgressLine from '../../images/SupplierPage0Progress.png'
+import FactProgressLine from '../../images/SupplierPage0Progress1.png'
 
 export const SupplierPage0 = React.memo(() => {
   const [productModeNumber, setProductModeNumber] = useState("");
   const [serialNumberRange_min, setSerialNumberRange_min] = useState("");  
   const [serialNumberRange_max, setSerialNumberRange_max] = useState("");
+  const [serialNumberRange, setSerialNumberRange] = useState("");
 
   const handleserialNumberRange_minChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSerialNumberRange_min(event.target.value);
@@ -25,6 +21,10 @@ export const SupplierPage0 = React.memo(() => {
 
   const handleserialNumberRange_maxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSerialNumberRange_max(event.target.value);
+  };
+
+  const handleserialNumberRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSerialNumberRange(event.target.value);
   };
 
   const handleProductModeNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,6 +47,23 @@ export const SupplierPage0 = React.memo(() => {
   };
 
   const handleSubmit = async () => {
+    const regex: RegExp = /(\d+)-(\d+)/;
+    const match: RegExpMatchArray | null = serialNumberRange.match(regex);
+    
+    if (match) {
+      const firstNumber: number = parseInt(match[1]);
+      const secondNumber: number = parseInt(match[2]);
+      if(firstNumber > secondNumber) {
+        alert('序列号范围大小有误!');
+        return;
+      }
+      console.log("First Number:", firstNumber);
+      console.log("Second Number:", secondNumber);
+      setSerialNumberRange_min(firstNumber.toString());
+      setSerialNumberRange_max(secondNumber.toString());
+    } else {
+      alert('序列号范围输入格式有误!');
+    }
     try {
       const provider = new ethers.providers.JsonRpcProvider(rpcProviderUrl);
       const wallet = new ethers.Wallet(supplierPrivateKey, provider);
@@ -80,98 +97,40 @@ export const SupplierPage0 = React.memo(() => {
   };
 
     return (
-        <div className="SupplierPage0">
-        <div className="overlap-wrapper">
-          <div className="overlap">
-            <div className="overlap-group">
-              <div className="view">
-                <div className="overlap-group-wrapper">
-                  <div className="div" onClick={handleGoToHomePage}>
-                    <div className="text-wrapper" onClick={handleGoToHomePage}>
-                      系统首页
-                    </div>
-                    <img className="line" alt="Line" src={lineSvg} />
-                    <img className="img" alt="Booking" src={BookingPng} />
-                  </div>
-                </div>
-                <div className="overlap-2">
-                  <div className="div-wrapper">
-                    <div className="overlap-3" onClick={handleGoToExperimenPage}>
-                      <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
-                        参与实验
-                      </div>
-                      <img className="line-2" alt="Line" src={lineSvg} />
-                      <img className="img" alt="Computer support" src={ComputerSupportPng} />
-                    </div>
-                  </div>
-                  <div className="view-2">
-                    <div className="overlap-4" onClick={handleGoToDataPage}>
-                      <div className="text-wrapper" onClick={handleGoToDataPage}>
-                        实验数据
-                      </div>
-                      <img className="line" alt="Line" src={lineSvg} />
-                      <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="tittle">
-                <div className="overlap-5">
-                  <div className="text-wrapper-3">区块链物联网实训系统</div>
-                  <img className="image" alt="Image" src={schooLogoPng} />
-                  <div className="text-wrapper-4">张三</div>
-                  <img className="account" alt="Account" src={AccountPng} />
-                </div>
-              </div>
+      <div className='SupplierPage0'>
+        <PageFunctionTitle titleName='提交详细信息'/>
+        <div className='SupplierPage0-box'>
+          <div className='SupplierPage0-box-1'>
+            <div className='SupplierPage0-box-1-title'>
+              产品型号
             </div>
-            <h1 className="h-1">配件交付</h1>
-            <div className="view-3">
-              <div className="overlap-6">
-                <div className="text-wrapper-5">产品型号</div>
-                <input
-                  className="rectangle"
-                  type="text"
-                  value={productModeNumber}
-                  onChange={handleProductModeNumberChange}
-                />
-                <input
-                  className="rectangle-2"
-                  type="text"
-                  value={serialNumberRange_min}
-                  onChange={handleserialNumberRange_minChange}
-                />    
-                <input
-                  className="rectangle-5"
-                  type="text"
-                  value={serialNumberRange_max}
-                  onChange={handleserialNumberRange_maxChange}
-                />               
-                <div className="text-wrapper-6">产品序列号范围</div>
-                <div className="rectangle-3" />
-                <div className="view-4">
-                  <div className="overlap-group-2" onClick={handleSubmit}>
-                    <div className="text-wrapper-7">
-                      提交
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <FunctionPageInPut
+              value={productModeNumber}
+              onChange={handleProductModeNumberChange}
+            />
+          </div>
+          <div className='SupplierPage0-box-2'>
+            <div className='SupplierPage0-box-2-title'>
+              产品序列号范围
             </div>
-            <div className="text-wrapper-8">提交详细信息</div>
-            <div className="view-5">
-              <div className="overlap-7">
-                <div className="text-wrapper-9">供应商</div>
-                <div className="text-wrapper-10">0x709...9C8</div>
-              </div>
+            <FunctionPageInPut
+             value={serialNumberRange}
+             onChange={handleserialNumberRangeChange}
+            />
+          </div>
+          <div className='SupplierPage0-box-3' onClick={handleSubmit}>
+            <div className='SupplierPage0-box-3-title'>
+              提交
             </div>
-            <img className="back" alt="Back" src={BackPng} />
-            <img className="line-3" alt="Line" src={Line6Svg} />
-            <div className="view-6">
-              <div className="rectangle-wrapper">
-                <div className="rectangle-4" />
-              </div>
-              <div className="text-wrapper-11">1/3</div>
-            </div>
+          </div>
+        </div>
+        <div className='SupplierPage0-progress'>
+          <div className='SupplierPage0-progress-name'>
+            1/3
+          </div>
+          <div className='SupplierPage0-progress-line'>
+            <img className='SupplierPage0-progress-line-2' src={FactProgressLine}/>
+            <img className='SupplierPage0-progress-line-1' src={ProgressLine}/>
           </div>
         </div>
       </div>

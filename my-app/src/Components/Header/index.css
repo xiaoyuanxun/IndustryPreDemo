@@ -23,9 +23,7 @@
 } */
 
 .header {
-  /* width: 100%; */
   height: 70px;
-  flex-shrink: 0;
   background: #FFF;
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.25);
   display: flex; /* 声明该容器使用弹性布局 */
@@ -34,6 +32,10 @@
   padding-left: 29px;
   padding-right: 80px;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .header-1 {
   display: flex;
@@ -79,13 +81,42 @@
   /* justify-content: right; */
 }
 
+.innerHeader-line {
+  height: 1px;
+  background: #000;
+  position: fixed;
+  width: 100%;
+  top: 174px;
+  left: 180px;
+  right: 0;
+}
+
 .innerHeader {
-  /* width: 100%; */
   display: flex; 
-  flex-direction: row; /* 设置主轴方向，这里是水平方向 */
-  align-items: center; /* 设置子元素在交叉轴上的对齐方式，这里是居中对齐 */
-  justify-content: space-between; 
-  padding-left: 280px;
+  flex-direction: row; 
+  background: #0F0C37;
+  height: 66px;
+  padding-top: 26px;
+  padding-bottom: 12px;
+  padding-left: 420px;
+  padding-right: 80px;
+  justify-content: space-between;
+  position: fixed;
+  top: 70px;
+  left: 180px;
+  right: 0;
+}
+
+.innerHeader-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.innerHeader-back-logo {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 4px;
 }
 
 .innerHeader-title {
@@ -94,5 +125,45 @@
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
+  line-height: normal;
+  margin-left: 11px;
+}
+
+.innerHeader-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 35px;
+  background: #E9E9E9;
+  width: 200px;
+  height: 30px;
+  flex-shrink: 0;
+  padding-left: 11px;
+}
+
+.innerHeader-2-name {
+  display: flex;
+  width: 64.8px;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: #484848;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.innerHeader-2-address {
+  display: flex;
+  width: 123.6px;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: #484848;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
   line-height: normal;
 }

@@ -39,113 +39,45 @@ export const Login = React.memo(() => {
       }
     } catch (error: any) {
       if (error.response && error.response.status === 401) {
-        setErrorMessage("用户名或密码不匹配");
+        setErrorMessage("*用户名或密码不匹配");
       } else {
         console.error("登录请求错误:", error);
-        setErrorMessage("登录请求错误");
+        setErrorMessage("*登录请求错误");
       }
     }
   };
 
   return (
-
-  //   <div className="login">
-  //     <div className="login-background">
-  //       <div className="login-box">
-  //         <div className="login-box-header"> 
-  //           <img className='login-box-header-logo' src={schooLogoPng}/>
-  //           <div className='login-box-header-title'>
-  //             区块链物联网管理系统
-  //           </div>
-  //           <div className={'login-box-header-name'}>
-  //             学生端
-  //           </div>
-  //         </div>
-
-  //         <div className="login-box-id">
-  //           <div className={'login-box-id-name'}>
-  //             用户ID/学号
-  //           </div>
-  //           <input
-  //             type="text"
-  //             className="login-input-id"
-  //             placeholder="请输入用户ID或学号"
-  //           />
-  //         </div>
-  //       </div>
-  //     </div>
-  // </div>
-
-    // <div className="login">
-    //   {/* <div className="login-background"></div> */}
-    //   <div className="login-box">
-
-    //     <div className="login-box-header"> 
-    //       <img className='login-box-header-logo' src={schooLogoPng}/>
-    //       <div className='login-box-header-title'>
-    //         区块链物联网管理系统
-    //       </div>
-    //       <div className={'login-box-header-name'}>
-    //         学生端
-    //       </div>
-    //     </div>
-
-    //     <div className="login-box-id">
-    //       <div className={'login-box-id-name'}>
-    //         用户ID/学号
-    //       </div>
-    //       <input
-    //         type="text"
-    //         className="login-input-id"
-    //         placeholder="请输入用户ID或学号"
-    //       />
-    //     </div>
-    //   </div>
-    // </div>
-
-
     <div className="login-screen">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="rectangle" />
-          <div className="tittle">
-            <h1 className="text-wrapper">区块链物联网实训系统</h1>
-            <div className="div">学生端</div>
-            <img className="image" alt="Image" src={schooLogoPng} />
-          </div>
-          <div className="view">
-            <div className="overlap-group" onClick={handleLogin}>
-              <div className="text-wrapper-2">
-                登录
-              </div>
-            </div>
-          </div>
-          <div className="view-2">
-            {/* <div className="div-wrapper"> */}
-            <input
-                className="div-wrapper"
-                type="text"
-                value={userId}
-                onChange={handleUserIdChange}
-                placeholder="请输入用户ID或学号"
-              />
-            {/* </div> */}
-            <div className="text-wrapper-4">用户ID/学号</div>
-          </div>
-          <div className="view-3">
-            {/* <div className="div-wrapper"> */}
-            <input
-                className="div-wrapper"
-                type="password"
-                value={password}
-                onChange={handlePasswordChange}
-                placeholder="请输入密码"
-              />
-            {/* </div> */}
-            <div className="text-wrapper-4">密码</div>
-          </div>
-          {errorMessage && <div className="text-wrapper-5">{errorMessage}</div>}
-          {/* <div className="text-wrapper-5">*用户ID或密码不匹配</div> */}
+      <div className="login-screen-box">
+        <div className="login-screen-box-header">
+          <img className="login-screen-box-header-logo" alt="school-logo" src={schooLogoPng} />
+          <div className="login-screen-box-header-title">区块链物联网实训系统</div>
+          <div className="login-screen-box-header-student">学生端</div>
+        </div>
+        <div className="login-screen-box-1">
+          <div className="login-screen-box-1-title">用户ID/学号</div>
+          <input
+            className="login-screen-box-1-input"
+            type="text"
+            value={userId}
+            onChange={handleUserIdChange}
+            placeholder="请输入用户ID或学号"
+          />
+        </div>
+        <div className="login-screen-box-2">
+          <div className="login-screen-box-2-title">密码</div>
+          <input
+            className="login-screen-box-2-input"
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="请输入密码"
+          />
+        </div>
+        {errorMessage && <div className="login-screen-box-3">{errorMessage}</div>}
+        <div className="login-screen-box-4" onClick={handleLogin}>
+            <div className="login-screen-box-4-title">登录</div>
         </div>
       </div>
     </div>

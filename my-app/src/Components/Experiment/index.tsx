@@ -34,31 +34,31 @@ export const Experiment_1 = React.memo(() => {
           <div className="overlap-group">
             <div className="view">
               <div className="overlap-group-wrapper">
-                <div className="div">
+                <div className="div" onClick={handleGoToHomePage}>
                   <h1 className="text-wrapper" onClick={handleGoToHomePage}>
                     系统首页
                   </h1>
                   <img className="line" alt="Line" src={lineSvg} />
-                  <img className="img" alt="Booking" src={BookingPng} />
+                  <img className="img" alt="Booking" src={BookingPng}  onClick={handleGoToHomePage}/>
                 </div>
               </div>
               <div className="overlap-2">
                 <div className="div-wrapper">
-                  <div className="overlap-3">
+                  <div className="overlap-3" onClick={handleGoToExperimenPage}>
                     <div className="text-wrapper-2" onClick={handleGoToExperimenPage}>
                       参与实验
                     </div>
                     <img className="line-2" alt="Line" src={lineSvg} />
-                    <img className="img" alt="Computer support" src={ComputerSupportPng}/>
+                    <img className="img" alt="Computer support" src={ComputerSupportPng} onClick={handleGoToExperimenPage}/>
                   </div>
                 </div>
                 <div className="view-2">
-                  <div className="overlap-4">
+                  <div className="overlap-4" onClick={handleGoToDataPage}>
                     <div className="text-wrapper" onClick={handleGoToDataPage}>
                       实验数据
                     </div>
                     <img className="line" alt="Line" src={lineSvg} />
-                    <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} />
+                    <img className="investment-portfolio" alt="Investment portfolio" src={InvestmentPortfolioPng} onClick={handleGoToDataPage}/>
                   </div>
                 </div>
               </div>

@@ -49,16 +49,18 @@
   display: flex;
   background: #E9E9E9;
   width: 180px;
-  /* height: 1080px; */
   height: 100%; 
   flex-direction: column; /* 设置主轴方向 */
   justify-content: flex-start; /* 设置子元素在主轴上的对齐方式，这里是置顶对齐 */
   align-items: center; /* 设置子元素在交叉轴上的对齐方式，这里是居中对齐 */
+  position: fixed;
+  left: 0;
+  top: 70px;
+  bottom: 0;
 }
 
 .sidebar-box {
   width: 180px;
-  /* height: 180px; */
   height: auto;
   background: #4F5590;
   display: flex;
@@ -66,6 +68,11 @@
   padding-top: 34px;
   padding-bottom: 24.51px;
   align-items: center; /* 设置子元素在交叉轴上的对齐方式，这里是居中对齐 */
+}
+
+.sidebar-box.active {
+  background: #2797FF;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.25);
 }
 
 .sidebar-box-title {
@@ -85,4 +92,25 @@
 
 .sidebar-line {
   margin-bottom: 1px;
+}
+
+.pageFunctionTitle {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: fixed;
+  top: 240px;
+}
+
+.FunctionPageInPut {
+  width: 341px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #FFF;
+  box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.25);
 }
