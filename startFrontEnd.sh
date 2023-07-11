@@ -7,7 +7,7 @@ echo "安装依赖"
 npm install
 
 ecoo "编译前端"
-npm run start
+npm run build
 
 echo "启动前端"
 npm run start

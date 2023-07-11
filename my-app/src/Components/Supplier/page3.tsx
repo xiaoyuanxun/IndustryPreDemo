@@ -74,7 +74,7 @@ export const SupplierPage3 = React.memo(() => {
 });
 
 function truncateHash(hash: string) {
-  const containerWidth = 500; // CSS 中的宽度
+  const containerWidth = 475; // CSS 中的宽度
   const fontSize = 18; // CSS 中的字体大小
   const charWidth = fontSize * 0.6; // 字符宽度的估计值
 

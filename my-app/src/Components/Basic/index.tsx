@@ -62,8 +62,10 @@ export const Sidebar = React.memo((props: { activeNumber: number }) => {
 export const PageFunctionTitle = React.memo((props: { titleName: string }) => {
   const titleName = props.titleName;
   return (
-    <div className="pageFunctionTitle">
-      {titleName}
+    <div className='pageFunctionTitle-box'>
+      <div className="pageFunctionTitle">
+        {titleName}
+      </div>
     </div>
   );
 });

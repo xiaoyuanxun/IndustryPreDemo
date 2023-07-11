@@ -48,7 +48,7 @@ export const SupplierPage2 = React.memo(() => {
           </div>
           <div className="SupplierPage2-box-2-box">
             <div className="SupplierPage2-box-2-box-hash">
-            {/* 0x9e692d4b4da0959684bf5c5d3638cfef3512d51af4ce23e5bdaff8e851877133 */}
+            {/* 0xc7ecef7dde2193bc6a6cba6b0b7f98bd6ec8739b7a928cbf09945ba93c8979cc */}
               {productHashCode}
             </div>
           </div>

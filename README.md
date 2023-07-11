@@ -83,3 +83,8 @@
 
 3. 存储入库Hash值 : 产品信息与入库Hash值的映射，因为供应商的交付列表需要展示交付Hash值
 
+ - https : 
+ ```ts
+    "start": "HTTPS=true SSL_CRT_FILE=cert.pem SSL_KEY_FILE=key.pem BROWSER=none react-scripts start",
+ ```
+
