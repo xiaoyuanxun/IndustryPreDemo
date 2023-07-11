@@ -63,60 +63,30 @@ function App() {
 
         <Route path="/supplier" element = {
           <>
-            <Header/>
-            <Sidebar activeNumber={1}/>
             <Supplier/>            
           </>
           } />
 
         <Route path="/supplier/0" element = {
             <>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件交付'
-              sideName = '供应商'
-              address = '0x709...9C8'
-            />
-            <Sidebar activeNumber={1}/>
             <SupplierPage0/>
             </>
           } />
           
         <Route path="/supplier/1" element = {
             <>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件交付'
-              sideName = '供应商'
-              address = '0x709...9C8'
-            />
-            <Sidebar activeNumber={1}/>
             <SupplierPage1/>
             </>
         } />
 
         <Route path="/supplier/2" element = {
             <>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件交付'
-              sideName = '供应商'
-              address = '0x709...9C8'
-            />
-            <Sidebar activeNumber={1}/>
             <SupplierPage2/>
             </>
         } />
 
         <Route path="/supplier/3" element = {
             <>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '交付列表'
-              sideName = '供应商'
-              address = '0x709...9C8'
-            />
-            <Sidebar activeNumber={1}/>
             <SupplierPage3/>
             </>
         } />
@@ -124,137 +94,65 @@ function App() {
         <Route path="/factory" element = {
             <>
             <FactorySide/>
-            <Header/>
-            <Sidebar activeNumber={1}/>
             </>
         } />
 
         <Route path="/factory/0" element = {
             <>
             <FactorySidePage0 />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '新增配件'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />
 
         <Route path="/factory/1" element = {
             <>
             <FactorySidePage1 />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '新增配件'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />
 
         <Route path="/factory/2" element = {
             <>
             <FactorySidePage2 />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件入库'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />        
 
         <Route path="/factory/3" element = {
             <>
             <FactorySidePage3 />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件入库'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />   
         
         <Route path="/factory/4" element = {
             <>
             <FactorySidePage4  />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件入库'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />                   
                 
         <Route path="/factory/5" element = {
             <>
             <FactorySidePage5  />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件入库'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />     
 
         <Route path="/factory/6" element = {
             <>
             <FactorySidePage6  />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '产品出库'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />        
 
         <Route path="/factory/7" element = {
             <>
             <FactorySidePage7  />
-            <Header/>
-            <InnerHeader 
-              pageTitle = '产品出库'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />   
 
         <Route path="/factory/8" element = {
             <>
             <FactorySidePage8  />            
-            <Header/>
-            <InnerHeader 
-              pageTitle = '产品出库'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />   
 
         <Route path="/factory/9" element = {
             <>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '配件列表'
-              sideName = '工厂端'
-              address = '0xf39...266'
-            />
-            <Sidebar activeNumber={1}/>
             <FactorySidePage9  />
             </>
         } />   
@@ -262,47 +160,24 @@ function App() {
         <Route path="/user" element = {
             <>
             <UserTerminal/>
-            <Header/>
-            <Sidebar activeNumber={1}/>
             </>
         } />
 
         <Route path="/user/0" element = {
             <>
             <UserTerminalPage0/>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '新能源车主'
-              sideName = '用户端'
-              address = '0x3C4...3BC'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />
 
         <Route path="/user/1" element = {
             <>
             <UserTerminalPage1/>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '新能源车主'
-              sideName = '用户端'
-              address = '0x3C4...3BC'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />
 
         <Route path="/user/2" element = {
             <>
             <UserTerminalPage2/>
-            <Header/>
-            <InnerHeader 
-              pageTitle = '新能源车主'
-              sideName = '用户端'
-              address = '0x3C4...3BC'
-            />
-            <Sidebar activeNumber={1}/>
             </>
         } />
 
@@ -314,32 +189,28 @@ function App() {
 
         <Route path="/system" element = {
           <>
-            <Header/>
-            <Sidebar activeNumber={0}/>
             <System/>
           </>
         } />
 
         <Route path="/experiment" element = {
           <>
-          <Experiment_1/>
+          <Experiment_2/>
           </>
 
         } />
 
-        <Route path="/experiment/1" element = {
+        {/* <Route path="/experiment/1" element = {
             <>
             <Header/>
             <Sidebar activeNumber={1}/>
             <Experiment_1/>
             </>
-        } />
+        } /> */}
         
         <Route path="/experiment/2" element = {
             <>
             <Experiment_2/>
-            <Header/>
-            <Sidebar activeNumber={1}/>
             </>
         } />
 

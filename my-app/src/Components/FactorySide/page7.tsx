@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import "./page7.css";
+import Line6Svg from '../../images/Line 6.svg'
 import Line7Svg from '../../images/Line 7.svg'
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ethers } from "ethers";
 import { contractAddress, rpcProviderUrl, factoryPrivateKey } from "../../contractConfig";
 import contractAbi from '../../contractABI.json';
+import { Header, InnerHeader } from "../Header";
+import { Sidebar, PageFunctionTitle } from "../Basic";
+import ProgressLine from '../../images/SupplierPage0Progress.png'
+import FactProgressLine from '../../images/SupplierPage1FactProgress.png'
 
 interface ProductInfo {
   productName?: string,
@@ -71,35 +76,62 @@ export const FactorySidePage7 = React.memo(() => {
 
   return (
     <div className="FactorySidePage7">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="view-3">
-            <div className="overlap-6">
-              <div className="text-wrapper-5">备注</div>
-              <div className="rectangle" />
-              <div className="rectangle-2" onClick={handleSubmit}/>
-              <img className="line-3" alt="Line" src={Line7Svg} />
-              <img className="line-4" alt="Line" src={Line7Svg} />
-              <img className="line-5" alt="Line" src={Line7Svg} />
-              <img className="line-6" alt="Line" src={Line7Svg}/>
-              <div className="text-wrapper-6">产品名称</div>
-              <div className="text-wrapper-7">{productName}</div>
-              <div className="text-wrapper-8">产品型号</div>
-              <div className="text-wrapper-9">{productModeNumber}</div>
-              <div className="text-wrapper-10">产品序列号范围</div>
-              <div className="text-wrapper-11">{serialNumberRange_min}-{serialNumberRange_max}</div>
-              <div className="text-wrapper-12">
-                {productDescription}
-              </div>
-              <div className="text-wrapper-13" onClick={handleSubmit}>提交</div>
+      <Header/>
+      <div className="FactorySidePage7-1">
+        <Sidebar activeNumber={1}/>
+        <div className="FactorySidePage7-1-1">
+          <InnerHeader 
+            pageTitle = '产品出库'
+            sideName = '工厂端'
+            address = '0xf39...266'
+          />
+          <PageFunctionTitle titleName='提交出库信息'/>
+          <div className="FactorySidePage7-box">
+            <div className="FactorySidePage7-box-1-title">
+              产品名称
+            </div>
+            <div className="FactorySidePage7-box-1-answer">
+              {/* 1型电池 */}
+              {productName}
+            </div>
+            <img className="FactorySidePage7-box-line" alt="Line" src={Line6Svg} />
+            <div className="FactorySidePage7-box-1-title">
+              产品型号
+            </div>
+            <div className="FactorySidePage7-box-1-answer">
+              {/* TEST-123 */}
+              {productModeNumber}
+            </div>
+            <img className="FactorySidePage7-box-line" alt="Line" src={Line6Svg} />
+            <div className="FactorySidePage7-box-1-title">
+              产品序列号范围
+            </div>
+            <div className="FactorySidePage7-box-1-answer">
+              {/* 100-200 */}
+              {serialNumberRange_min}-{serialNumberRange_max}
+            </div>
+            <img className="FactorySidePage7-box-line" alt="Line" src={Line6Svg} />
+            <div className="FactorySidePage7-box-1-title">
+              备注
+            </div>
+            <div className="FactorySidePage7-box-1-answer">
+              {/* 这是个电池，通过工厂端配件库信息对应进行上传，并且上传后通过工厂端进行确认入库信息后完成入库 */}
+              {productDescription}
             </div>
           </div>
-          <div className="text-wrapper-14">提交出库信息</div>
-          <div className="view-5">
-            <div className="rectangle-wrapper">
-              <div className="rectangle-3" />
+          <div className="FactorySidePage7-box-button" onClick={handleSubmit}>
+              <div className="FactorySidePage7-box-button-title">
+                提交
+              </div>
             </div>
-            <div className="text-wrapper-17">2/3</div>
+          <div className='FactorySidePage7-progress'>
+            <div className='FactorySidePage7-progress-name'>
+              2/3
+            </div>
+            <div className='FactorySidePage7-progress-line'>
+            <img className='FactorySidePage7-progress-line-1' alt='factProgress' src={FactProgressLine}/>
+            <img className='FactorySidePage7-progress-line-2' alt='allProgerss' src={ProgressLine}/>
+            </div>
           </div>
         </div>
       </div>

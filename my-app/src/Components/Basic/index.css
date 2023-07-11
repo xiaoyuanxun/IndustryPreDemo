@@ -53,10 +53,6 @@
   flex-direction: column; /* 设置主轴方向 */
   justify-content: flex-start; /* 设置子元素在主轴上的对齐方式，这里是置顶对齐 */
   align-items: center; /* 设置子元素在交叉轴上的对齐方式，这里是居中对齐 */
-  position: fixed;
-  left: 0;
-  top: 70px;
-  bottom: 0;
 }
 
 .sidebar-box {
@@ -100,8 +96,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 240px;
-  margin-bottom: 138px;
+  margin-top: 66px;
 }
 
 .pageFunctionTitle {

@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { ethers } from 'ethers';
 import { contractAddress, factoryPrivateKey, rpcProviderUrl } from '../../contractConfig';
 import contractAbi from '../../contractABI.json';
+import { Header, InnerHeader } from "../Header";
+import { Sidebar, PageFunctionTitle } from "../Basic";
 
 export const FactorySidePage0 = React.memo(() => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -128,39 +130,48 @@ export const FactorySidePage0 = React.memo(() => {
 
   return (
     <div className="FactorySidePage0">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="view-3">
-          <div className="text-wrapper-5">产品名称</div>
+      <Header/>
+      <div className="FactorySidePage0-1">
+        <Sidebar activeNumber={1}/>
+        <div className="FactorySidePage0-1-1">
+          <InnerHeader 
+            pageTitle = '新增配件'
+            sideName = '工厂端'
+            address = '0xf39...266'
+          />
+          <PageFunctionTitle titleName='配件详细信息'/>
+          <div className="FactorySidePage0-box">
+            <div className="FactorySidePage0-box-1">
+              <div className="FactorySidePage0-box-1-title">产品名称</div>
               <input
-                className="rectangle"
+                className="FactorySidePage0-box-1-input"
                 type="text"
                 value={productName}
                 onChange={handleProductNameChange}
               />
+            </div>
+            <div className="FactorySidePage0-box-2">
+              <div className="FactorySidePage0-box-2-title">产品型号</div>
               <input
-                className="rectangle-2"
+                className="FactorySidePage0-box-2-input"
                 type="text"
                 value={productModeNumber}
                 onChange={handleProductModeNumberChange}
               />
+            </div>
+            <div className="FactorySidePage0-box-3">
+              <div className="FactorySidePage0-box-3-title">产品备注</div>
               <input
-                className="rectangle-3"
+                className="FactorySidePage0-box-3-input"
                 type="text"
                 value={productDescription}
                 onChange={handleProductDescriptionChange}
               />
-              <div className="text-wrapper-6">产品型号</div>
-              <div className="view-4">
-                <div className="overlap-group-2" onClick={handleSubmit}> 
-                  <div className="text-wrapper-7">
-                    提交
-                  </div>
-                </div>
-              </div>
-              <div className="text-wrapper-8">产品备注</div>
+            </div>
+            <div className="FactorySidePage0-box-4" onClick={handleSubmit}>
+              <div className="FactorySidePage0-box-4-title">提交</div>
+            </div>
           </div>
-          <div className="text-wrapper-9">配件详细信息</div>
         </div>
       </div>
     </div>

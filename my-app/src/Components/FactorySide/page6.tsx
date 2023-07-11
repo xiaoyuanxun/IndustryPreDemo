@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { ethers } from "ethers";
 import { contractAddress, rpcProviderUrl, factoryPrivateKey, BASE } from "../../contractConfig";
 import contractAbi from '../../contractABI.json';
+import { Header, InnerHeader } from "../Header";
+import { Sidebar, PageFunctionTitle } from "../Basic";
+import ProgressLine from '../../images/SupplierPage0Progress.png'
+import FactProgressLine from '../../images/SupplierPage0Progress1.png'
 
 export const FactorySidePage6 = React.memo(() => {
   const [productModeNumber, setProductModeNumber] = useState('');
@@ -71,42 +75,51 @@ export const FactorySidePage6 = React.memo(() => {
 
   return (
     <div className="FactorySidePage6">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="view-3">
-            <div className="overlap-6">
-              <div className="text-wrapper-5">产品型号</div>
-              <input
-                  className="rectangle"
-                  type="text"
-                  value={productModeNumber}
-                  onChange={handleProductModeNumberChange}
-              />
-              <input
-                  className="rectangle-2"
-                  type="text"
-                  value={serialNumberRange}
-                  onChange={handleserialNumberRangeChange}
-              />
-              <div className="text-wrapper-6">产品序列号范围</div>
-              <div className="rectangle-3" />
-              <div className="view-4">
-                <div className="overlap-group-2" onClick={handleSubmit}>
-                  <div className="text-wrapper-7">提交</div>
-                </div>
-              </div>
-            </div>
+    <Header/>
+    <div className="FactorySidePage6-1">
+      <Sidebar activeNumber={1}/>
+      <div className="FactorySidePage6-1-1">
+        <InnerHeader 
+          pageTitle = '产品出库'
+          sideName = '工厂端'
+          address = '0xf39...266'
+        />
+        <PageFunctionTitle titleName='提交出库信息'/>
+        <div className="FactorySidePage6-box">
+          <div className="FactorySidePage6-box-1">
+            <div className="FactorySidePage6-box-1-name">产品型号</div>
+            <input
+              className="FactorySidePage6-box-1-input"
+              type="text"
+              value={productModeNumber}
+              onChange={handleProductModeNumberChange}
+            />
           </div>
-          <div className="text-wrapper-8">提交出库信息</div>
-          <div className="view-6">
-            <div className="rectangle-wrapper">
-              <div className="rectangle-4" />
-            </div>
-            <div className="text-wrapper-11">1/3</div>
+          <div className="FactorySidePage6-box-1">
+            <div className="FactorySidePage6-box-2-name">产品序列号范围</div>
+            <input
+              className="FactorySidePage6-box-1-input"
+              type="text"
+              value={serialNumberRange}
+              onChange={handleserialNumberRangeChange}
+            />
           </div>
+          <div className="FactorySidePage6-box-2" onClick={handleSubmit}>
+            <div className="FactorySidePage6-box-2-title">查询</div>
+          </div>
+        </div>
+        <div className='SupplierPage0-progress'>
+            <div className='SupplierPage0-progress-name'>
+              1/3
+            </div>
+            <div className='SupplierPage0-progress-line'>
+              <img className='SupplierPage0-progress-line-2' alt='factProgres' src={FactProgressLine}/>
+              <img className='SupplierPage0-progress-line-1' alt='allProgress' src={ProgressLine}/>
+            </div>
         </div>
       </div>
     </div>
+  </div>
   );
 });
 

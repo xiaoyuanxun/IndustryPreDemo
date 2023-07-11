@@ -7,7 +7,7 @@ async function setProductInfo() {
     const signer = await ethers.getSigner('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266');
     const contract = new ethers.Contract(contractAddress, contractAbi, signer);
 
-    for(var i = 2;i < 10;++i) {
+    for(var i = 2;i < 6;++i) {
         const productName = `${i}型电池`;
         const productModel = `TEST${i}${i}${i}`;
         const productDesc = `这是${i}型电池`;

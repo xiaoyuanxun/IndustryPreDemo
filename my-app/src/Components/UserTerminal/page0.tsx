@@ -4,6 +4,8 @@ import { ethers } from "ethers";
 import { contractAddress, rpcProviderUrl, userPrivateKey } from "../../contractConfig";
 import contractAbi from '../../contractABI.json';
 import { useNavigate } from 'react-router-dom';
+import { Header, InnerHeader } from "../Header";
+import { Sidebar, PageFunctionTitle } from "../Basic";
 
 export const UserTerminalPage0 = React.memo(() => {
   const [productModeNumber, setProductModeNumber] = useState('');
@@ -78,32 +80,45 @@ export const UserTerminalPage0 = React.memo(() => {
 
   return (
     <div className="UserTerminalPage0">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="view-3">
-              <div className="text-wrapper-5">产品型号</div>
-              <input
-                  className="rectangle"
-                  type="text"
-                  value={productModeNumber}
-                  onChange={handleProductModeNumberChange}
-              />
-              <input
-                  className="rectangle-2"
-                  type="text"
-                  value={productHashCode}
-                  onChange={handleProductHashCodeChange}
-              />              
-              <div className="text-wrapper-6">产品序列号</div>
-              <div className="view-4" onClick={handleSubmit}>
-                <div className="overlap-group-2">
-                  <div className="text-wrapper-7">提交</div>
-                </div>
+      <Header/>
+      <div className="UserTerminalPage0-1">
+        <Sidebar activeNumber={1}/>
+        <div className="UserTerminalPage0-1-1">
+          <InnerHeader 
+            pageTitle = '新能源车主'
+            sideName = '用户端'
+            address = '0x3C4...3BC'
+          />
+          <PageFunctionTitle titleName='查询产品信息'/>
+          <div className="UserTerminalPage0-box">
+            <div className="UserTerminalPage0-box-1">
+              <div className="UserTerminalPage0-box-1-title">
+                产品型号
               </div>
-              <div className="rectangle-3" />
+              <input
+                className="UserTerminalPage0-box-1-input"
+                type="text"
+                value={productModeNumber}
+                onChange={handleProductModeNumberChange}
+              />
+            </div>
+            <div className="UserTerminalPage0-box-2">
+              <div className="UserTerminalPage0-box-2-title">
+                产品序列号
+              </div>
+              <input
+                className="UserTerminalPage0-box-2-input"
+                type="text"
+                value={productHashCode}
+                onChange={handleProductHashCodeChange}
+              />
+            </div>
+            <div className="UserTerminalPage0-box-3" onClick={handleSubmit}>
+              <div className="UserTerminalPage0-box-3-title">
+                提交
+              </div>
+            </div>
           </div>
-          
-          <div className="text-wrapper-8">查询产品信息</div>
         </div>
       </div>
     </div>

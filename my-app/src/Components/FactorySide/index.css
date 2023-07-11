@@ -1,22 +1,4 @@
-/* .success-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .success-message {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .success-message p {
-    color: #32CD32;
-    font-size: 16px;
-    font-weight: bold;
-  } */
-
-  .FactorySide {
+.FactorySide {
     background-color: #f9f9f9;
     display: flex;
     flex-direction: row;
@@ -24,409 +6,201 @@
     width: 100%;
     height: 100%;
   }
-  
-  .FactorySide .overlap-wrapper {
-    background-color: #f9f9f9;
-    border: 1px none;
-    height: 1080px;
-    overflow: hidden;
-    width: 1920px;
+
+  .FactorySide {
+    background: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
   
-  .FactorySide .overlap {
-    height: 1080px;
-    position: relative;
-    width: 1924px;
+  .FactorySide-0 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
   }
   
-  .FactorySide .overlap-group {
-    height: 1080px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1924px;
+  .FactorySide-0-0 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
   
-  .FactorySide .view {
-    background-color: #e8e8e8;
-    height: 1080px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 180px;
-  }
-  
-  .FactorySide .overlap-group-wrapper {
-    height: 180px;
-    left: 0;
-    position: absolute;
-    top: 70px;
-    width: 182px;
-  }
-  
-  .FactorySide .div {
-    background-color: #4e5590;
-    height: 180px;
-    position: relative;
-    width: 180px;
-  }
-  
-  .FactorySide .text-wrapper {
-    color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 24px;
-    font-weight: 400;
-    left: 38px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 128px;
-    white-space: nowrap;
-    width: 105px;
-  }
-  
-  .FactorySide .line {
-    height: 1px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 179px;
-    width: 180px;
-  }
-  
-  .FactorySide .img {
-    height: 70px;
-    left: 55px;
-    position: absolute;
-    top: 34px;
-    width: 70px;
-  }
-  
-  .FactorySide .overlap-2 {
-    height: 359px;
-    left: 0;
-    position: absolute;
-    top: 251px;
-    width: 182px;
-  }
-  
-  .FactorySide .div-wrapper {
-    height: 180px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 182px;
-  }
-  
-  .FactorySide .overlap-3 {
-    background-color: #2797ff;
-    box-shadow: 0px 0px 5px 3px #00000040;
-    height: 180px;
-    position: relative;
-    width: 180px;
-  }
-  
-  .FactorySide .text-wrapper-2 {
-    color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 24px;
-    font-weight: 400;
-    left: 38px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 130px;
-    white-space: nowrap;
-    width: 105px;
-  }
-  
-  .FactorySide .line-2 {
-    height: 1px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 178px;
-    width: 180px;
-  }
-  
-  .FactorySide .view-2 {
-    height: 180px;
-    left: 0;
-    position: absolute;
-    top: 179px;
-    width: 182px;
-  }
-  
-  .FactorySide .overlap-4 {
-    background-color: #4f5590;
-    height: 180px;
-    position: relative;
-    width: 180px;
-  }
-  
-  .FactorySide .investment-portfolio {
-    height: 70px;
-    left: 55px;
-    position: absolute;
-    top: 35px;
-    width: 70px;
-  }
-  
-  .FactorySide .tittle {
-    height: 70px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1924px;
-  }
-  
-  .FactorySide .overlap-5 {
-    background-color: #ffffff;
-    box-shadow: 0px 0px 4px 3px #00000040;
-    height: 70px;
-    position: relative;
-    width: 1920px;
-  }
-  
-  .FactorySide .text-wrapper-3 {
-    color: #000000;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 24px;
-    font-weight: 400;
-    left: 91px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 21px;
-    width: 240px;
-  }
-  
-  .FactorySide .image {
-    height: 49px;
-    left: 29px;
-    position: absolute;
-    top: 10px;
-    width: 50px;
-  }
-  
-  .FactorySide .text-wrapper-4 {
-    color: #000000;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 20px;
-    font-weight: 400;
-    left: 1800px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 23px;
-    white-space: nowrap;
-  }
-  
-  .FactorySide .account {
-    height: 30px;
-    left: 1762px;
-    position: absolute;
-    top: 20px;
-    width: 30px;
-  }
-  
-  .FactorySide .view-3 {
-    height: 180px;
-    left: 890px;
-    position: absolute;
-    top: 174px;
-    width: 602px;
-  }
-  
-  .FactorySide .overlap-6 {
-    background-color: #4f5590;
-    border-radius: 30px;
-    height: 180px;
-    position: relative;
+  .FactorySide-1 {
     width: 600px;
-  }
-  
-  .FactorySide .text-wrapper-5 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 50px;
-    font-weight: 700;
-    left: 287px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 25px;
-  }
-  
-  .FactorySide .text-wrapper-11 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 50px;
-    font-weight: 700;
-    left: 287px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 55px;
-  }
-
-  .FactorySide .vector {
-    height: 121px;
-    left: 80px;
-    position: absolute;
-    top: 30px;
-    width: 120px;
-  }
-  
-  .FactorySide .overlap-7 {
     height: 180px;
-    left: 430px;
-    position: absolute;
-    top: 414px;
-    width: 702px;
-  }
-  
-  .FactorySide .view-4 {
-    height: 180px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 702px;
-  }
-  
-  .FactorySide .overlap-8 {
-    background-color: #2797ff;
+    flex-shrink: 0;
     border-radius: 30px;
-    box-shadow: 0px 0px 5px 5px #00000040;
-    height: 180px;
-    position: relative;
-    width: 700px;
+    background: #4F5590;
+  
+    margin-top: 104px;
+    margin-left: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    padding-left: 80px;
+  
   }
   
-  .FactorySide .text-wrapper-6 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
+  .FactorySide-1-image {
+    width: 120px;
+    height: 120.698px;
+    flex-shrink: 0;
+    fill: #F2CCA2;
+  
+    margin-right: 63px;
+  }
+  
+  .FactorySide-1-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .FactorySide-1-title{
+    color: #FFF;
+    font-family: Inter;
     font-size: 50px;
+    font-style: normal;
     font-weight: 700;
-    left: 247px;
-    letter-spacing: 0;
     line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 19px;
   }
   
-  .FactorySide .group {
-    background-image: url(../../images/Group\ 8.svg);
-    background-size: 100% 100%;
-    height: 120px;
-    left: 80px;
-    position: absolute;
-    top: 30px;
-    width: 120px;
+  .FactorySide-1-url {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 27px;
   }
   
-  .FactorySide .overlap-group-2 {
-    height: 72px;
-    left: 27px;
-    position: relative;
-    top: 38px;
-    width: 66px;
-  }
-  
-  .FactorySide .rectangle {
-    background-color: #f2cca2;
-    height: 72px;
-    left: 4px;
-    position: absolute;
-    top: 0;
-    width: 62px;
-  }
-  
-  .FactorySide .vector-2 {
-    height: 58px;
-    left: 0;
-    position: absolute;
-    top: 14px;
-    width: 66px;
-  }
-  
-  .FactorySide .text-wrapper-7 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 30px;
-    font-weight: 700;
-    left: 247px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    text-decoration: underline;
-    top: 91px;
-    white-space: nowrap;
-  }
-  
-  .FactorySide .text-wrapper-8 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 30px;
-    font-weight: 700;
-    left: 247px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    text-decoration: underline;
-    top: 131px;
-    white-space: nowrap;
-  }
-  
-  .FactorySide .text-wrapper-9 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 30px;
-    font-weight: 700;
-    left: 387px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    text-decoration: underline;
-    top: 91px;
-    white-space: nowrap;
-  }
-  
-  .FactorySide .text-wrapper-10 {
-    color: #ffffff;
-    font-family: "Inter-Bold", Helvetica;
-    font-size: 30px;
-    font-weight: 700;
-    left: 527px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    text-decoration: underline;
-    top: 91px;
-    white-space: nowrap;
-  }
-  
-  .FactorySide .view-5 {
+  .FactorySide-2 {
+    width: 700px;
     height: 180px;
-    left: 890px;
-    position: absolute;
-    top: 654px;
-    width: 602px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #2797FF;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+    margin-top: 60px;
+    margin-left: 14.3%;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   
-  .FactorySide .vector-3 {
-    height: 76px;
-    left: 80px;
-    position: absolute;
-    top: 52px;
+  .FactorySide-2-image {
     width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    margin-left: 80px;
+  }
+  
+  .FactorySide-2-box {
+    display: flex;
+    flex-direction: column;
   }
 
+.FactorySide-2-box-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+  .FactorySide-2-title {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 47px;
+  }
+  
+  .FactorySide-2-box-1-url-1 {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    margin-left: 47px;
+  }
+
+.FactorySide-2-box-1-url-2 {
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-left: 20px;
+}
+
+.FactorySide-2-box-1-url-3 {
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-left: 20px;
+}
+
+.FactorySide-2-box-2-url {
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+  .FactorySide-3 {
+    width: 600px;
+    height: 180px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #4F5590;
+  
+    margin-top: 60px;
+    margin-left: 40%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .FactorySide-3-image {
+    width: 120px;
+    height: 76.364px;
+    flex-shrink: 0;
+    fill: #F2CCA2;
+  
+    margin-left: 80px;
+  }
+  
+  .FactorySide-3-title {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  
+    margin-left: 80px;
+  }
   

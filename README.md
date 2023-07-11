@@ -1,5 +1,40 @@
 # IndustryPreDemo
 
+# 部署命令
+## 启动节点网络
+```sh
+npm install
+```
+```sh
+npx hardhat clean
+```
+```sh
+npx hardhat node
+```
+## 部署&初始化合约
+```sh
+npx hardhat --network localhost compile
+```
+```sh
+npx hardhat --network localhost run scripts/deploy.ts 
+```
+```sh
+npx hardhat --network localhost run scripts/setWhiteList.ts 
+```
+```sh
+npx hardhat --network localhost run scripts/setProductInfo.ts 
+```
+## 启动前端
+```sh
+cd my-app/
+```
+```sh
+npm install
+```
+```sh
+npm run start
+```
+
 # 需求分析
 
 ## 角色分类

@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { PageFunctionTitle, FunctionPageInPut } from '../Basic';
 import ProgressLine from '../../images/SupplierPage0Progress.png'
 import FactProgressLine from '../../images/SupplierPage0Progress1.png'
+import { Header, InnerHeader } from '../Header';
+import { Sidebar } from '../Basic';
 
 export const SupplierPage0 = React.memo(() => {
   const [productModeNumber, setProductModeNumber] = useState("");
@@ -74,39 +76,50 @@ export const SupplierPage0 = React.memo(() => {
 
     return (
       <div className='SupplierPage0'>
-        <PageFunctionTitle titleName='提交详细信息'/>
-        <div className='SupplierPage0-box'>
-          <div className='SupplierPage0-box-1'>
-            <div className='SupplierPage0-box-1-title'>
-              产品型号
-            </div>
-            <FunctionPageInPut
-              value={productModeNumber}
-              onChange={handleProductModeNumberChange}
+        <Header/>
+        <div className='SupplierPage0-1'>
+          <Sidebar activeNumber={1}/>
+          <div className='SupplierPage0-1-1'>
+            <InnerHeader 
+              pageTitle = '配件交付'
+              sideName = '供应商'
+              address = '0x709...9C8'
             />
-          </div>
-          <div className='SupplierPage0-box-2'>
-            <div className='SupplierPage0-box-2-title'>
-              产品序列号范围
+          <PageFunctionTitle titleName='提交详细信息'/>
+            <div className='SupplierPage0-box'>
+              <div className='SupplierPage0-box-1'>
+                <div className='SupplierPage0-box-1-title'>
+                  产品型号
+                </div>
+                <FunctionPageInPut
+                  value={productModeNumber}
+                  onChange={handleProductModeNumberChange}
+                />
+              </div>
+              <div className='SupplierPage0-box-2'>
+                <div className='SupplierPage0-box-2-title'>
+                  产品序列号范围
+                </div>
+                <FunctionPageInPut
+                value={serialNumberRange}
+                onChange={handleserialNumberRangeChange}
+                />
+              </div>
+              <div className='SupplierPage0-box-3' onClick={handleSubmit}>
+                <div className='SupplierPage0-box-3-title'>
+                  提交
+                </div>
+              </div>
             </div>
-            <FunctionPageInPut
-             value={serialNumberRange}
-             onChange={handleserialNumberRangeChange}
-            />
-          </div>
-          <div className='SupplierPage0-box-3' onClick={handleSubmit}>
-            <div className='SupplierPage0-box-3-title'>
-              提交
+            <div className='SupplierPage0-progress'>
+              <div className='SupplierPage0-progress-name'>
+                1/3
+              </div>
+              <div className='SupplierPage0-progress-line'>
+                <img className='SupplierPage0-progress-line-2' alt='factProgres' src={FactProgressLine}/>
+                <img className='SupplierPage0-progress-line-1' alt='allProgress' src={ProgressLine}/>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className='SupplierPage0-progress'>
-          <div className='SupplierPage0-progress-name'>
-            1/3
-          </div>
-          <div className='SupplierPage0-progress-line'>
-            <img className='SupplierPage0-progress-line-2' alt='factProgres' src={FactProgressLine}/>
-            <img className='SupplierPage0-progress-line-1' alt='allProgress' src={ProgressLine}/>
           </div>
         </div>
       </div>

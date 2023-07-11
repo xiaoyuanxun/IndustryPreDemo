@@ -3,6 +3,8 @@ import "./page1.css";
 import Line7Svg from '../../images/Line 7.svg'
 import Arrow2Svg from '../../images/Arrow 2.svg'
 import { useLocation } from 'react-router-dom';
+import { Header, InnerHeader } from "../Header";
+import { Sidebar, PageFunctionTitle } from "../Basic";
 
 interface ProductInfo {
   supplyId?: string,
@@ -27,30 +29,64 @@ export const UserTerminalPage1 = React.memo(() => {
 
   return (
     <div className="UserTerminalPage1">
-      <div className="overlap-wrapper">
-        <div className="overlap">
+      <Header/>
+      <div className="UserTerminalPage1-1">
+        <Sidebar activeNumber={1}/>
+        <div className="UserTerminalPage1-1-1">
+          <InnerHeader 
+            pageTitle = '新能源车主'
+            sideName = '用户端'
+            address = '0x3C4...3BC'
+          />
+          <PageFunctionTitle titleName='查询产品信息'/>
+          <div className="UserTerminalPage1-box">
+            <div className="UserTerminalPage1-box-1">
+              <img className="UserTerminalPage1-logo" src={Arrow2Svg}/>
+              <div className="UserTerminalPage1-box-1-box">
+                <div className="UserTerminalPage1-box-1-box-title">供应商</div>
+                <div className="UserTerminalPage1-box-1-box-id">
+                  {/* ID: 123 */}
+                  ID: {supplyId}
+                </div>
+              </div>
+              <div className="UserTerminalPage1-box-1-time">
+                {/* 2023/7/2 10:00:00 */}
+                {supplyTime}
+              </div>
+            </div>
+            <img className="UserTerminalPage1-line" src ={Line7Svg}/>
 
-          <div className="text-wrapper-5">查询产品信息</div>
-          <div className="div-2">
-            <img className="line-4" alt="Line" src={Line7Svg} />
-            <div className="text-wrapper-6">供应商</div>
-            <div className="text-wrapper-7">ID: {supplyId}</div>
-            <div className="text-wrapper-8">{supplyTime}</div>
-            <img className="arrow" alt="Arrow" src={Arrow2Svg} />
-          </div>
-          <div className="div-3">
-            <img className="line-4" alt="Line" src={Line7Svg} />
-            <div className="text-wrapper-6">加工厂</div>
-            <div className="text-wrapper-7">ID: {enterId}</div>
-            <div className="text-wrapper-8">{enterTime}</div>
-            <img className="arrow" alt="Arrow" src={Arrow2Svg} />
-          </div>
-          <div className="div-4">
-            <img className="line-4" alt="Line" src={Line7Svg} />
-            <div className="text-wrapper-6">销售商</div>
-            <div className="text-wrapper-7">ID: {outId}</div>
-            <div className="text-wrapper-8">{outTime}</div>
-            <img className="arrow" alt="Arrow" src={Arrow2Svg} />
+            <div className="UserTerminalPage1-box-2">
+              <img className="UserTerminalPage1-logo" src={Arrow2Svg}/>
+              <div className="UserTerminalPage1-box-2-box">
+                <div className="UserTerminalPage1-box-2-box-title">加工厂</div>
+                <div className="UserTerminalPage1-box-2-box-id">
+                  {/* ID: 123 */}
+                  ID: {enterId}
+                </div>
+              </div>
+              <div className="UserTerminalPage1-box-2-time">
+                {/* 2023/7/2 10:00:00 */}
+                {enterTime}
+              </div>
+            </div>
+            <img className="UserTerminalPage1-line" src ={Line7Svg}/>
+
+            <div className="UserTerminalPage1-box-2">
+              <img className="UserTerminalPage1-logo" src={Arrow2Svg}/>
+              <div className="UserTerminalPage1-box-2-box">
+                <div className="UserTerminalPage1-box-2-box-title">销售商</div>
+                <div className="UserTerminalPage1-box-2-box-id">
+                  {/* ID: 123 */}
+                  ID: {outId}
+                </div>
+              </div>
+              <div className="UserTerminalPage1-box-2-time">
+                {/* 2023/7/2 10:00:00 */}
+                {outTime}
+              </div>
+            </div>
+            <img className="UserTerminalPage1-line" src ={Line7Svg}/>
           </div>
         </div>
       </div>

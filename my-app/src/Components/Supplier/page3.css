@@ -8,12 +8,25 @@
   justify-content: center;
 }
 
+.SupplierPage3-1 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.SupplierPage3-1-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
 .SupplierPage3-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 220px;
-  margin-top: 274px;
+  margin-top: 50px;
 }
 
 .SupplierPage3-box-title {
@@ -61,14 +74,13 @@
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-  margin-left: 220px;
 }
 
 .SupplierPage3-product-box {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 15px;
+  margin-left: 30px;
 }
 
 .SupplierPage3-product-name {
@@ -98,6 +110,5 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
   width: 465px;
 }

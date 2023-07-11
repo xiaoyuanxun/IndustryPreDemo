@@ -4,6 +4,8 @@ import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
 import Group8Png from '../../images/Group 8.svg'
 import { useNavigate } from 'react-router-dom';
+import { Header } from '../Header';
+import { Sidebar } from '../Basic';
 
 // interface Page0Props {
 //   handleTransactionData: (data: string) => void;
@@ -38,34 +40,40 @@ export const Supplier = React.memo(() => {
   
   return (
       <div className="Supplier">
-        <div className='Supplier-1'>
-          <img className="Supplier-1-image" alt="Vector" src={Vector} />
-          <div className='Supplier-1-info'>
-            <div className="Supplier-1-title" onClick={handleGoToSupplierPage}>
-              配件供应商
-            </div>
-            <div className='Supplier-1-url'>
-              <div className='Supplier-1-url-1' onClick={handleGoToSupplierPage0}>
-                配件交付
+        <Header/>
+        <div className='Supplier-0'>
+          <Sidebar activeNumber={1}/>
+          <div className='Supplier-0-0'>
+            <div className='Supplier-1'>
+              <img className="Supplier-1-image" alt="Vector" src={Vector} />
+              <div className='Supplier-1-info'>
+                <div className="Supplier-1-title" onClick={handleGoToSupplierPage}>
+                  配件供应商
+                </div>
+                <div className='Supplier-1-url'>
+                  <div className='Supplier-1-url-1' onClick={handleGoToSupplierPage0}>
+                    配件交付
+                  </div>
+                  <div className='Supplier-1-url-2' onClick={handleGoToSupplierPage3}>
+                    交付列表
+                  </div>
+                </div>
               </div>
-              <div className='Supplier-1-url-2' onClick={handleGoToSupplierPage3}>
-                交付列表
+            </div>
+            <div className='Supplier-2' onClick={handleGoToFactoryPage}>
+              <img className="Supplier-2-image" alt="Vector" src={Group8Png} />
+              <div className='Supplier-2-title'>
+                新能源汽车
+                <br />
+                加工厂
               </div>
             </div>
-          </div>
-        </div>
-        <div className='Supplier-2' onClick={handleGoToFactoryPage}>
-          <img className="Supplier-2-image" alt="Vector" src={Group8Png} />
-          <div className='Supplier-2-title'>
-            新能源汽车
-            <br />
-            加工厂
-          </div>
-        </div>
-        <div className='Supplier-3' onClick={handleGoToUserPage}>
-          <img className="Supplier-3-image" alt="Vector" src={Vector3Svg} />
-          <div className='Supplier-3-title'>
-            新能源车主
+            <div className='Supplier-3' onClick={handleGoToUserPage}>
+              <img className="Supplier-3-image" alt="Vector" src={Vector3Svg} />
+              <div className='Supplier-3-title'>
+                新能源车主
+              </div>
+            </div>
           </div>
         </div>
       </div>

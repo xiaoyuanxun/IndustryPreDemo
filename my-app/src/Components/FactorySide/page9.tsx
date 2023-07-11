@@ -4,6 +4,8 @@ import LinePng from '../../images/FactoryPage9Line.png'
 import { ethers } from "ethers";
 import contractAbi from '../../contractABI.json';
 import { contractAddress, rpcProviderUrl, factoryPrivateKey } from "../../contractConfig";
+import { Header,InnerHeader } from "../Header";
+import { Sidebar, PageFunctionTitle } from "../Basic";
 
 export const FactorySidePage9 = React.memo(() => {
   const [productArray, setProductArray] = useState([]);
@@ -33,27 +35,37 @@ export const FactorySidePage9 = React.memo(() => {
 
   return (
     <div className="FactorySidePage9">
-      <div className="FactorySidePage9-box">
-        <div className="FactorySidePage9-box-title">
-          <div className="FactorySidePage9-box-title-1">
-            产品名称
+      <Header/>
+      <div className="FactorySidePage9-1">
+        <Sidebar activeNumber={1}/>
+        <div className="FactorySidePage9-1-1">
+          <InnerHeader 
+                pageTitle = '配件列表'
+                sideName = '工厂端'
+                address = '0xf39...266'
+          />
+          <div className="FactorySidePage9-box">
+            <div className="FactorySidePage9-box-title">
+              <div className="FactorySidePage9-box-title-1">
+                产品名称
+              </div>
+              <div className="FactorySidePage9-box-title-2">
+                产品型号
+              </div>
+            </div>
+            <img className="FactorySidePage9-line" alt="Line" src={LinePng} />
           </div>
-          <div className="FactorySidePage9-box-title-2">
-            产品型号
-          </div>
+          {productArray.map((item, index) => (
+            <div key={index} className="FactorySidePage9-product">
+              <div className="FactorySidePage9-product-box"> 
+                <div className="FactorySidePage9-product-name">{item[0]}</div>
+                <div className="FactorySidePage9-product-model">{item[1]}</div>
+              </div>
+              <img className="FactorySidePage9-line" alt="Line" src={LinePng} />
+            </div>
+          ))}
         </div>
-        <img className="FactorySidePage9-line" alt="Line" src={LinePng} />
       </div>
-      {productArray.map((item, index) => (
-        <div key={index} className="FactorySidePage9-product">
-          <div className="FactorySidePage9-product-box"> 
-            <div className="FactorySidePage9-product-name">{item[0]}</div>
-            <div className="FactorySidePage9-product-model">{item[1]}</div>
-          </div>
-          <img className="FactorySidePage9-line" alt="Line" src={LinePng} />
-        </div>
-
-      ))}
     </div>
   );
 });

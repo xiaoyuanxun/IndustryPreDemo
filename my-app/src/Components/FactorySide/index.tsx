@@ -1,9 +1,11 @@
 import React from 'react';
 import "./index.css"
-import Vector2Svg from '../../images/vector-2.svg'
+import Group8Png from '../../images/Group 8.svg'
 import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
 import { useNavigate } from 'react-router-dom';
+import { Header } from '../Header';
+import { Sidebar } from '../Basic';
 
 export const FactorySide = React.memo(() => {
   const navigate = useNavigate();
@@ -38,41 +40,51 @@ export const FactorySide = React.memo(() => {
 
   return (
     <div className="FactorySide">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-
-          <div className="view-3">
-            <div className="overlap-6" onClick={handleGoToSupplierPage}>
-              <h1 className="text-wrapper-5">配件供应商</h1>
-              <img className="vector" alt="Vector" src={Vector} />
+    <Header/>
+    <div className='FactorySide-0'>
+      <Sidebar activeNumber={1}/>
+      <div className='FactorySide-0-0'>
+        <div className='FactorySide-1' onClick={handleGoToSupplierPage}>
+          <img className="FactorySide-1-image" alt="Vector" src={Vector} />
+          <div className='FactorySide-1-info'>
+            <div className="FactorySide-1-title" onClick={handleGoToSupplierPage}>
+              配件供应商
             </div>
           </div>
-          <div className="overlap-7">
-            <div className="view-4">
-              <div className="overlap-8" onClick={handleGoToFactoryPage}>
-                <div className="text-wrapper-5">新能源汽车加工厂</div>
-                <div className="group">
-                  <div className="overlap-group-2">
-                    <div className="rectangle" />
-                    <img className="vector-2" alt="Vector" src={Vector2Svg} />
-                  </div>
-                </div>
+        </div>
+        <div className='FactorySide-2'>
+          <img className="FactorySide-2-image" alt="Vector" src={Group8Png} />
+          <div className='FactorySide-2-box'>
+            <div className='FactorySide-2-title'>
+              新能源汽车加工厂
+            </div>
+            <div className='FactorySide-2-box-1'>
+              <div className='FactorySide-2-box-1-url-1' onClick={handleGoToFactory0Page}>
+                新增配件
+              </div>
+              <div className='FactorySide-2-box-1-url-2' onClick={handleGoToFactory2Page}>
+                配件入库
+              </div>
+              <div className='FactorySide-2-box-1-url-3' onClick={handleGoToFactory6Page}>
+                配件出库
               </div>
             </div>
-            <div className="text-wrapper-7" onClick={handleGoToFactory0Page}>新增配件</div>
-            <div className="text-wrapper-8" onClick={handleGoToFactory9Page}>配件列表</div>
-            <div className="text-wrapper-9" onClick={handleGoToFactory2Page}>配件入库</div>
-            <div className="text-wrapper-10" onClick={handleGoToFactory6Page}>配件出库</div>
-          </div>
-          <div className="view-5">
-            <div className="overlap-6" onClick={handleGoToUserPage}>
-              <div className="text-wrapper-11">新能源车主</div>
-              <img className="vector-3" alt="Vector" src={Vector3Svg}/>
+            <div className='FactorySide-2-box-2'>
+              <div className='FactorySide-2-box-2-url' onClick={handleGoToFactory9Page}>
+                配件列表
+              </div>
             </div>
+          </div>
+        </div>
+        <div className='FactorySide-3' onClick={handleGoToUserPage}>
+          <img className="FactorySide-3-image" alt="Vector" src={Vector3Svg} />
+          <div className='FactorySide-3-title'>
+            新能源车主
           </div>
         </div>
       </div>
     </div>
+  </div>
   );
 });
 

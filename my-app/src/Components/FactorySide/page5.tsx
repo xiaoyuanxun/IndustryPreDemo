@@ -3,6 +3,8 @@ import "./page5.css";
 import Line7Svg from '../../images/Line 7.svg'
 import OkPng from '../../images/Ok.png'
 import { useLocation } from 'react-router-dom';
+import { Header, InnerHeader } from "../Header";
+import { Sidebar, PageFunctionTitle } from "../Basic";
 
 interface ProductInfo {
   productName?: string,
@@ -25,25 +27,50 @@ export const FactorySidePage5 = React.memo(() => {
 
   return (
     <div className="FactorySidePage5">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="text-wrapper-5">提交入库信息</div>
-          <div className="view-4">
-            <div className="overlap-7">
-              <div className="text-wrapper-8">入库成功</div>
-              <img className="ok" alt="Ok" src={OkPng} />
-              <div className="text-wrapper-9">备注</div>
-              <img className="line-4" alt="Line" src={Line7Svg} />
-              <img className="line-5" alt="Line" src={Line7Svg} />
-              <img className="line-6" alt="Line" src={Line7Svg} />
-              <img className="line-7" alt="Line" src={Line7Svg} />
-              <div className="text-wrapper-10">产品名称</div>
-              <div className="text-wrapper-11">{productName}</div>
-              <div className="text-wrapper-12">产品型号</div>
-              <div className="text-wrapper-13">{productModeNumber}</div>
-              <div className="text-wrapper-14">产品序列号范围</div>
-              <div className="text-wrapper-15">{serialNumberRange_min}-{serialNumberRange_max}</div>
-              <div className="text-wrapper-16">
+      <Header/>
+      <div className="FactorySidePage5-1">
+        <Sidebar activeNumber={1}/>
+        <div className="FactorySidePage5-1-1">
+          <InnerHeader 
+            pageTitle = '配件入库'
+            sideName = '工厂端'
+            address = '0xf39...266'
+          />
+          <PageFunctionTitle titleName='提交入库信息'/>
+          <div className="FactorySidePage5-box">
+            <div className="FactorySidePage5-box-1">
+              <img className="FactorySidePage5-logo" src={OkPng}/>
+              <div className="FactorySidePage5-box-1-title">入库成功</div>
+            </div>
+            <img className="FactorySidePage5-line" src={Line7Svg}/>
+            <div className="FactorySidePage5-box-2">
+              <div className="FactorySidePage5-box-2-title">产品名称</div>
+              <div className="FactorySidePage5-box-2-value">
+                {/* 1型电池 */}
+                {productName}
+              </div>
+            </div>
+            <img className="FactorySidePage5-line" src={Line7Svg}/>
+            <div className="FactorySidePage5-box-2">
+              <div className="FactorySidePage5-box-2-title">产品型号</div>
+              <div className="FactorySidePage5-box-2-value">
+                {/* TEST-123 */}
+                {productModeNumber}
+              </div>
+            </div>
+            <img className="FactorySidePage5-line" src={Line7Svg}/>
+            <div className="FactorySidePage5-box-2">
+              <div className="FactorySidePage5-box-2-title">产品序列号范围</div>
+              <div className="FactorySidePage5-box-2-value">
+                {/* 100-200 */}
+                {serialNumberRange_min}-{serialNumberRange_max}
+              </div>
+            </div>
+            <img className="FactorySidePage5-line" src={Line7Svg}/>
+            <div className="FactorySidePage5-box-2">
+              <div className="FactorySidePage5-box-2-title">备注</div>
+              <div className="FactorySidePage5-box-2-value">
+                {/* 这是个电池，通过工厂端配件库信息对应进行上传，并且上传后通过工厂端进行确认入库信息后完成入库 */}
                 {productDescription}
               </div>
             </div>

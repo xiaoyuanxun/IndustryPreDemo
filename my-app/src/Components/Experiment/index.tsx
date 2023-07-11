@@ -1,10 +1,12 @@
 import React from "react";
 import "./index.css";
 import CarRepairSvg from '../../images/Car repair.svg'
-import Vector2Svg from '../../images/vector-2.svg'
+import Group8Png from '../../images/Group 8.svg'
 import Vector3Svg from '../../images/vector-3.svg'
 import Vector from '../../images/Vector.svg'
 import { useNavigate } from 'react-router-dom';
+import { Header } from "../Header";
+import { Sidebar } from "../Basic";
 
 export const Experiment_1 = React.memo(() => {
 
@@ -49,40 +51,37 @@ export const Experiment_2 = React.memo(() => {
     navigate('/user');
   };
     return (
-      <div className="page2-element">
-        <div className="overlap-wrapper">
-          <div className="overlap">
-            <div className="view-3">
-              <div className="overlap-6" onClick={handleGoToSupplierPage}>
-                <h1 className="text-wrapper-7" onClick={handleGoToSupplierPage}>
-                  配件供应商
-                </h1>
-                <img className="vector" alt="Vector" src={Vector} />
+      <div className="UserTerminal">
+      <Header/>
+      <div className='UserTerminal-0'>
+        <Sidebar activeNumber={1}/>
+        <div className='UserTerminal-0-0'>
+          <div className='UserTerminal-1' onClick={handleGoToSupplierPage}>
+            <img className="UserTerminal-1-image" alt="Vector" src={Vector} />
+            <div className='UserTerminal-1-info'>
+              <div className="UserTerminal-1-title" onClick={handleGoToSupplierPage}>
+                配件供应商
               </div>
             </div>
-            <div className="view-4">
-              <div className="overlap-7" onClick={handleGoToFactoryPage} >
-                <div className="text-wrapper-6" onClick={handleGoToFactoryPage}>
-                  新能源汽车
-                  <br />
-                  加工厂
-                </div>
-                <div className="group">
-                  <div className="overlap-group-2">
-                    <div className="rectangle" />
-                    <img className="vector-2" alt="Vector" src={Vector2Svg}  onClick={handleGoToExperimen1Page} />
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div className='UserTerminal-2' onClick={handleGoToFactoryPage}>
+            <img className="UserTerminal-2-image" alt="Vector" src={Group8Png} />
+            <div className='UserTerminal-2-title'>
+              新能源汽车
+              <br />
+              加工厂
             </div>
-            <div className="view-5">
-              <div className="overlap-6" onClick={handleGoToUserPage}>
-                <div className="text-wrapper-5" onClick={handleGoToUserPage}>新能源车主</div>
-                <img className="vector-3" alt="Vector" src={Vector3Svg} />
+          </div>
+          <div className='UserTerminal-3' onClick={handleGoToUserPage}>
+            <img className="UserTerminal-3-image" alt="Vector" src={Vector3Svg} />
+            <div className='UserTerminal-3-box'>
+              <div className='UserTerminal-3-title'>
+                新能源车主
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     );
   });
