@@ -10,9 +10,9 @@ echo "编译项目"
 npx hardhat compile
 
 echo "启动本地Hardhat网络"
-# gnome-terminal -- bash -c "npx hardhat node"
+gnome-terminal -- bash -c "npx hardhat node"
 # osascript -e 'tell application "Terminal" to do script "npx hardhat node"'
-osascript -e 'tell application "Terminal" to activate' -e 'tell application "Terminal" to do script "cd /Users/heyuanxun/Documents/GitHub/IndustryPreDemo && npx hardhat node"'
+# osascript -e 'tell application "Terminal" to activate' -e 'tell application "Terminal" to do script "cd /Users/heyuanxun/Documents/GitHub/IndustryPreDemo && npx hardhat node"'
 
 echo "等待网络启动"
 sleep 10 # 可根据需要调整等待时间

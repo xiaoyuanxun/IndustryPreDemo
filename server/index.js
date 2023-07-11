@@ -55,29 +55,45 @@ const userData = {
   walletPrivateKey: '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
 };
 
-const factoryAccount = {
-  username: 'factory',
-  password: 'factoryPassword',
-  walletAddress: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
-  walletPublicKey: '0x8318535b54105d4a7aae60c08fc45f9687181b4fdfc625bd1a753fa7397fed753547f11ca8696646f2f3acb08e31016afac23e630c5d11f59f61fef57b0d2aa5',
-  walletPrivateKey: '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
+const student1 = {
+  username: '20236666',
+  password: '20236666',
+  walletAddress: '0x90F79bf6EB2c4f870365E785982E1f101E93b906',
+  walletPublicKey: '0x20b871f3ced029e14472ec4ebc3c0448164942b123aa6af91a3386c1c403e0ebd3b4a5752a2b6c49e574619e6aa0549eb9ccd036b9bbc507e1f7f9712a236092',
+  walletPrivateKey: '0x7c852118294e51e653712a81e05800f419141751be58f605c371e15141b007a6'
 };
 
-const supplierAccount = {
-  username: 'supplier',
-  password: 'supplierPassword',
-  walletAddress: '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
-  walletPublicKey: '0xba5734d8f7091719471e7f7ed6b9df170dc70cc661ca05e688601ad984f068b0d67351e5f06073092499336ab0839ef8a521afd334e53807205fa2f08eec74f4',
-  walletPrivateKey: '0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d'
+const student2 = {
+  username: '20237777',
+  password: '20237777',
+  walletAddress: '0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65',
+  walletPublicKey: '0xbf6ee64a8d2fdc551ec8bb9ef862ef6b4bcb1805cdc520c3aa5866c0575fd3b514c5562c3caae7aec5cd6f144b57135c75b6f6cea059c3d08d1f39a9c227219d',
+  walletPrivateKey: '0x47e179ec197488593b187f80a00eb0da91f1b9d0b13f8733639f19c30a34926a'
 };
 
-const userAccount = {
-  username: 'user',
-  password: 'userPassword',
-  walletAddress: '0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC',
-  walletPublicKey: '0x9d9031e97dd78ff8c15aa86939de9b1e791066a0224e331bc962a2099a7b1f0464b8bbafe1535f2301c72c2cb3535b172da30b02686ab0393d348614f157fbdb',
-  walletPrivateKey: '0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a'
-};
+// const factoryAccount = {
+//   username: 'factory',
+//   password: 'factoryPassword',
+//   walletAddress: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+//   walletPublicKey: '0x8318535b54105d4a7aae60c08fc45f9687181b4fdfc625bd1a753fa7397fed753547f11ca8696646f2f3acb08e31016afac23e630c5d11f59f61fef57b0d2aa5',
+//   walletPrivateKey: '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
+// };
+
+// const supplierAccount = {
+//   username: 'supplier',
+//   password: 'supplierPassword',
+//   walletAddress: '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
+//   walletPublicKey: '0xba5734d8f7091719471e7f7ed6b9df170dc70cc661ca05e688601ad984f068b0d67351e5f06073092499336ab0839ef8a521afd334e53807205fa2f08eec74f4',
+//   walletPrivateKey: '0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d'
+// };
+
+// const userAccount = {
+//   username: 'user',
+//   password: 'userPassword',
+//   walletAddress: '0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC',
+//   walletPublicKey: '0x9d9031e97dd78ff8c15aa86939de9b1e791066a0224e331bc962a2099a7b1f0464b8bbafe1535f2301c72c2cb3535b172da30b02686ab0393d348614f157fbdb',
+//   walletPrivateKey: '0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a'
+// };
 
 // 向 users 表插入数据的函数
 const insertUser = (userData) => {
@@ -113,9 +129,11 @@ const insertUser = (userData) => {
     });
   });
 };
-insertUser(factoryAccount);
-insertUser(supplierAccount);
-insertUser(userAccount);
+insertUser(student1);
+insertUser(student2);
+// insertUser(factoryAccount);
+// insertUser(supplierAccount);
+// insertUser(userAccount);
 
 const queryAllInfo = () => {
   // 查询 users 表中的所有数据
@@ -145,11 +163,11 @@ const getPublicKey = (privateKey) => {
 
   return publicKey;
 };
-// // 调用获取公钥函数
-// const privateKey = '0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a'; // 替换为实际的私钥
-// const publicKey = getPublicKey(privateKey);
+// 调用获取公钥函数
+const privateKey = '0x47e179ec197488593b187f80a00eb0da91f1b9d0b13f8733639f19c30a34926a'; // 替换为实际的私钥
+const publicKey = getPublicKey(privateKey);
 
-// console.log('公钥:', publicKey);
+console.log('公钥:', publicKey);
 
 // 设置 express-session 中间件
 app.use(session({
