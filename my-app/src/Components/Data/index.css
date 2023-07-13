@@ -135,6 +135,7 @@
   margin-left: 5.56%;
   margin-right: 5.56%;
   margin-top: 20px;
+  width: 88%;
 }
 
 .data-row-1-box-2 {
@@ -812,6 +813,8 @@
   margin-top: 20px;
   margin-left: 5.56%;
   margin-right: 5.56%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .data-row-4-box-row-block {

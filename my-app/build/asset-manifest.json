@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9bbc827.css",
-    "main.js": "/static/js/main.e3bca92f.js",
+    "main.css": "/static/css/main.5dd5fb63.css",
+    "main.js": "/static/js/main.f4408b56.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/background_image_1.png": "/static/media/background_image_1.a1bf19e74e1b9d0cb093.png",
     "static/media/school_logo.png": "/static/media/school_logo.d9a1f9435b39942ec4b5.png",
@@ -10,7 +10,6 @@
     "static/media/Pie Chart.svg": "/static/media/Pie Chart.c91473700dff8de009dd644d1dfad149.svg",
     "static/media/Group 8.svg": "/static/media/Group 8.6807aefd8b3c19a85d5f60884a4600cd.svg",
     "static/media/Car repair.svg": "/static/media/Car repair.d8de3b2226c580ca0e9b0fb2ad6e96c2.svg",
-    "static/media/vector-2.svg": "/static/media/vector-2.d550b921cf789f66911580001c4f67f6.svg",
     "static/media/vector-3.svg": "/static/media/vector-3.ac0216fa41979fea44af103ef55e3985.svg",
     "index.html": "/index.html",
     "static/media/Arrow 2.svg": "/static/media/Arrow 2.8871b40b24ccb9050f99b714d0feaadf.svg",
@@ -19,12 +18,12 @@
     "static/media/Line 3.svg": "/static/media/Line 3.5279fd1e283a8e37347de9f22900c622.svg",
     "static/media/Line 7.svg": "/static/media/Line 7.df3c8552ef92e4e2e67006eca73cb66e.svg",
     "static/media/line.svg": "/static/media/line.a41deee61c8cd799da4ef37a44a0a17a.svg",
-    "main.f9bbc827.css.map": "/static/css/main.f9bbc827.css.map",
-    "main.e3bca92f.js.map": "/static/js/main.e3bca92f.js.map",
+    "main.5dd5fb63.css.map": "/static/css/main.5dd5fb63.css.map",
+    "main.f4408b56.js.map": "/static/js/main.f4408b56.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9bbc827.css",
-    "static/js/main.e3bca92f.js"
+    "static/css/main.5dd5fb63.css",
+    "static/js/main.f4408b56.js"
   ]
 }

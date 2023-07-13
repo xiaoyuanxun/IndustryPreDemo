@@ -9,6 +9,7 @@ npm install
 echo "清理节点网络缓存"
 npx hardhat clean
 
+npx hardhat compile
 
 echo "启动本地Hardhat网络"
 
